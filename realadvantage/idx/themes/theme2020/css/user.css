@@ -1,0 +1,275 @@
+div#IDX-main {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-top: 100px;
+	position: relative;
+    background-attachment: fixed;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+div#IDX-main:not(.IDX-type-myaccount) {
+    min-height: 100vh;
+}
+div#ar-UserFormContainer {
+	width: 800px;
+	max-width: 90%;
+	margin: 0 auto;
+	position: relative;
+}
+div#ar-UserFormRow {
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.25);
+}
+div#ar-UserFormRow div#ar-userSocial {
+	background-color: #000000;
+}
+div#ar-UserFormRow div#ar-userForm {
+	background-color: #ffffff;
+}
+div#ar-userSocialInner {
+    padding: 45px 25px 45px 25px;
+    text-align: center;
+}
+div#ar-userFormInner {
+    padding: 45px 25px 45px 25px;
+    text-align: center;
+}
+div#ar-UserFormRow div#ar-userSocial {
+    position: relative;
+}
+div#ar-UserFormRow div#ar-userSocial div#ar-userSocialInner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 30px);
+}
+div#ar-UserFormRow div#ar-userForm div:not(#IDX-keepLoggedIn) > label {
+	display: none;
+}
+form#IDX-social-facebook, form#IDX-social-google {
+    display: block;
+    margin-right: 0;
+}
+#IDX-social-google button, #IDX-social-facebook button {
+    background-image: none!important;
+    color: #ffffff!important;
+    margin-bottom: 25px;
+    border-color: #ffffff;
+    font-family: var(--button_typography-font-family, sans-serif);
+    font-weight: var(--button_typography-font-weight, normal);
+    font-style: var(--button_typography-font-style, normal);
+    padding: 17px 40px;
+    line-height: 21px;
+    font-size: 18px;
+    text-transform: var(--button_text_transform);
+}
+#IDX-social-google button .button-icon-divider-left, #IDX-social-facebook button .button-icon-divider-left {
+	border-color: #ffffff;
+}
+a#IDX-userSignupLink, div#IDX-gotoUserLogin a#IDX-toggleLogIn, 
+div#IDX-gotoUserSignup a#IDX-userSignupLink:hover, 
+div#IDX-gotoUserLogin a#IDX-toggleLogIn:hover {
+    background-color: var(--primary_color)!important;
+    border-color: #ffffff!important;
+    color: #ffffff!important;
+    font-family: var(--button_typography-font-family, sans-serif);
+    font-weight: var(--button_typography-font-weight, normal);
+    font-style: var(--button_typography-font-style, normal);
+    padding: 17px 40px;
+    line-height: 21px;
+    font-size: 18px;
+}
+div#IDX-gotoUserSignup a#IDX-userSignupLink span.fusion-button-text,
+div#IDX-gotoUserLogin a#IDX-toggleLogIn span.fusion-button-text,
+div#IDX-gotoUserSignup a#IDX-userSignupLink:hover span.fusion-button-text,
+div#IDX-gotoUserLogin a#IDX-toggleLogIn:hover span.fusion-button-text {
+    color: #ffffff!important;
+}
+#IDX-social-google button:hover,
+#IDX-social-facebook button:hover,
+div#IDX-gotoUserSignup a#IDX-userSignupLink:hover,
+div#IDX-gotoUserLogin a#IDX-toggleLogIn:hover {
+	opacity: 0.8!important;
+}
+div#IDX-social-providers {
+	margin-bottom: 0;
+}
+div#arUser-or {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 25px;
+    padding-top: 9px;
+    color: #ffffff;
+    background-color: var(--primary_color);
+    line-height: 1.8em;
+}
+#main .post div#arFormTitleSocial h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+div#arFormTitle {
+    text-align: center;
+}
+span#IDX-leadLoginForgotPass a {
+    position: relative;
+    top: -13px;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #666666;
+}
+div#IDX-keepLoggedIn {
+    text-align: right;
+}
+div#IDX-keepLoggedIn label {
+    font-size: 0.8rem!important;
+}
+div#IDX-keepLoggedIn input.IDX-keepLoggedInCheckBox {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+}
+#IDX-main button#IDX-loginSubmit,
+#IDX-main button#IDX-signupFormSubmitBtn {
+    font-family: var(--button_typography-font-family, sans-serif);
+    font-weight: var(--button_typography-font-weight, normal);
+    font-style: var(--button_typography-font-style, normal);
+    line-height: 21px;
+    font-size: 18px;
+    background: var(--button_gradient_top_color)!important;
+    color: var(--button_accent_color)!important;
+    border-color: var(--button_border_color)!important;
+    text-transform: var(--button_text_transform);
+}
+#IDX-main button#IDX-loginSubmit:hover,
+#IDX-main button#IDX-signupFormSubmitBtn:hover {
+    background: var(--button_gradient_top_color_hover)!important;
+    color: var(--button_accent_hover_color)!important;
+    border-color: var(--button_border_hover_color)!important;
+}
+@media only screen and (min-width: 641px) {
+	div#ar-userSocialInner {
+    	padding-right: 35px;
+	}
+	div#ar-userFormInner {
+    	padding-left: 35px;
+	}
+    div#IDX-leadLoginContainer, div#IDX-leadSignupContainer {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    div#arUser-or {
+        display: none!important;
+    }
+}
+div#idx-mlm-app {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#IDX-main div#arFormTitle h1 {
+    font-size: 2.5rem;
+}
+#IDX-main.IDX-wrapper-standard .IDX-form-control {
+    height: var(--form_input_height);
+    background-color: var(--form_bg_color);
+    font-size: var(--form_text_size);
+    color: var(--form_text_color);
+    border-width: var(--form_border_width);
+    border-color: var(--form_border_color);
+    border-radius: var(--form_border_radius);
+    padding-top: 0;
+    padding-bottom: 0; 
+}
+
+.mlm-alert__info {
+    background-color: var(--primary_color);
+    padding-bottom: 1px;
+}
+.btn-info, .idx-mk-modal-open+.mlm-dialog__mask .mlm-button__info, .mlm-button__info {
+    color: #fff;
+    background-color: var(--primary_color);
+    border-color: var(--primary_color-75a);
+}
+.mlm-bar .mlm-bar__link,
+#idx-mlm-market-report-subscriptions .idx-mlm-market-report-subscriptions__add-report.mlm-bar__link {
+    color: var(--primary_color);
+    font-weight: bold;
+}
+#idx-mlm-market-report-subscriptions .idx-mlm-market-report-subscriptions__unsubscribe--all {
+    line-height: 1em;
+}
+.active.mlm-button__info, .btn-info.active, .btn-info:active, .btn-info:hover, 
+.idx-mk-modal-open+.mlm-dialog__mask .active.mlm-button__info, .idx-mk-modal-open+.mlm-dialog__mask .mlm-button__info:active, 
+.idx-mk-modal-open+.mlm-dialog__mask .mlm-button__info:hover, .idx-mk-modal-open+.mlm-dialog__mask .open>.dropdown-toggle.mlm-button__info, 
+.mlm-button__info:active, .mlm-button__info:hover, .open>.btn-info.dropdown-toggle, .open>.dropdown-toggle.mlm-button__info {
+    background-color: var(--primary_color-7a);
+}
+html {
+    font-size: 16px!important;
+}
+h2#idx-mlm-action-heading {
+    text-transform: capitalize;
+}
+.landing .mlm-nav .mlm-nav__item .mlm-nav__item-link, .saved-searches .mlm-nav .mlm-nav__item .mlm-nav__item-link {
+    background-color: var(--primary_color);
+}
+.landing .mlm-nav .mlm-nav__item .mlm-nav__item-link:hover, .saved-searches .mlm-nav .mlm-nav__item .mlm-nav__item-link:hover {
+    background-color: var(--primary_color-7a);
+}
+p#idx-mlm-verify-alert-text a#idx-mlm-verify-action {
+    padding: 5px 8px 3px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+p.IDX-googleRecaptchaPolicy {
+    display: var(--raplus_idx_captcha_display);
+}
+
+.IDX-wrapper-standard #IDX-agentOwner-select-wrap .IDX-select-arrow {
+    position: absolute;
+    bottom: var(--form_border_width, 1px);
+    right: var(--form_border_width, 1px);
+    width: var(--form_input_height, 40px);
+    height: calc(var(--form_input_height, 40px) - (var(--form_border_width, 1px) * 2));
+    line-height: calc(var(--form_input_height, 40px) - (var(--form_border_width, 1px) * 2));
+    text-align: center;
+    border-style: solid;
+    border-width: 0;
+    border-left-width: var(--form_border_width, 1px);
+    border-color: var(--form_border_color, #cccccc);
+    border-radius: var(--form_border_radius, 0);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: var(--form_bg_color, #ffffff);
+    font-size: var(--form_text_size, 1rem);
+    color: var(--form_border_color, #cccccc);
+    pointer-events: none;
+    z-index: 10;
+    cursor: pointer;
+}
+#IDX-main.IDX-wrapper-standard #IDX-agentOwner-select-wrap.IDX-select-wrap .IDX-select {
+    width: 100%;
+    padding-right: var(--form_input_height, 40px);
+    padding-left: 15px;
+    z-index: 5;
+    cursor: pointer;
+}
+.IDX-wrapper-standard #IDX-agentOwner-select-wrap.IDX-select-wrap {
+    position: relative;
+}

@@ -1,0 +1,290 @@
+.IDX-registrationModal {
+  padding: 0!important;
+  border-radius: 0!important;
+}
+.IDX-registrationModal .ui-dialog-titlebar {
+  display: none!important;
+}
+.IDX-registrationModal div#IDX-registration {
+    padding: 0!important;
+}
+div#regModal-right, div#logModal-right {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+}
+div#regModal-left, div#logModal-left {
+  margin-bottom: 0!important;
+  padding: 25px;
+  padding-right: 45px;
+}
+div#regModal-left .IDX-customRegistrationFields div#IDX-firstName-group {
+    width: 49%;
+    margin-right: 0!important;
+    padding-right: 5px;
+}
+div#regModal-left .IDX-customRegistrationFields div#IDX-lastName-group {
+    width: 49%;
+    margin-right: 0!important;
+    padding-left: 5px;
+}
+div#regModal-left .IDX-customRegistrationFields div#IDX-email-group,
+div#regModal-left .IDX-customRegistrationFields div#IDX-phone-group,
+div#regModal-left .IDX-customRegistrationFields div#IDX-password-group,
+div#regModal-left .IDX-customRegistrationFields div#IDX-agentOwner-group,
+div#logModal-left div#IDX-email-group,
+div#logModal-left div#IDX-password-group {
+    width: 100%;
+    margin-right: 0!important;
+}
+div#regModal-left .IDX-customRegistrationFields label,
+div#logModal-left div#IDX-email-group label,
+div#logModal-left div#IDX-password-group label {
+  display: none!important;
+}
+div#regModal-left .IDX-customRegistrationFields input,
+div#logModal-left div#IDX-email-group input,
+div#logModal-left div#IDX-password-group input,
+div#regModal-left .IDX-customRegistrationFields div#IDX-agentOwner-group select {
+    font-weight: 500;
+    font-size: 1rem;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom: 2px solid #000000;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 5px;
+    height: 42px;
+}
+div#regModal-left .IDX-customRegistrationFields div#IDX-agentOwner-group select {
+    width: 100%;
+}
+div#regModal-left button#IDX-submitBtn,
+div#logModal-left button#IDX-loginSubmit {
+    padding: 13px 29px;
+    line-height: 17px;
+    font-size: 14px;
+    border: 1px solid;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+div#regModal-left div#IDX-captchaReg > div {
+    transform: scale(0.75);
+    width: auto!important;
+    padding-left: 23px;
+}
+div#regModal-left div#IDX-registrationDefaultMessage {
+    display: none!important;
+}
+div#registrationSignup-inner,
+div#registrationLogin-inner {
+    position: relative;
+}
+div#registrationSignup-inner div#regModal-or,
+div#registrationLogin-inner div#logModal-or {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #ffffff;
+    background-color: #000000;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 25px;
+    padding-top: 9px;
+}
+div#registrationSignup-inner div#IDX-FormActions,
+div#registrationLogin-inner div#IDX-FormActions {
+    border-bottom-width: 0!important;
+    padding-bottom: 0!important;
+}
+h2#regModal-leftTitle,
+h2#logModal-leftTitle {
+    margin-top: 0;
+    margin-bottom: 0px!important;
+    font-weight: normal;
+    font-size: 2rem;
+}
+p#regModal-leftText,
+p#logModal-leftText {
+    font-size: 1rem!important;
+    margin-top: 0;
+}
+div#regModal-closeLink,
+div#logModal-closeLink {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+div#regModal-closeLink a,
+div#logModal-closeLink a {
+    color: #ffffff!important;
+    opacity: 1!important;
+}
+div#regModal-right div#IDX-social-media-logins,
+div#logModal-right div#IDX-social-media-logins {
+    margin: 0!important;
+    width: 100%!important;
+}
+div#regModal-right p#IDX-social-instructions,
+div#logModal-right p#IDX-social-instructions {
+  display: none!important;
+}
+h2#regModal-rightTitle,
+h2#logModal-rightTitle {
+    margin-top: 0;
+    margin-bottom: 0px!important;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+}
+p#regModal-rightText {
+    font-size: 1rem!important;
+    margin-top: 0;
+    text-align: center!important;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.4);
+}
+div#regModal-right #IDX-social-facebook button,
+div#regModal-right #IDX-social-google button,
+div#logModal-right #IDX-social-facebook button,
+div#logModal-right #IDX-social-google button {
+    display: block;
+    background-image: none;
+    padding: 13px 29px;
+    line-height: 17px;
+    font-size: 22px;
+    font-weight: 700;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    color: #ffffff;
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+div#regModal-right #IDX-social-facebook button span,
+div#regModal-right #IDX-social-google button span,
+div#logModal-right #IDX-social-facebook button span,
+div#logModal-right #IDX-social-google button span {
+    font-size: 14px!important;
+    display: inline-block;
+    line-height: 22px;
+    vertical-align: bottom;
+}
+div#regModal-right .IDX-social-form,
+div#logModal-right .IDX-social-form {
+    margin-right: 0!important;
+    display: block;
+}
+div#regModal-right a#IDX-toggleLogIn {
+    text-decoration: none!important;
+    float: none!important;
+    display: block;
+    background-image: none;
+    padding: 13px 29px;
+    line-height: 17px;
+    font-size: 22px;
+    font-weight: 700;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    color: #ffffff;
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 20px;
+    font-size: 14px!important;
+    line-height: 22px;
+    vertical-align: bottom;
+    background-color: #000000;
+    text-align: center;
+}
+div#regModal-right a#IDX-toggleLogIn:hover,
+div#regModal-right #IDX-social-facebook button:hover,
+div#regModal-right #IDX-social-google button:hover,
+div#logModal-right #IDX-social-facebook button:hover,
+div#logModal-right #IDX-social-google button:hover {
+  opacity: 0.75!important;
+}
+div#regModal-right div#IDX-leadSignUpLogin p {
+    display: block;
+    padding-right: 0;
+    float: none!important;
+    text-align: center;
+}
+div#regModal-right,
+div#logModal-right {
+  margin-bottom: 0!important;
+  padding: 25px;
+  padding-left: 45px;
+}
+div#regModal-right-inner,
+div#logModal-right-inner {
+  position: relative;
+  height: 100%;
+}
+div#regModal-right-innerWrap,
+div#logModal-right-innerWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  transform: translate(-50%,-50%);
+}
+div#regModal-left div#IDX-registrationDefaultMessage,
+div#regModal-left div#IDX-registrationMessage {
+  display: none!important;
+}
+p#regModal-leftText a,
+p#logModal-leftText a{
+    text-decoration: underline;
+}
+div#regModal-closeLink a.close.psudolink i, 
+div#logModal-closeLink a.close.psudolink i {
+    color: #000000;
+}
+@media screen and (min-width: 1000px) {
+.ui-dialog[aria-labelledby="ui-dialog-title-IDX-registration"] {
+    min-width: 800px;
+}
+}
+
+@media only screen and (max-width: 800px) {
+    .ui-dialog[aria-labelledby="ui-dialog-title-IDX-registration"] {
+        top: 0!important;
+        position: fixed;
+        height: 100vh!important;
+        overflow: scroll;
+        z-index: 9999999999999!important;
+    }
+    .IDX-registrationModal div#IDX-registration {
+        height: 100%!important;
+    }
+    div#regModal-left, div#logModal-left {
+        padding-right: 25px;
+        padding-bottom: 60px;
+    }
+    div#registrationSignup-inner div#regModal-or, div#registrationLogin-inner div#logModal-or {
+        top: initial;
+        bottom: calc(100vw - 30px);
+        transform: translateX(-50%);
+    }
+    div#regModal-right-innerWrap, div#logModal-right-innerWrap {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto!important;
+        transform: none;
+    }
+    div#regModal-right, div#logModal-right {
+        padding-left: 25px;
+        padding-top: 60px;
+        min-height: 100vw;
+    }
+}

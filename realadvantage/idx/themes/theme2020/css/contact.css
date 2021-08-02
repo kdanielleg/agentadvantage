@@ -1,0 +1,350 @@
+#IDX-main {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer {
+    background-color: var(--raplus_idx_alt_content_bg_color);
+    display: flex;
+    justify-content: space-between;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressInfoWrap {
+    padding: 15px 45px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressWrap h2,
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressWrap h5 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexRow {
+    display: flex;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexCol {
+    margin-right: 2px;
+    background-color: #ffffff;
+    padding: 5px 10px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexCol span.IDX-label {
+    font-weight: bold;
+    padding: 0 5px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-infoWrap {
+    margin-top: 10px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extrasWrap {
+    width: 50%;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexRow {
+    display: flex;
+    min-height: 100%;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary_color-7a);
+    color: #ffffff;
+    border-right: 2px solid #ffffff;
+    width: 25%;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol span.IDX-label:after {
+    display: none;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol span.IDX-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol i {
+    font-size: 2rem;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol span.IDX-propertyInfoData {
+    font-size: 1.5rem!important;
+    margin-top: 10px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexRow > .IDX-listingHeader-extras-flexCol:last-child {
+    border-right-width: 0;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction {
+    position: relative;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--primary_color);
+    color: #ffffff;
+    flex-direction: column;
+    border-width: 0!important;
+    text-decoration: none!important;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction i {
+    font-size: 2rem;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction .IDX-goToProperty-text {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction .IDX-goToProperty-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction:hover {
+    background-color: #ffffff;
+    color: var(--primary_color);
+    text-decoration: none!important;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div.IDX-listingHeader-extras-flexCol:not(#IDX-propertyAction) {
+    padding: 25px;
+}
+@media only screen and (max-width: 1199px) {
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer {
+        flex-direction: column;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extrasWrap {
+        width: 100%;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressWrap h2, 
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressWrap h5 {
+        text-align: center;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexRow {
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 640px) {
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressInfoWrap {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexRow {
+        flex-wrap: wrap;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexCol {
+        width: calc(50% - 2px);
+        margin-bottom: 2px;
+        text-align: center;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexRow {
+        flex-wrap: wrap;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol {
+        width: 50%;
+        border-bottom: 2px solid #ffffff;
+    }
+}
+p.IDX-googleRecaptchaPolicy {
+    display: var(--raplus_idx_captcha_display);
+}
+div#IDX-scheduleshowingContent, div#IDX-moreinfoContent, div#IDX-homevaluationContent {
+    max-width: 1170px;
+    margin: 60px auto;
+}
+div#IDX-contactContainer {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 60px 15px;
+}
+#IDX-main.IDX-wrapper-standard input.IDX-form-control, #IDX-main.IDX-wrapper-standard select.IDX-select {
+    height: var(--form_input_height);
+    background-color: var(--form_bg_color);
+    font-size: var(--form_text_size);
+    color: var(--form_text_color);
+    border-width: var(--form_border_width);
+    border-color: var(--form_border_color);
+    border-radius: var(--form_border_radius);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#IDX-main.IDX-wrapper-standard textarea {
+    padding: 15px;
+    background-color: var(--form_bg_color);
+    font-size: var(--form_text_size);
+    color: var(--form_text_color);
+    border-width: var(--form_border_width);
+    border-color: var(--form_border_color);
+    border-radius: var(--form_border_radius);
+}
+div#IDX-scheduleshowingFormText p {
+    text-align: center;
+}
+
+/**Title Overrides**/
+.IDX-wrapper-standard .fusion-title {
+    flex-wrap: var(--raplus_idx_title_wrap, nowrap);
+    flex-direction: var(--raplus_idx_title_direction, row);
+}
+.IDX-wrapper-standard .fusion-title .title-sep-container {
+    border-width: var(--raplus_idx_title_border_width, 0);
+    border-style: var(--raplus_idx_title_border_style, none);
+    border-color: var(--raplus_idx_title_border_color, transparent);
+    width: var(--raplus_idx_title_sep_width, auto);
+    max-width: var(--raplus_idx_title_sep_max_width, unset);
+    order: var(--raplus_idx_title_sep_order, 0);
+}
+.IDX-form-actions {
+    text-align: center;
+}
+.IDX-form-actions button#IDX-submitBtn {
+    font-family: var(--button_typography-font-family, sans-serif);
+    font-weight: var(--button_typography-font-weight, normal);
+    font-style: var(--button_typography-font-style,normal);
+    line-height: 1em;
+    font-size: 24px!important;
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+    letter-spacing: var(--button_typography-letter-spacing);
+    border-width: var(--button_border_width);
+    border-style: solid;
+    border-radius: var(--button_border_radius);
+    text-transform: var(--button_text_transform);
+    transition: all .2s;
+    background: var(--button_gradient_top_color);
+    color: var(--button_accent_color);
+    border-color: var(--button_border_color);
+    display: inline-block!important;
+    width: auto!important;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+.IDX-form-actions button#IDX-submitBtn:hover {
+    background: var(--button_gradient_top_color_hover);
+    color: var(--button_accent_hover_color,var(--button_accent_color));
+    border-color: var(--button_border_hover_color);
+}
+
+h4.icon-radio-group-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align:center;
+}
+.switch-field {
+    overflow: hidden;
+    text-align:center;
+    margin-bottom: 20px;
+}
+.switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0); 
+    height: 1px; 
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+.switch-field label {
+    display: inline-block;
+    width: 20%;
+    transition: 0.3s;
+    text-align: center;
+    border: 1px solid #dddddd;
+    padding: 15px;
+    border-left-width: 0;
+    background-image: linear-gradient(to bottom, #ffffff 32%, #efefef 100%);
+}
+.switch-field > label:nth-child(2) {
+    border-left-width: 1px!important;
+}
+span.icon-radio-icon {
+    display: block;
+    font-size: 2rem;
+}
+div#IDX-hvPropType-group .switch-field label {
+    width: 25%;
+}
+.switch-field label:hover {
+    cursor: pointer;
+}
+.switch-field:hover label.IDX-radio-inline,
+.switch-field:hover input:checked ~ label.IDX-radio-inline, 
+.switch-field:hover label.IDX-radio-inline:hover ~ label.IDX-radio-inline {
+    color: #222222;
+}
+.switch-field input:checked + label.IDX-radio-inline,
+.switch-field:hover label.IDX-radio-inline:hover {
+    color: #222222!important;
+    background-image: linear-gradient(to bottom, #d3d3d3 32%, #ffffff 100%);
+}
+#IDX-main.IDX-wrapper-standard textarea#IDX-hvFeatures, 
+#IDX-main.IDX-wrapper-standard textarea#IDX-hvMessage {
+    height: 180px;
+}
+p#IDX_hvProvide {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+div#ar-googleHvAddressWrap {
+    margin-bottom: 20px;
+}
+div#IDX-contactContainer .IDX-contactAccountHeader {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.IDX-wrapper-standard ul.fusion-checklist a {
+    color: var(--link_color);
+}
+div#IDX-contactFormWrap h2.title-heading-center {
+    margin-top: 0;
+}
+div#IDX-contactInformation > img {
+    margin-top: 20px;
+}
+div#IDX-contactFormWrap .fusion-title.fusion-title-center {
+    align-items: flex-start;
+}
+div#IDX-contactFormWrap .fusion-title.fusion-title-center h2.title-heading-center {
+    text-align: left;
+    padding: 0;
+}
+
+.IDX-wrapper-standard #IDX-agentOwner-select-wrap .IDX-select-arrow {
+    position: absolute;
+    bottom: var(--form_border_width, 1px);
+    right: var(--form_border_width, 1px);
+    width: var(--form_input_height, 40px);
+    height: calc(var(--form_input_height, 40px) - (var(--form_border_width, 1px) * 2));
+    line-height: calc(var(--form_input_height, 40px) - (var(--form_border_width, 1px) * 2));
+    text-align: center;
+    border-style: solid;
+    border-width: 0;
+    border-left-width: var(--form_border_width, 1px);
+    border-color: var(--form_border_color, #cccccc);
+    border-radius: var(--form_border_radius, 0);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: var(--form_bg_color, #ffffff);
+    font-size: var(--form_text_size, 1rem);
+    color: var(--form_border_color, #cccccc);
+    pointer-events: none;
+    z-index: 10;
+    cursor: pointer;
+}
+#IDX-main.IDX-wrapper-standard #IDX-agentOwner-select-wrap.IDX-select-wrap .IDX-select {
+    width: 100%;
+    padding-right: var(--form_input_height, 40px);
+    padding-left: 15px;
+    z-index: 5;
+    cursor: pointer;
+}
+.IDX-wrapper-standard #IDX-agentOwner-select-wrap.IDX-select-wrap {
+    position: relative;
+}
+div#ar-googleHvAddressParamWrap {
+    text-align: center;
+    margin-top: -35px;
+    margin-bottom: 35px;
+}
+div#ar-googleHvAddressParamWrap img {
+    margin-bottom: 25px;
+}
+div#ar-googleHvAddressParamWrap .fusion-title {
+    margin-bottom: 0;
+}

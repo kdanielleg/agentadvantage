@@ -1,0 +1,22 @@
+#IDX-main {
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+.post.idx-wrapper {
+    margin-bottom: 0!important;
+}
+div#IDX-main + img {
+	display: none!important;
+}
+div#IDX-thankYouWrapper {
+	max-width: 1400px;
+	margin: 0 auto;
+}
+div.ar_wc_map {
+    height: 100%;
+}
+body.idx-wrapper-template-default .fusion-post-title-meta-wrap {
+    margin-bottom: 0;
+}

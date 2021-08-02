@@ -1,0 +1,211 @@
+.idx-mk-report-landing-page {
+    background-color: var(--raplus_idx_alt_content_bg_color);
+}
+h2.idx-mk-report-landing-page__title {
+    text-transform: none;
+}
+
+/**Title Overrides**/
+.IDX-wrapper-standard .fusion-title {
+    flex-wrap: var(--raplus_idx_title_wrap, nowrap);
+    flex-direction: var(--raplus_idx_title_direction, row);
+}
+.IDX-wrapper-standard .fusion-title .title-sep-container {
+    border-width: var(--raplus_idx_title_border_width, 0);
+    border-style: var(--raplus_idx_title_border_style, none);
+    border-color: var(--raplus_idx_title_border_color, transparent);
+    width: var(--raplus_idx_title_sep_width, auto);
+    max-width: var(--raplus_idx_title_sep_max_width, unset);
+    order: var(--raplus_idx_title_sep_order, 0);
+}
+
+.IDX-wrapper-standard .idx-mk-report-location-search .idx-mk-report-location-input__header {
+    color: var(--body_typography-color);
+}
+.IDX-wrapper-standard .idx-mk-report-location-search .idx-mk-report-autocomplete__input-button,
+.IDX-wrapper-standard .idx-mk-report-location-search .idx-mk-report-autocomplete__input-button:disabled, 
+.IDX-wrapper-standard .idx-mk-report-location-search .idx-mk-report-autocomplete__input-button:disabled:hover,
+.IDX-wrapper-standard button.idx-mk-report-btn.idx-mk-report-btn-primary.idx-mk-report-change-location__button,
+.idx-mk-report-header-actions .idx-mk-report-change-location .idx-mk-report-location-search .idx-mk-report-autocomplete__input-button {
+    background: var(--button_gradient_top_color);
+    color: var(--button_accent_color);
+    border-color: var(--button_border_color);
+    border-style: solid;
+    border-width: var(--button_border_width);
+    border-radius: var(--button_border_radius);
+    text-transform: var(--button_text_transform);
+    font-family: var(--button_typography-font-family, sans-serif);
+    font-weight: var(--button_typography-font-weight, normal);
+    font-style: var(--button_typography-font-style, normal);
+}
+.IDX-wrapper-standard .idx-mk-report-location-search .idx-mk-report-autocomplete__input-button:hover,
+.IDX-wrapper-standard button.idx-mk-report-btn.idx-mk-report-btn-primary.idx-mk-report-change-location__button:hover {
+    background: var(--button_gradient_top_color_hover);
+    color: var(--button_accent_hover_color,var(--button_accent_color));
+    border-color: var(--button_border_hover_color);
+}
+
+.IDX-wrapper-standard .idx-mk-report-location-search__interactions > div {
+    width: 100%;
+}
+.IDX-wrapper-standard .idx-mk-report-location-search .idx-mk-report-autocomplete__container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.IDX-wrapper-standard .idx-mk-report-location-search .idx-mk-report-autocomplete__input {
+    width: calc(100% - 200px);
+}
+.IDX-wrapper-standard .idx-mk-report-summary .idx-mk-report-summary__title {
+    color: var(--primary_color, #000000);
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions h2.idx-mk-location-title {
+    display: none;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions {
+    margin-bottom: 0;
+    position: relative;
+    top: -175px;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions .idx-mk-report-change-location {
+    margin-top: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions .idx-mk-report-change-location .idx-mk-report-location-search {
+    width: 100%;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions .idx-mk-report-change-location {
+    justify-content: center;
+}
+#IDX-main.IDX-wrapper-standard div.idx-mk-report-market-report a {
+    color: var(--link_color, #3ca5d6);
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__header ul.idx-mk-report-tab-container__tabs {
+    margin-bottom: 0;
+    border: 1px solid var(--raplus_idx_tab_border_color, #e2e2e2);
+    border-bottom-width: 0px;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__body {
+    border: 1px solid var(--raplus_idx_tab_border_color, #e2e2e2);
+    border-top-width: 0;
+    border-radius: 0;
+    margin-top: 0;
+    padding: 25px;
+    background-color: #ffffff;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__tab {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-left-width: 0;
+    border-right: 1px solid var(--raplus_idx_tab_active_color, #ffffff);
+    background-color: var(--raplus_idx_tab_inactive_color);
+    border-top: 3px solid transparent;
+    color: var(--h4_typography-color, #000000);
+    font-family: var(--h4_typography-font-family, inherit);
+    font-weight: var(--h4_typography-font-weight, inherit);
+    letter-spacing: var(--h4_typography-letter-spacing, inherit);
+    font-style: var(--h4_typography-font-style, normal);
+    font-size: var(--raplus_idx_tab_font_size, 1rem);
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__tab:hover, 
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__tab:focus {
+    color: var(--h4_typography-color, #000000);
+    background-color: var(--raplus_idx_tab_active_color, #ffffff);
+    border-bottom-color: transparent;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__tab.idx-mk-report-tab-container__tab--active, 
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__tab.idx-mk-report-tab-container__tab--active:hover, 
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__tab.idx-mk-report-tab-container__tab--active:focus {
+    color: var(--h4_typography-color, #000000);
+    background-color: var(--raplus_idx_tab_active_color, #ffffff);
+    border-top-color: var(--raplus_idx_tab_accent_color, #000000);
+    border-bottom-color: transparent;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container--has-tabs .idx-mk-report-tab-container__header {
+    margin-bottom: 0;
+    border-bottom-width: 0;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-market-report-body > div:not(.idx-mk-report-sign-up__banner) {
+    padding: 60px 15px;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-market-report-body > div:nth-of-type(odd):not(.idx-mk-report-sign-up__banner) {
+    background-color: var(--raplus_idx_alt_content_bg_color);
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container {
+    background-color: transparent;
+    border-width: 0;
+    max-width: var(--site_width);
+    margin: 0 auto;
+    padding: 0;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-sign-up__call-to-action {
+    max-width: var(--site_width);
+    margin: 0 auto;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report a.idx-mk-meta-data__container.idx-mk-meta-data__container--open-house {
+    background-color: var(--primary_color-5a);
+    color: #ffffff;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report a.idx-mk-meta-data__container.idx-mk-meta-data__container--new {
+    background-color: var(--primary_color-7a);
+    color: #ffffff;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report a.idx-mk-meta-data__container.idx-mk-meta-data__container--sold {
+    background-color: var(--primary_color-85a);
+    color: #ffffff;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-twig-header {
+    max-width: var(--site_width);
+    margin: 0 auto;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-market-report__header {
+    margin-bottom: 50px;
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data a.idx-mk-meta-data__container--sold:hover, 
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data a.idx-mk-meta-data__container--sold:active, 
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data a.idx-mk-meta-data__container--sold:focus,
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data a.idx-mk-meta-data__container--new:hover, 
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data a.idx-mk-meta-data__container--new:active, 
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data a.idx-mk-meta-data__container--new:focus,
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data a.idx-mk-meta-data__container--open-house:hover, 
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data a.idx-mk-meta-data__container--open-house:active, 
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data a.idx-mk-meta-data__container--open-house:focus {
+    color: #ffffff;
+    background-color: var(--primary_color);
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-change-view--active,
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-change-view:hover {
+    background-color: var(--primary_color);
+}
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-sign-up__banner.idx-mk-report-display__banner--fixed {
+    border-top: 4px solid var(--primary_color);
+}
+@media (min-width: 768px) {
+    .IDX-wrapper-standard .idx-mk-report-display__banner--bottom.idx-mk-report-sign-up__banner .idx-mk-report-sign-up__graphic {
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+    #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions .idx-mk-report-change-location .idx-mk-report-location-search .idx-mk-report-autocomplete__input-button {
+        width: 191px;
+    }
+    #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions .idx-mk-report-change-location .idx-mk-report-location-search .idx-mk-report-autocomplete__input {
+        width: calc(100% - 200px);
+    }
+    #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions .idx-mk-report-change-location {
+        justify-content: center;
+    }
+    #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__tab+.idx-mk-report-tab-container__tab {
+        margin-left: 0;
+    }
+    #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-tab-container__tab {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-market-report-body {
+        padding: 0!important;
+    }
+}

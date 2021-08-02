@@ -1,0 +1,150 @@
+div#IDX-main {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-top: 100px;
+	position: relative;
+    background-attachment: fixed;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+div#IDX-main:not(.IDX-type-myaccount) {
+    min-height: 100vh;
+}
+div#ar-UserFormContainer {
+	width: 800px;
+	max-width: 90%;
+	margin: 0 auto;
+	position: relative;
+}
+div#ar-UserFormRow {
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.25);
+}
+div#ar-UserFormRow div#ar-userSocial {
+	background-color: #000000;
+}
+div#ar-UserFormRow div#ar-userForm {
+	background-color: #ffffff;
+}
+div#ar-userSocialInner {
+    padding: 45px 25px 45px 25px;
+    text-align: center;
+}
+div#ar-userFormInner {
+    padding: 45px 25px 45px 25px;
+    text-align: center;
+}
+div#ar-UserFormRow div#ar-userSocial {
+    position: relative;
+}
+div#ar-UserFormRow div#ar-userSocial div#ar-userSocialInner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 30px);
+}
+div#ar-UserFormRow div#ar-userForm div:not(#IDX-keepLoggedIn) > label {
+	display: none;
+}
+form#IDX-social-facebook, form#IDX-social-google {
+    display: block;
+    margin-right: 0;
+}
+#IDX-social-google button, #IDX-social-facebook button {
+	background-image: none!important;
+	color: #ffffff!important;	
+	margin-bottom: 25px;
+}
+#IDX-social-google button .button-icon-divider-left, #IDX-social-facebook button .button-icon-divider-left {
+	border-color: #ffffff;
+}
+a#IDX-userSignupLink, div#IDX-gotoUserLogin a#IDX-toggleLogIn {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+div#IDX-gotoUserSignup a#IDX-userSignupLink:hover, div#IDX-gotoUserLogin a#IDX-toggleLogIn:hover {
+    background-color: #ffffff!important;
+    border-color: #ffffff!important;
+    color: #000000!important;
+}
+div#IDX-gotoUserSignup a#IDX-userSignupLink:hover span.fusion-button-text,
+div#IDX-gotoUserLogin a#IDX-toggleLogIn:hover span.fusion-button-text {
+    color: #000000!important;
+}
+#IDX-social-google button:hover,
+#IDX-social-facebook button:hover,
+div#IDX-gotoUserSignup a#IDX-userSignupLink:hover,
+div#IDX-gotoUserLogin a#IDX-toggleLogIn:hover {
+	opacity: 0.8!important;
+}
+div#IDX-social-providers {
+	margin-bottom: 0;
+}
+div#arUser-or {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 25px;
+    padding-top: 9px;
+}
+#main .post div#arFormTitleSocial h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+div#arFormTitle {
+    text-align: center;
+}
+span#IDX-leadLoginForgotPass a {
+    position: relative;
+    top: -13px;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #666666;
+}
+div#IDX-keepLoggedIn {
+    text-align: right;
+}
+div#IDX-keepLoggedIn label {
+    font-size: 0.8rem!important;
+}
+div#IDX-keepLoggedIn input.IDX-keepLoggedInCheckBox {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+}
+
+@media only screen and (min-width: 641px) {
+	div#ar-userSocialInner {
+    	padding-right: 35px;
+	}
+	div#ar-userFormInner {
+    	padding-left: 35px;
+	}
+    div#IDX-leadLoginContainer, div#IDX-leadSignupContainer {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    div#arUser-or {
+        display: none!important;
+    }
+}
+div#idx-mlm-app {
+    max-width: 1400px;
+    margin: 0 auto;
+}

@@ -1,0 +1,458 @@
+/**Links Page**/
+
+#IDX-main.IDX-page-linkshowcase div#IDX-linkShowcaseContainer {
+    max-width: var(--site_width);
+    margin: 0 auto;
+    padding: 45px 15px;
+}
+#IDX-main.IDX-page-linkshowcase div.IDX-customLinkWrapper {
+    padding-right: 1px;
+    padding-bottom: 2px;
+    padding-left: 1px;
+}
+#IDX-main.IDX-page-linkshowcase a.IDX-customLinkHref {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+#IDX-main.IDX-page-linkshowcase .IDX-customLink-displayWrap {
+    display: flex;
+    position: relative;
+    background-color: var(--raplus_idx_alt_content_bg_color);
+    padding: 15px 15px 0;
+    transition: 0.2s all;
+}
+#IDX-main.IDX-page-linkshowcase .IDX-customLink-displayWrap:hover {
+    background-color: var(--primary_color);
+    color: #ffffff;
+}
+#IDX-main.IDX-page-linkshowcase .IDX-customLink-displayIcon-Wrap i {
+    font-size: 3rem;
+    color: var(--primary_color);
+    transition: 0.2s all;
+}
+#IDX-main.IDX-page-linkshowcase .IDX-customLink-displayIcon-Wrap {
+    margin-right: 10px;
+}
+#IDX-main.IDX-page-linkshowcase .IDX-customLinkTitle h5 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: 0.2s all;
+}
+#IDX-main.IDX-page-linkshowcase .IDX-customLinkDescription p {
+    transition: 0.2s all;
+}
+#IDX-main.IDX-page-linkshowcase .IDX-customLink-displayWrap:hover .IDX-customLink-displayIcon-Wrap i,
+#IDX-main.IDX-page-linkshowcase .IDX-customLink-displayWrap:hover .IDX-customLinkTitle h5,
+#IDX-main.IDX-page-linkshowcase .IDX-customLink-displayWrap:hover .IDX-customLinkDescription p {
+    color: #ffffff;
+}
+
+#IDX-main.IDX-page-linkshowcase .ar-flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+#IDX-main.IDX-page-linkshowcase .ar-flex-col {
+    width: 100%;
+}
+@media only screen and (min-width: 641px) {
+    #IDX-main.IDX-page-linkshowcase .ar-flex-col {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    #IDX-main.IDX-page-linkshowcase .ar-flex-col {
+        width: calc(100% / 2);
+    }
+}
+@media only screen and (min-width: 1200px) {
+    #IDX-main.IDX-page-linkshowcase .ar-flex-col {
+        width: calc(100% / 3);
+    }
+}
+
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer {
+    background-color: var(--raplus_idx_alt_content_bg_color);
+    display: flex;
+    justify-content: space-between;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressInfoWrap {
+    padding: 15px 45px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressWrap h2,
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressWrap h5 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexRow {
+    display: flex;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexCol {
+    margin-right: 2px;
+    background-color: #ffffff;
+    padding: 5px 10px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexCol span.IDX-label {
+    font-weight: bold;
+    padding: 0 5px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-infoWrap {
+    margin-top: 10px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extrasWrap {
+    width: 50%;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexRow {
+    display: flex;
+    min-height: 100%;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary_color-7a);
+    color: #ffffff;
+    border-right: 2px solid #ffffff;
+    width: 25%;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol span.IDX-label:after {
+    display: none;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol span.IDX-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol i {
+    font-size: 2rem;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol span.IDX-propertyInfoData {
+    font-size: 1.5rem!important;
+    margin-top: 10px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexRow > .IDX-listingHeader-extras-flexCol:last-child {
+    border-right-width: 0;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction {
+    position: relative;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--primary_color);
+    color: #ffffff;
+    flex-direction: column;
+    border-width: 0!important;
+    text-decoration: none!important;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction i {
+    font-size: 2rem;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction .IDX-goToProperty-text {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction .IDX-goToProperty-label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div#IDX-propertyAction a#IDX-goToPropertyAction:hover {
+    background-color: #ffffff;
+    color: var(--primary_color);
+    text-decoration: none!important;
+}
+#IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer div.IDX-listingHeader-extras-flexCol:not(#IDX-propertyAction) {
+    padding: 25px;
+}
+@media only screen and (max-width: 1199px) {
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer {
+        flex-direction: column;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extrasWrap {
+        width: 100%;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressWrap h2, 
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressWrap h5 {
+        text-align: center;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexRow {
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 640px) {
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-addressInfoWrap {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexRow {
+        flex-wrap: wrap;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-info-flexCol {
+        width: calc(50% - 2px);
+        margin-bottom: 2px;
+        text-align: center;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexRow {
+        flex-wrap: wrap;
+    }
+    #IDX-main .IDX-pageHeaderContainer.IDX-propertyInfoHeaderContainer .IDX-listingHeader-extras-flexCol {
+        width: 50%;
+        border-bottom: 2px solid #ffffff;
+    }
+}
+#IDX-main.IDX-page-photogallery div#IDX-showcaseSlides {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 2px;
+}
+#IDX-main.IDX-page-photogallery div#IDX-showcaseSlides div.IDX-gallery-thumb  {
+    width: 100%;
+    border: 2px solid #ffffff;
+}
+#IDX-main.IDX-page-photogallery .IDX-gallery-thumb-link {
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    display: block;
+    transition: 1s all;
+}
+#IDX-main.IDX-page-photogallery .IDX-gallery-thumb a.IDX-gallery-thumb-link:hover {
+    opacity: 0.5;
+}
+#IDX-main.IDX-page-photogallery .IDX-gallery-thumb span.fusion-imageframe.imageframe-none.hover-type-zoomin {
+    width: 100%;
+    background-color: var(--primary_color);
+}
+#IDX-main.IDX-page-photogallery div#IDX-photoGallery + div {
+    display: none!important;
+}
+@media only screen and (min-width: 641px) {
+    #IDX-main.IDX-page-photogallery div#IDX-showcaseSlides div.IDX-gallery-thumb  {
+        width: calc(100% / 2);
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb-link {
+        padding-top: 80%;
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb-link img {
+        display: none;
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb a.IDX-gallery-thumb-link:hover {
+        transform: scale(1.2);
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb span.fusion-imageframe.imageframe-none.hover-type-zoomin {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    #IDX-main.IDX-page-photogallery div#IDX-showcaseSlides div.IDX-gallery-thumb  {
+        width: calc(100% / 3);
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb-link {
+        padding-top: 80%;
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb-link img {
+        display: none;
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb a.IDX-gallery-thumb-link:hover {
+        transform: scale(1.2);
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb span.fusion-imageframe.imageframe-none.hover-type-zoomin {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    #IDX-main.IDX-page-photogallery div#IDX-showcaseSlides div.IDX-gallery-thumb  {
+        width: calc(100% / 4);
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb-link {
+        padding-top: 80%;
+        transition: 1s all;
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb-link img {
+        display: none;
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb a.IDX-gallery-thumb-link:hover {
+        transform: scale(1.2);
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb span.fusion-imageframe.imageframe-none.hover-type-zoomin {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    #IDX-main.IDX-page-photogallery div#IDX-showcaseSlides div.IDX-gallery-thumb  {
+        width: calc(100% / 5);
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb-link {
+        padding-top: 80%;
+        transition: 1s all;
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb-link img {
+        display: none;
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb a.IDX-gallery-thumb-link:hover {
+        transform: scale(1.2);
+    }
+    #IDX-main.IDX-page-photogallery .IDX-gallery-thumb span.fusion-imageframe.imageframe-none.hover-type-zoomin {
+        width: 100%;
+    }
+}
+div#IDX-main.IDX-page-mortgage {
+    background-color: transparent!important;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageCalculatorContainer {
+    background-image: var(--raplus_idx_mcalc_bg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 80vh;
+    overflow: auto;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageCalculatorContent {
+    max-width: 1170px;
+    margin: 60px auto;
+    border: 2px solid #ffffff;
+    background: rgba(255,255,255,0.75);
+    padding: 45px;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgagePmi {
+    display: flex;
+    flex-wrap: wrap;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgagePmi label.IDX-label.IDX-input-group {
+    width: 100%;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgagePmi .IDX-mortgagePmi-wrap {
+    width: calc(98% - 85px);
+    margin-right: 2%;
+    position: relative;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgagePmi .IDX-checkbox {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: right;
+    height: var(--form_input_height);
+    line-height: var(--form_input_height);
+}
+div#IDX-main.IDX-page-mortgage #IDX-mortgagePmiUnit {
+    top: 50%;
+    transform: translateY(-50%);
+}
+div#IDX-main.IDX-page-mortgage .IDX-form-control {
+    height: var(--form_input_height);
+    background-color: var(--form_bg_color);
+    font-size: var(--form_text_size);
+    color: var(--form_text_color);
+    border-width: var(--form_border_width);
+    border-color: var(--form_border_color);
+    border-radius: var(--form_border_radius);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+div#IDX-main.IDX-page-mortgage input[type=checkbox]#IDX-includePmi {
+    margin-top: calc((var(--form_input_height) - 13px) / 2);
+}
+div#IDX-main.IDX-page-mortgage div#arCalc-content .IDX-btn.IDX-btn-primary {
+    font-family: var(--button_typography-font-family, sans-serif);
+    font-weight: var(--button_typography-font-weight, normal);
+    font-style: var(--button_typography-font-style,normal);
+    line-height: 1em;
+    font-size: 24px!important;
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+    letter-spacing: var(--button_typography-letter-spacing);
+    border-width: var(--button_border_width);
+    border-style: solid;
+    border-radius: var(--button_border_radius);
+    text-transform: var(--button_text_transform);
+    transition: all .2s;
+    background: var(--button_gradient_top_color);
+    color: var(--button_accent_color);
+    border-color: var(--button_border_color);
+}
+div#IDX-main.IDX-page-mortgage div#arCalc-content .IDX-btn.IDX-btn-primary:hover {
+    background: var(--button_gradient_top_color_hover);
+    color: var(--button_accent_hover_color,var(--button_accent_color));
+    border-color: var(--button_border_hover_color);
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageCalculationResults .IDX-well {
+    background-color: var(--primary_color);
+    color: #ffffff;
+    padding: 10px 25px 5px;
+    margin-bottom: 0;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageCalculationResults h5.mcalcResults-title {
+    font-size: 1.5rem!important;
+}
+div#IDX-main.IDX-page-mortgage #IDX-mortgageCalculationResults .IDX-well > div {
+    position: relative;
+    padding-left: 32px;
+    height: 49px;
+    overflow: auto;
+    padding-top: 6px;
+    margin-bottom: 0;
+}
+div#IDX-main.IDX-page-mortgage #IDX-mortgageCalculationResults .IDX-well > div:before {
+    content: '\f324';
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 300;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 1.2em;
+    transform: translateY(calc(-50% - 10px));
+}
+div#IDX-main.IDX-page-mortgage #IDX-mortgageCalculationResults .IDX-well > div#IDX-totoalPaymentInfo:before {
+    content: '\f645';
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageWrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageCalculatorContent h2.title-heading-center {
+    margin-top: 0;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageCalculatorContent > p {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+div#IDX-main.IDX-page-mortgage  .IDX-pagination-action a {
+    height: var(--form_input_height)!important;
+    line-height: var(--form_input_height)!important;
+}
+div#IDX-main.IDX-page-mortgage  .IDX-pagination-action select {
+    height: calc(var(--form_input_height) - 10px)!important;
+}
+
+/**Title Overrides**/
+.IDX-wrapper-standard .fusion-title {
+    flex-wrap: var(--raplus_idx_title_wrap, nowrap);
+    flex-direction: var(--raplus_idx_title_direction, row);
+}
+.IDX-wrapper-standard .fusion-title .title-sep-container {
+    border-width: var(--raplus_idx_title_border_width, 0);
+    border-style: var(--raplus_idx_title_border_style, none);
+    border-color: var(--raplus_idx_title_border_color, transparent);
+    width: var(--raplus_idx_title_sep_width, auto);
+    max-width: var(--raplus_idx_title_sep_max_width, unset);
+    order: var(--raplus_idx_title_sep_order, 0);
+}
