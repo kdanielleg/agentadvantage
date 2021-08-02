@@ -47,7 +47,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     __FILE__,
     $repo
 );
-$myUpdateChecker->setAuthentication('91a07e079dce797741d5ef7cc73fa038cbda2d96');
+$myUpdateChecker->setAuthentication('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');
 $myUpdateChecker->setBranch('live-release');
 
 /********Font Awesome Pro**************/
