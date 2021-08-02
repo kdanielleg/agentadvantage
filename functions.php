@@ -46,7 +46,7 @@ function ar_add_puc($dev){
         __FILE__,
         $repo
     );
-    $myUpdateChecker->setAuthentication(get_field('realadvantage_updates_token','option'));
+    $myUpdateChecker->setAuthentication('91a07e079dce797741d5ef7cc73fa038cbda2d96');
     $myUpdateChecker->setBranch('live-release');
 }
 
