@@ -38,17 +38,17 @@ function avada_lang_setup() {
 add_action( 'after_setup_theme', 'avada_lang_setup' );
 
 /********Automatic Update Notifications*************/
-function ar_add_puc($dev){
-    require get_stylesheet_directory() . '/realadvantage/plugins/plugin-update-checker/plugin-update-checker.php';
-    $repo = 'agentadvantage';
-    $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-        'https://github.com/kdanielleg/'.$repo.'/',
-        __FILE__,
-        $repo
-    );
-    $myUpdateChecker->setAuthentication('91a07e079dce797741d5ef7cc73fa038cbda2d96');
-    $myUpdateChecker->setBranch('live-release');
-}
+
+/*********Add Automatic Updates*********/
+require get_stylesheet_directory() . '/realadvantage/plugins/plugin-update-checker/plugin-update-checker.php';
+$repo = 'agentadvantage';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/kdanielleg/'.$repo.'/',
+    __FILE__,
+    $repo
+);
+$myUpdateChecker->setAuthentication('91a07e079dce797741d5ef7cc73fa038cbda2d96');
+$myUpdateChecker->setBranch('live-release');
 
 /********Font Awesome Pro**************/
 if (! function_exists('fa_custom_setup_kit') ) {
