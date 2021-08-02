@@ -5,10 +5,6 @@ function ar_enqueue_styles_scripts() {
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'fusion-dynamic-css' ), filemtime(get_stylesheet_directory() . '/style.css') );
     //match height
     wp_enqueue_script ( 'matchheight' , '//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js', array( 'jquery' ), '', true );
-    //smooth scroll anchor links
-    if(get_field('ar_smooth_scroll','option')) :
-        wp_enqueue_script( 'smooth-scroll', get_stylesheet_directory_uri() . '/realadvantage/js/smooth.js', array( 'jquery' ), '', true );
-    endif;
     //jquery ui
     wp_enqueue_script( 'jquery-ui-autocomplete' );
     wp_enqueue_script( 'jquery-ui-slider' );
@@ -20,9 +16,6 @@ function ar_enqueue_styles_scripts() {
     $google_api_key = get_field('ar_gmap_key','option');
     wp_enqueue_script('ar-gmaps-autocomplete', get_stylesheet_directory_uri() . '/realadvantage/js/autocomplete.js',array('jquery-core','jquery'),filemtime(get_stylesheet_directory() . '/realadvantage/js/autocomplete.js'),true);
     wp_enqueue_script('google-maps','https://maps.googleapis.com/maps/api/js?key='.(!empty($google_api_key) ? $google_api_key : 'AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es').'&libraries=places',ar_autocomplete_dependency(),'1.0',true);
-
-    //bootstrap 3 JS
-    //wp_enqueue_script ( 'ar-bootstrap3' , '//stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js', array( 'jquery' ), '', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'ar_enqueue_styles_scripts');

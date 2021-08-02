@@ -8,13 +8,13 @@ if(get_field('realadvantage_updates_token','option')) {
 //Add and remove menu pages
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
-		'page_title' 	=> 'RealAdvantage Settings',
-		'menu_title'	=> 'RealAdvantage',
+		'page_title' 	=> 'Agent Advantage Settings',
+		'menu_title'	=> 'Advantage Setup',
 		'menu_slug' 	=> 'realadvantage',
 		'capability'	=> 'edit_posts',
 		'position'		=>  '2.1',
 		/**'icon_url' 		=> 'dashicons-star-filled',**/
-		'icon_url'		=> '/wp-content/themes/realadvantage-plus/realadvantage/img/ar-branding-menu-2018.png',
+		'icon_url'		=> '/wp-content/themes/agentadvantage/realadvantage/img/ar-branding-menu-2018.png',
 		'redirect'		=> true,
 		'update_button'		=> __('Save Settings', 'acf'),
 		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
