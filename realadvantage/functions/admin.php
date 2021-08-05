@@ -20,25 +20,9 @@ if( function_exists('acf_add_options_page') ) {
 		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Agent Reputation Settings',
-		'menu_title'	=> 'Agent Reputation',
-		'menu_slug' 	=> 'shortcodes',
-		'parent_slug'	=> 'realadvantage',
-		'update_button'		=> __('Save Settings', 'acf'),
-		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
-	));
-	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Community Settings',
 		'menu_title'	=> 'Community Settings',
 		'menu_slug' 	=> 'community',
-		'parent_slug'	=> 'realadvantage',
-		'update_button'		=> __('Save Settings', 'acf'),
-		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
-	));
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Privacy Policy',
-		'menu_title'	=> 'Privacy Policy',
-		'menu_slug' 	=> 'privacy',
 		'parent_slug'	=> 'realadvantage',
 		'update_button'		=> __('Save Settings', 'acf'),
 		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
@@ -67,19 +51,6 @@ if( function_exists('acf_add_options_page') ) {
 		'update_button'		=> __('Save Settings', 'acf'),
 		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
 	));
-	if(shortcode_exists('idx-omnibar')):
-		acf_add_options_page(array(
-			'page_title' 	=> 'IDX Broker Admin',
-			'menu_title'	=> 'IDX Admin',
-			'menu_slug' 	=> 'realadvantage-idx',
-			'capability'	=> 'edit_posts',
-			'position'		=>  '2.2',
-			'icon_url' 		=> 'dashicons-admin-multisite',
-			'redirect'		=> true,
-			'update_button'		=> __('Save Settings', 'acf'),
-			'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
-		));
-	endif;
 }
 
 /**MENU CLEANUP**/
@@ -91,23 +62,10 @@ add_action( 'admin_menu', 'ar_community_page_removing' );
 
 //add google maps api key
 function my_acf_google_map_api( $api ){
-	$api['key'] = get_field('ar_gmap_key','option');
+	$api['key'] = AA_GOOGLE_API_KEY;
 	return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
-
-/*********ADD IMAGE SIZES***************/
-function ar_plus_theme_image_size() {
-	add_image_size('gallery-thumb','650','550', true);
-}
-add_action( 'after_setup_theme', 'ar_plus_theme_image_size' );
-// Register the image sizes for use in Add Media modal
-add_filter( 'image_size_names_choose', 'ar_custom_sizes' );
-function ar_custom_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-        'gallery-thumb' => __( 'Gallery Thumb' ),
-    ) );
-}
 
 /*****MATCH HEIGHT********/
 function ar_match_height() {
