@@ -219,7 +219,7 @@ function ar_walkscore_func($atts) {
 					$street = $atts['address'];
 				endif; ?>
 				<script type='text/javascript'>
-					var ws_wsid = '<?php the_field('ar_walkscore','option'); ?>';
+					var ws_wsid = '<?php echo AA_WALKSCORE_API_KEY; ?>';
 					var ws_address = '<?php echo $street; ?>';
 					var ws_format = 'wide';
 					var ws_width = '100%';
