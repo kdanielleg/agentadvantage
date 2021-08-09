@@ -18,7 +18,7 @@ function aa_front_reviews_func( $atts ) {
 		$revEnd = '[/fusion_testimonials]';
 		$revBody = '';
 		foreach ($reviews as $review):
-			$revBody .= '[fusion_testimonial name="'.$reviews['author'].'" avatar="none" image="" image_id="" image_border_radius="" company="" link="" target="_self"]'.$review['review'].'[/fusion_testimonial]';
+			$revBody .= '[fusion_testimonial name="'.$review['author'].'" avatar="none" image="" image_id="" image_border_radius="" company="" link="" target="_self"]'.$review['review'].'[/fusion_testimonial]';
 		endforeach;
 		ob_start(); ?>
 			<div id="<?php echo $atts['id']; ?>" class="aa-front-reviews <?php echo $atts['class']; ?>">
