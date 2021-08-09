@@ -38,7 +38,7 @@ function ar_render_featured_img_column( $column_name, $post_id ) {
 			// data-id should be "-1" I will explain below
 			$placeholder_id = get_field('ar_featured_img_placeholder','option');
 			$placeholder_atts = wp_get_attachment_image_src( $placeholder_id, 'thumbnail');
-			echo '<img data-id="-1" src="' . $placeholder_atts[0] . '" />';
+			echo '<img data-id="-1" src="/wp-content/themes/agentadvantage/realadvantage/img/placeholder-thumb.png" />';
 		}
 	}
 }

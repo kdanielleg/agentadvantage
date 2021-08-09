@@ -1,9 +1,4 @@
 <?php
-/***Activate PUC***/
-if(get_field('realadvantage_updates_token','option')) {
-    ar_add_puc(get_field('realadvantage_dev_mode', 'option'));
-}
-
 
 //Add and remove menu pages
 if( function_exists('acf_add_options_page') ) {
@@ -13,7 +8,7 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_slug' 	=> 'realadvantage',
 		'capability'	=> 'edit_posts',
 		'position'		=>  '2.1',
-		'icon_url'		=> '/wp-content/themes/agentadvantage/realadvantage/img/ar-branding-menu-2018.png',
+		'icon_url'		=> '/wp-content/themes/agentadvantage/realadvantage/img/ar-menu-icon.png',
 		'redirect'		=> true,
 		'update_button'		=> __('Save Settings', 'acf'),
 		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
@@ -22,14 +17,6 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title' 	=> 'Community Settings',
 		'menu_title'	=> 'Community Settings',
 		'menu_slug' 	=> 'community',
-		'parent_slug'	=> 'realadvantage',
-		'update_button'		=> __('Save Settings', 'acf'),
-		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
-	));
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Blog Settings',
-		'menu_title'	=> 'Blog Settings',
-		'menu_slug' 	=> 'author',
 		'parent_slug'	=> 'realadvantage',
 		'update_button'		=> __('Save Settings', 'acf'),
 		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
@@ -59,7 +46,7 @@ function ar_community_page_removing() {
 }
 add_action( 'admin_menu', 'ar_community_page_removing' );
 
-//add google maps api key
+//add acf google maps api key
 function my_acf_google_map_api( $api ){
 	$api['key'] = AA_GOOGLE_API_KEY;
 	return $api;
