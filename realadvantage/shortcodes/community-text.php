@@ -13,7 +13,6 @@ function ar_community_text_func( $atts ) {
 			'type'	=> 'buy',
 			'area'	=> 'Location',
 			'state'	=> get_field('ar_state','option'),
-			'st'	=> get_field('ar_state_abv','option'),
 			'mls'	=> get_field('ar_mls','option'),
 			'team'	=> get_field('ar_default_team','option'),
 			'class'	=> '',
@@ -29,10 +28,8 @@ function ar_community_text_func( $atts ) {
 	if($state == '0') {
 		$state = get_field('ar_state','option');
 	}
-	$state_abv = $atts['st'];
-	if($state_abv == '0') {
-		$state_abv = get_field('ar_state_abv','option');
-	}
+	$all_states = ar_state_to_st_array();
+	$state_abv = $all_states[$state];
 	$mls = $atts['mls'];
 	if($mls == '0') {
 		$mls = get_field('ar_mls','option');

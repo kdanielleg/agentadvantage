@@ -8,28 +8,6 @@ acf_add_local_field_group(array(
 	'title' => 'Community Text Settings',
 	'fields' => array(
 		array(
-			'key' => 'field_5c96c892a427d',
-			'label' => 'State 2 Letter',
-			'name' => 'ar_state_abv',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => ar_st_array(),
-			'default_value' => array(),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'return_format' => 'value',
-			'ajax' => 0,
-			'placeholder' => '',
-		),
-		array(
 			'key' => 'field_5c96c911a427e',
 			'label' => 'State',
 			'name' => 'ar_state',
