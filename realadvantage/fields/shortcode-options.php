@@ -180,7 +180,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'class' => '',
 					'id' => '',
 				),
-				'message' => '<p style="text-align:center;margin:0 auto;"><a href="https://www.agentreputation.net" target="_blank"><img src="/wp-content/themes/realadvantage-plus/realadvantage/img/ar-logo-2018.png" alt="Agent Reputation 5 Star Auto Blogging" style="max-width:100%;height:auto;" /></a></p>',
+				'message' => '<p style="text-align:center;margin:0 auto;"><a href="https://www.agentreputation.net" target="_blank"><img src="/wp-content/themes/agentadvantage/realadvantage/img/ar-logo.png" alt="Agent Reputation 5 Star Auto Blogging" style="max-width:100%;height:auto;" /></a></p>',
 				'new_lines' => '',
 				'esc_html' => 0,
 			),
