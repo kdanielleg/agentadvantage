@@ -4,7 +4,7 @@ Description: AgentAdvantage Child theme for Avada theme
 Author: Agent Reputation
 Author URI: https://www.agentreputation.net
 Template: Avada
-Version: 1.0.21
+Version: 1.0.22
 Text Domain:  Avada
 */
 
@@ -17,6 +17,12 @@ div#curlySepOnly span.fusion-highlighted-text {
 div#ar-footer-display p {
 	margin-bottom: 0.5em!important;
 	margin-top: 0;
+}
+.fusion-load-more-button {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 /**Video Shortcodes**/
