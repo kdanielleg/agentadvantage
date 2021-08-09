@@ -12,7 +12,7 @@ function ar_enqueue_styles_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'ar_enqueue_styles_scripts');
 
-/**list of gmaps autocomplete dependency files**/
+/**gmaps autocomplete dependencies**/
 function ar_autocomplete_dependency() {
     $options = array(
         'jquery-core',
@@ -52,13 +52,15 @@ ar_require_folder('functions');
 /*********CUSTOM FIELDS***************/
 ar_require_folder('fields');
 
-/*********WIDGETS***************/
-ar_require_folder('widgets');
+/*********SHORTCODES***************/
+ar_require_folder('shortcodes');
 
 /*********ADD Fivestar***************/
-if(get_field('ar_activate_fivestar','option')) {
-	require_once( get_stylesheet_directory() . '/realadvantage/plugins/fivestar.php');
-}
+require_once( get_stylesheet_directory() . '/realadvantage/plugins/fivestar.php');
+
+/**Add Custom IDX Codes**/
+require_once( get_stylesheet_directory() . '/realadvantage/idx/idx.php');
+
 
 /*********Require Folders Loop*******/
 function ar_require_folder($folder) {
@@ -66,59 +68,4 @@ function ar_require_folder($folder) {
         $function = basename($function);
         require get_stylesheet_directory().'/realadvantage/'.$folder.'/'.$function;
     endforeach;
-}
-
-/**Client Specific files**/
-function ar_client_files(){
-    $choices = array(
-        'none' => 'None',
-    );
-    return $choices;
-}
-
-if(get_field('ar_client_file','option') && get_field('ar_client_file','option') != 'none') {
-    require_once( get_stylesheet_directory() . '/realadvantage/client/'.get_field('ar_client_file','option').'.php');
-}
-
-function ar_custom_mime_types( $mime_types=array() ) {
-	// New allowed mime types.
-	$mime_types['svg'] = 'image/svg+xml';
-	$mime_types['svgz'] = 'image/svg+xml';
-	$mime_types['doc'] = 'application/msword';
-	$mime_types['mp4'] = 'video/mp4';
-    $mime_types['vcf'] = 'text/vcard';
-    $mime_types['vcard'] = 'text/vcard';
-	return $mime_types;
-}
-add_filter( 'upload_mimes', 'ar_custom_mime_types' );
-
-/**Add Custom IDX Codes**/
-if(get_field('ar_wrapcodes_active','option')) :
-    require_once( get_stylesheet_directory() . '/realadvantage/idx/idx.php');
-endif;
-
-
-/**
- * Change Gravity forms  inputs to buttons
- */
-add_filter( 'gform_next_button', 'ar_input_to_button', 10, 2 );
-add_filter( 'gform_previous_button', 'ar_input_to_button', 10, 2 );
-add_filter( 'gform_submit_button', 'ar_input_to_button', 10, 2 );
-function ar_input_to_button( $button, $form ) {
-    $dom = new DOMDocument();
-    $dom->loadHTML( '<?xml encoding="utf-8" ?>' . $button );
-    $input = $dom->getElementsByTagName( 'input' )->item(0);
-    $new_button = $dom->createElement( 'button' );
-    $new_button->appendChild( $dom->createTextNode( $input->getAttribute( 'value' ) ) );
-    $input->removeAttribute( 'value' );
-    foreach( $input->attributes as $attribute ) :
-        $new_button->setAttribute( $attribute->name, $attribute->value );
-    endforeach;
-    $input->parentNode->replaceChild( $new_button, $input );
-    return $dom->saveHtml( $new_button );
-}
-
-/**Gravity forms EID fix**/
-function avada_gravity_form_merge_tags( $args = array() ) {
-    Avada_Gravity_Forms_Tags_Merger::get_instance( array( 'auto_append_eid' => false ) );
 }

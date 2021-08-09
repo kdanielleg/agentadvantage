@@ -18,6 +18,9 @@ if(shortcode_exists('idx-omnibar')):
 	//[ar_omnibar_search $atts...]
 	add_shortcode( 'ar_omnibar_search', 'ar_omnibar_func' );
 	add_action( 'fusion_builder_before_init', 'ar_fusion_element_omnibar' );
+	//[ar_home_value $atts...]
+	add_shortcode( 'ar_home_value', 'ar_home_value_func' );
+	add_action( 'fusion_builder_before_init', 'ar_fusion_element_home_value' );
 endif;
 
 /****
@@ -430,5 +433,54 @@ function ar_fusion_element_omnibar() {
 	  'params'          => $params,
 	);
 
+	fusion_builder_map($args);
+}
+
+
+/****
+** [ar_home_value $atts...]
+****/
+function ar_home_value_func( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'class' => '',
+			'id'	=> '',
+		),
+		$atts
+	);
+	$count = (int)$atts['count'];
+	ob_start(); ?>
+		<div id="<?php echo $atts['id']; ?>" class="ar-idx-hv-form <?php echo $atts['class']; ?>">
+			<div id="hvForm">
+				<form action="<?php the_field('idx_account_url', 'option'); ?>/idx/homevaluation">
+  					<input type="text" id="hv-location" name="address" placeholder="Start Typing the Address...">
+  					<button type="submit" value="Submit"><i class="fad fa-location"></i></button>
+				</form>
+			</div>
+		</div>
+	<?php return ob_get_clean();
+}
+function ar_fusion_element_home_value() {
+	$params = array(
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
+			'param_name'	=> 'class',
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS ID', 'fusion-builder' ),
+			'param_name'	=> 'id',
+		),
+	);
+	$args = array(
+		'name'            => esc_attr__( 'AR Home Value', 'fusion-builder' ),
+		'shortcode'       => 'ar_home_value',
+		'icon'            => 'far fa-usd',
+		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/home_value-preview.php',
+		'preview_id'      => 'fusion-builder-block-module-home_value-preview-template',
+		'allow_generator' => true,
+		'params'          => $params,
+	); 
 	fusion_builder_map($args);
 }

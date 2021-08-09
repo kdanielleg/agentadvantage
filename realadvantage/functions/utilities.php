@@ -96,3 +96,17 @@ function convert_tf_vars($atts, $fields) {
 	}
 	return $atts;
 }
+
+/**convert lat/long to address**/
+function get_lat_long($address){
+    $address = str_replace(" ", "+", $address);
+    $gmaps = "https://maps.google.com/maps/api/geocode/json?address=".$address."&key=".AA_GOOGLE_API_KEY;
+
+    $json = file_get_contents($gmaps);
+    $json = json_decode($json);
+    $atts = array(
+    	'lat' => $json->{'results'}[0]->{'geometry'}->{'location'}->{'lat'},
+    	'lng' => $json->{'results'}[0]->{'geometry'}->{'location'}->{'lng'},
+    );
+    return $atts;
+}

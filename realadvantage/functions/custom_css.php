@@ -1,9 +1,6 @@
-<?php /* Add Custom CSS to Header */
+<?php 
 
-if (get_field('ar_custom_css_on', 'option')) :
-	add_action('wp_head', 'ar_custom_css_fields');
-endif;
-
+/* Add Custom CSS to Header */
 function ar_custom_css_fields(){
 	$cssFields = array(
 		'main' => array(
@@ -42,3 +39,5 @@ function ar_custom_css_fields(){
 
 	<?php 
 }
+
+add_action('wp_head', 'ar_custom_css_fields');

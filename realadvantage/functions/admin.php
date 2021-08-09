@@ -13,7 +13,6 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_slug' 	=> 'realadvantage',
 		'capability'	=> 'edit_posts',
 		'position'		=>  '2.1',
-		/**'icon_url' 		=> 'dashicons-star-filled',**/
 		'icon_url'		=> '/wp-content/themes/agentadvantage/realadvantage/img/ar-branding-menu-2018.png',
 		'redirect'		=> true,
 		'update_button'		=> __('Save Settings', 'acf'),
@@ -161,3 +160,20 @@ function ar_set_google_autocomplete(){
 <?php
 }
 add_action('wp_head', 'ar_set_google_autocomplete');
+
+
+
+// New allowed mime types.
+function ar_custom_mime_types( $mime_types=array() ) {
+	$mime_types['svg'] = 'image/svg+xml';
+	$mime_types['svgz'] = 'image/svg+xml';
+	$mime_types['doc'] = 'application/msword';
+	$mime_types['mp4'] = 'video/mp4';
+    $mime_types['vcf'] = 'text/vcard';
+    $mime_types['vcard'] = 'text/vcard';
+	return $mime_types;
+}
+add_filter( 'upload_mimes', 'ar_custom_mime_types' );
+
+
+
