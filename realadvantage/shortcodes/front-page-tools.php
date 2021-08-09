@@ -113,3 +113,53 @@ function aa_fusion_element_front_areas() {
 	fusion_builder_map($args);
 }
 add_action( 'fusion_builder_before_init', 'aa_fusion_element_front_areas' );
+
+
+
+
+
+/****
+** Front Page Listings
+****/
+function aa_front_listings_func( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'class' => '',
+			'id'	=> '',
+		),
+		$atts
+	);
+	$return = "<p>Element available for home page only</p>";
+	if(is_front_page()):
+		ob_start();
+		echo do_shortcode('[ar_idx widget="'.get_field('home_listings_widget').'" class="'.$atts['class'].'" id="'.$atts['id'].'" /]');
+		$return = ob_get_clean();
+	endif;
+	return $return;
+}
+add_shortcode( 'aa_front_listings', 'aa_front_listings_func' );
+function aa_fusion_element_front_listings() {
+	$params = array(
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
+			'param_name'	=> 'class',
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS ID', 'fusion-builder' ),
+			'param_name'	=> 'id',
+		),
+	);
+	$args = array(
+		'name'            => esc_attr__( 'Front Page Listings', 'fusion-builder' ),
+		'shortcode'       => 'aa_front_listings',
+		'icon'            => 'far fa-radiation-alt',
+		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/front_page_listings-preview.php',
+		'preview_id'      => 'fusion-builder-block-module-front_page_listings-preview-template',
+		'allow_generator' => true,
+		'params'          => $params,
+	);
+	fusion_builder_map($args);
+}
+add_action( 'fusion_builder_before_init', 'aa_fusion_element_front_listings' );
