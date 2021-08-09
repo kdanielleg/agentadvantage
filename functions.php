@@ -59,7 +59,7 @@ ar_require_folder('shortcodes');
 require_once( get_stylesheet_directory() . '/realadvantage/plugins/fivestar.php');
 
 /**Add Custom IDX Codes**/
-require_once( get_stylesheet_directory() . '/realadvantage/idx/idx.php');
+//require_once( get_stylesheet_directory() . '/realadvantage/idx/idx.php');
 
 
 /*********Require Folders Loop*******/
