@@ -95,8 +95,6 @@ function ar_fusion_element_community_text() {
 	}else {
 		$teamDeafult = 'Singular';
 	}
-	$stDefault = ar_st_array();
-	$stDefault['0'] = 'Default ('.get_field('ar_state_abv','option').')';
 	$stateDefault = ar_state_array();
 	$stateDefault['0'] = 'Default ('.get_field('ar_state','option').')';
 	$params = array(
@@ -126,13 +124,6 @@ function ar_fusion_element_community_text() {
 			'description'	=>	esc_attr__( 'Choose full state name or leave default theme value.', 'fusion-builder' ),
 			'param_name'	=>	'state',
 			'value'			=>	$stateDefault,
-		),
-		array(
-			'type'			=>	'select',
-			'heading'		=>	esc_attr__( 'State (2 Letter)', 'fusion-builder' ),
-			'description'	=>	esc_attr__( 'Choose 2 letter capital state abreviation or leave default theme value.', 'fusion-builder' ),
-			'param_name'	=>	'st',
-			'value'			=>	$stDefault,
 		),
 		array(
 			'type'			=>	'textfield',

@@ -21,7 +21,7 @@ function ar_search_map_func( $atts ) {
 		<div id="<?php echo $atts['id']; ?>" class="ar-search-map <?php echo $atts['class']; ?>">
 			<?php if($search) : ?>
 				<div class="ar-gmap ar-responsive-map" style="padding-bottom: <?php echo $atts['height']; ?>;">
-					<iframe width="600" height="520" frameborder="0" style="border:0" allowfullscreen src="//www.google.com/maps/embed/v1/search?key=<?php the_field('ar_gmap_key', 'option'); ?>&q=<?php echo $search; ?>&zoom=<?php echo $atts['zoom']; ?>"></iframe>
+					<iframe width="600" height="520" frameborder="0" style="border:0" allowfullscreen src="//www.google.com/maps/embed/v1/search?key=<?php echo AA_GOOGLE_API_KEY; ?>&q=<?php echo $search; ?>&zoom=<?php echo $atts['zoom']; ?>"></iframe>
 				</div>
 			<?php else : ?>
 				<p>No search term found.</p>
