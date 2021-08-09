@@ -4,14 +4,15 @@ Description: AgentAdvantage Child theme for Avada theme
 Author: Agent Reputation
 Author URI: https://www.agentreputation.net
 Template: Avada
-Version: 1.0.20
+Version: 1.0.21
 Text Domain:  Avada
 */
 
 
 /**GENERAL**/
-.fusion-flexslider.fusion-post-slideshow {
-	margin-bottom: 2rem;
+div#curlySepOnly span.fusion-highlighted-text {
+    visibility: hidden;
+    height: 0;
 }
 div#ar-footer-display p {
 	margin-bottom: 0.5em!important;
@@ -33,6 +34,19 @@ div#ar-footer-display p {
 	width: 100%;
 	height: 100%;
 	border: none !important;
+}
+.ar-responsive-video.ar-responsive-video-bg:after {
+    content: ' ';
+    background: transparent;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.ar-responsive-video.ar-responsive-video-bg {
+    margin-bottom: 0;
 }
 
 /**Responsive Map**/
@@ -69,246 +83,192 @@ div#ar-footer-display p {
 	border: none !important;
 }
 
-/**Author Block**/
-div#authorBlock {
-	background-color: #f6f6f6;
-	border-width: 0;
-	padding: 20px;
-	padding-bottom: 0;
-}
-ul.authorContactList {
-	list-style-type: none;
-	margin-left: 0;
-	margin-bottom: 15px;
-	margin-top: 10px;
-	padding-inline-start: 0px;
-}
-.authorSocial {
-	margin-bottom: 20px;
-}
-.authorTitle {
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-.authorSubTitle {
-	margin-top: 0px;
-	margin-bottom: 15px;
-}
-ul.authorContactList li i {
-	position: absolute;
-	left: 0;
-	top: 6px;
-	width: 30px;
-}
-ul.authorContactList li {
-	position: relative;
-	padding-left: 30px;
-	margin-bottom: 10px;
-}
-
 /**IDX Omnibar Widget**/
-form.idx-omnibar-form.idx-omnibar-original-form {
+form.idx-omnibar-form {
 	padding: 0!important;
 }
 
 
-/**fix feedback form**/
-.ar-reputation > iframe {
-	min-height: 800px;
-}
-
-/**Video gallery**/
-.ar-video-title h6 {
-	text-align: center;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-
-/**IDX Showcase Widget CSS
-#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseCell .IDX-showcaseContainer **/
-
-/**Directory**/
-.ar-business {
-	border: 1px solid #ddd;
-	background: #ffffff;
-	padding: 15px 25px;
-	margin-bottom: 20px;
-}
-h3.ar-business-title {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-h6.ar-business-location {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-.ar-business-contacts ul li i {
-	margin-right: 10px;
-}
-.ar-business-contacts ul {
-	list-style: none;
-	margin-block-start: 0;
-	margin-block-end: 0;
-	padding-inline-start: 0px;
-}
-.ar-business-contacts, .ar-business-people {
-	margin-top: 20px;
-}
-.ar-business-people h4 {
-	margin-top: 0!important;
-	margin-bottom: 0!important;
-}
-.ar-business-top .fusion-layout-column.fusion-spacing-yes {
-	margin-bottom: 0!important;
-}
-.ar_business_features p {
-	font-weight: 600;
-}
-
-/**C21 Docs Table**/
-.ar_docs_table_wrap table {
-	width: 100%;
-	border-collapse: collapse; 
-}
-.ar_docs_table_wrap th {
-	background-color: #a19276;
-	color: #ffffff;
-	border: 1px solid #ffffff;
-	border-top-width: 0;
-	font-size: 1.5rem;
-}
-.ar_docs_table_wrap tbody > tr:nth-of-type(odd) {
-	background: #fff; 
-}
-.ar_docs_table_wrap tbody > tr:nth-of-type(even) {
-	background: #fff; 
-}
-.ar_docs_table_wrap td, 
-.ar_docs_table_wrap th { 
-	padding: 6px 10px; 
-	border: 1px solid #beaf87; 
-	text-align: center; 
-}
-.ar_docs_table_wrap th.docTitle,
-.ar_docs_table_wrap td.docTitle,
-.ar_docs_table_wrap th.docCats,
-.ar_docs_table_wrap td.docCats {
-	text-align: left;
-}
-.ar_docs_table_wrap table tbody tr.docHide {
-	display: none!important;
-}
-.docsSortWrap select#docCatsChoice {
-    width: 400px;
-    display: block;
-    margin-left: auto;
-    margin-bottom: 20px;
-}
-
-@media only screen and (max-width: 500px) {
-	.ar_docs_table_wrap table, 
-	.ar_docs_table_wrap thead, 
-	.ar_docs_table_wrap tbody, 
-	.ar_docs_table_wrap th, 
-	.ar_docs_table_wrap td, 
-	.ar_docs_table_wrap tr:not(.docHide) { 
-		display: block; 
-	}
-	.ar_docs_table_wrap thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	.ar_docs_table_wrap tr { 
-		border: 1px solid #beaf87; 
-	}
-	
-	.ar_docs_table_wrap table td { 
-		border: none;
-		border-bottom: 1px solid #eee; 
-		width: 100%;
-	}
-	.ar_docs_table_wrap td.docCats:before {
-    	content: 'Category:';
-    	display: inline-block;
-    	padding-right: 10px;
-	}
-	.ar_docs_table_wrap td.docDate:before {
-    	content: 'Date:';
-    	display: inline-block;
-    	padding-right: 10px;
-	}
-	.docsSortWrap select#docCatsChoice {
-    	width: 100%;
-	}
-	.ar_docs_table_wrap td.docTitle,
-	.ar_docs_table_wrap td.docCats {
-		text-align: center;
-	}
-}
-
-/**Image Blocks Widgets**/
-div.menuImgLink {
-    display: block;
-    padding: 100px 50px;
-    position: relative;
-    text-align: center;
+/**IDX Showcase Widget CSS **/
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseContainer {
+    border-width: 0!important;
+    padding: 0!important;
+    box-shadow: none!important;
     overflow: hidden;
 }
-div.menuImgLinkBlock {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-transition: all 1s;
-    transition: all 1s;
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcasePhoto {
+    margin-left: 0!important;
+    margin-right: 0!important;
+    width: 100%;
 }
-div.menuImgLinkBlock:before {
-    content: ' ';
-    background-color: rgba(0,0,0,0.3);
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseCityStateZip {
+	font-size: 1rem;
+    font-weight: 500;
+    padding: 0;
+    color: #b2b2b2;
+  padding-bottom: 20px;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseCityStateZip span.IDX-showcaseAddressElement.IDX-showcaseState {
+  display: none;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseCityStateZip span.IDX-showcaseAddressElement.IDX-showcaseStateAbrv {
+  display: inline-block;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseCell .IDX-showcasePrice {
     display: block;
-    width: 100%;
-    height: 100%;
+    font-size: 1rem;
+    padding: 5px 10px;
     position: absolute;
-    top: 0;
-    left: 0;
-}
-div.menuImgLink span {
+    top: 65%;
+    right: 15px;
+    background-color: #333333;
+    border-radius: 2px;
+    font-weight: bold;
+    letter-spacing: 1px;
     color: #ffffff;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseContainer a {
+    background-color: #000000;
     position: relative;
-    text-shadow: #000000;
+    -webkit-transition: all .3s .3s;
+    transition: all .3s .3s;
 }
-div.menuImgLink a {
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseContainer a img {
+    -webkit-transition: all .3s .3s;
+    transition: all .3s .3s;
+    height: 100%!important;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseContainer a:hover {
+    background-color: #000000;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseContainer a:hover img {
+    opacity: 0.22;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseContainer a:after {
+    font-weight: 100;
+    font-family: sans-serif;
+    font-size: 80px;
+    -webkit-transition: all .3s .3s;
+    transition: all .3s .3s;
+    display: inline-block;
+    color: #fff;
+    content: "+";
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
+    top: 50%;
     left: 0;
-}
-div.menuImgLink:hover div.menuImgLinkBlock {
-    transform: scale(1.2);
-}
-
-/**Video responsive **/
-.ar-responsive-video.ar-responsive-video-bg:after {
-    content: ' ';
-    background: transparent;
     opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
+    text-align: center;
     width: 100%;
-    height: 100%;
+    transform: translateY(-50%);
 }
-.ar-responsive-video.ar-responsive-video-bg {
-    margin-bottom: 0;
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseContainer a:hover:after {
+    opacity: 1;
+    top: 50%;
+    text-align:center;
+    transform: translateY(-50%);
 }
-
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseAddress.IDX-showcaseAddressElement {
+    font-size: 1.6rem;
+    line-height: 1.2em;
+    font-weight: 600;
+    padding: 0;
+    color: #333333;
+    padding-top: 10px;
+    font-family: var(--h2_typography-font-family);
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcasePhoto {
+    width: 100%;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseRow .IDX-showcaseCell {
+    padding-top: 0!important;
+    padding-right: 0!important;
+    padding-left: 0!important;
+    padding-bottom: 0!important;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseRow {
+    margin-bottom: 0!important;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseStatus {
+    display: block;
+    position: absolute;
+    padding: 8px;
+    top: 27px;
+    left: 0px;
+    color: #ffffff;
+    background-color: var(--primary_color-85a);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotate(-45deg) translate(-36px, -30px);
+    width: 190px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    border-left: 25px solid rgba(255,255,255,0);
+    border-right: 25px solid rgba(255,255,255,0);
+    letter-spacing: 0.1em;
+}
+.ar-idx-widget .IDX-showcaseTable {
+    text-align: left;
+}
+.ar-idx-widget {
+    text-align: center;
+}
+#main div[id^="IDX-showcaseGallery-"] + a {
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    zoom: 1;
+    border: 1px solid transparent;
+    background: var(--button_gradient_top_color);
+    color: var(--button_accent_color);
+    border-color: var(--button_border_color);
+    font-family: var(--button_typography-font-family);
+    font-weight: var(--button_typography-font-weight);
+    font-style: var(--button_typography-font-style,normal);
+    letter-spacing: var(--button_typography-letter-spacing);
+    border-width: var(--button_border_width);
+    border-style: solid;
+    border-radius: var(--button_border_radius);
+    text-transform: var(--button_text_transform);
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    padding: 20px 40px;
+    line-height: 1.2em!important;
+    font-size: 1.4rem;
+    margin: 25px auto;
+    display: block;
+    width: fit-content;
+}
+#main div[id^="IDX-showcaseGallery-"] + a:hover {
+    background: var(--button_gradient_top_color_hover);
+    color: var(--button_accent_hover_color,var(--button_accent_color));
+    border-color: var(--button_border_hover_color);
+    text-decoration: none!important;
+}
+#main div[id^="IDX-showcaseGallery-"] .IDX-resultsCountMessage {
+    font-size: 1rem;
+  text-align: center;
+}
+@media only screen and (min-width: 801px) and (max-width: 1170px) {
+  	#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseCell {
+    	width: calc(100%/3);
+    	min-width: calc(100%/3);
+	}
+}
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+	#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseCell {
+    	width: calc(100%/2);
+    	min-width: calc(100%/2);
+	}
+}
+@media only screen and (max-width: 599px) {
+  	#main div[id^="IDX-showcaseGallery-"] .IDX-showcaseCell {
+    	width: 100%;
+    	min-width: 100%/2;
+	}
+}
 
 /**HV Form**/
 .ar-idx-hv-form #hvForm button {
