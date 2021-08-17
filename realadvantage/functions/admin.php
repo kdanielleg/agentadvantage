@@ -176,6 +176,7 @@ function aa_admin_phone_func(){
 }
  
 function aa_admin_phone_callback_function($args){
-	echo "<input type='text' id='aa_admin-phone' value='".get_option('aa_admin-phone')."' placeholder='Enter Your Main Phone Number' />";
+	$value = get_option( 'aa_admin-phone', '' );
+	echo "<input type='text' id='aa_admin-phone' value='".$value."' placeholder='Phone Number' />";
 	echo "<p>This will display on your privacy policy and DMCA pages as the main phone number for your site.</p>";
 }
