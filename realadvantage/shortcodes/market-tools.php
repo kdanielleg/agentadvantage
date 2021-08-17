@@ -16,7 +16,7 @@ function aa_market_intro_func( $atts ) {
 	$return = "<p>Element available for market area template only</p>";
 	if(is_singular('avada_portfolio')) :
 		ob_start(); ?>
-		<div id="<?php echo $atts['id']; ?>" class="aa-market intro <?php echo $atts['class']; ?>">
+		<div id="<?php echo $atts['id']; ?>" class="aa-market-intro <?php echo $atts['class']; ?>">
 			<?php if(get_field('market_intro_type') == 'custom') :
 				echo do_shortcode(get_field('market_intro_custom'));
 			else:
@@ -126,3 +126,67 @@ function aa_fusion_element_market_listings() {
 	fusion_builder_map($args);
 }
 add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_listings' );
+
+
+/****
+** Market Areas Content
+****/
+function aa_market_content_func( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'class' => '',
+			'id'	=> '',
+		),
+		$atts
+	);
+	$return = "<p>Element available for market area template only</p>";
+	if(is_singular('avada_portfolio')):
+		ob_start(); ?>
+		<div id="<?php echo $atts['id']; ?>" class="aa-market-content <?php echo $atts['class']; ?>">
+			<?php if(get_field('market_content_type') == 'text'): ?>
+				<div class="aa-market-content_text">
+					<?php echo do_shortcode(get_field('market_content_text')); ?>
+				</div>
+			<?php elseif(get_field('market_content_type') == 'toggles'):
+				$toggles = get_field('market_content_toggles');
+				if($toggles):
+					$accStart =  '[fusion_accordion type="" boxed_mode="" border_size="" border_color="" background_color="" hover_color="" divider_line="" title_font_size="" icon_size="" icon_color="" icon_boxed_mode="" icon_box_color="" icon_alignment="" toggle_hover_accent_color="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="aa-market-content_toggles" id=""]';
+					$accEnd = '[/fusion_accordion]';
+					$accBody = '';
+					foreach ($toggles as $toggle):
+						$accBody .= '[fusion_toggle title="'.$toggle['title'].'" open="no" class="" id=""]'.do_shortcode($toggle['content']).'[/fusion_toggle]';
+					endforeach;
+					echo do_shortcode($accStart.$accBody.$accEnd); 
+				endif;
+			endif; ?>
+		</div>
+		<?php $return = ob_get_clean();
+	endif;
+	return $return;
+}
+add_shortcode( 'aa_market_content', 'aa_market_content_func' );
+function aa_fusion_element_market_content() {
+	$params = array(
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
+			'param_name'	=> 'class',
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS ID', 'fusion-builder' ),
+			'param_name'	=> 'id',
+		),
+	);
+	$args = array(
+		'name'            => esc_attr__( 'Market Area Content', 'fusion-builder' ),
+		'shortcode'       => 'aa_market_content',
+		'icon'            => 'far fa-radiation-alt',
+		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_content-preview.php',
+		'preview_id'      => 'fusion-builder-block-module-market_content-preview-template',
+		'allow_generator' => true,
+		'params'          => $params,
+	);
+	fusion_builder_map($args);
+}
+add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_content' );
