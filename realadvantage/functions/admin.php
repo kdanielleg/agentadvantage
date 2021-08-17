@@ -14,14 +14,6 @@ if( function_exists('acf_add_options_page') ) {
 		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Community Settings',
-		'menu_title'	=> 'Community Settings',
-		'menu_slug' 	=> 'community',
-		'parent_slug'	=> 'realadvantage',
-		'update_button'		=> __('Save Settings', 'acf'),
-		'updated_message'	=> __('Your settings have been updated successfully.', 'acf'),
-	));
-	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Footer Shortcode Settings',
 		'menu_title'	=> 'Footer Settings',
 		'menu_slug' 	=> 'footer',
