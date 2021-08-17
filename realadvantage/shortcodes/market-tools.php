@@ -127,7 +127,6 @@ function aa_fusion_element_market_listings() {
 }
 add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_listings' );
 
-
 /****
 ** Market Areas Content
 ****/
@@ -236,3 +235,123 @@ function aa_fusion_element_market_wiki() {
 	fusion_builder_map($args);
 }
 add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_wiki' );
+
+/****
+** Market Areas WS + Schools 
+****/
+$GLOBALS['marketschoolscount'] = 1;
+function aa_display_schools($locationField = 'market_walkscore') {
+	$location = get_field($locationField);
+	$address = urlencode($location['address']);
+	$lat = $location['lat'];
+	$lng = $location['lng'];
+	$blockStart = 'aaSchools_'.get_the_ID().'-';
+	$blockName = $blockStart.(string)$GLOBALS['marketschoolscount'];
+	$jsUnique = '_'.get_the_ID().'_'.(string)$GLOBALS['marketschoolscount'];
+	ob_start(); ?>
+	<div class='aa-schools-widget'>
+		<div id='<?php echo $blockName;?>'></div>
+		<script type="text/javascript">var _gsreq = new XMLHttpRequest();var _gsid = new Date().getTime();_gsreq.open("GET", "https://www.google-analytics.com/collect?v=1&tid=UA-54676320-1&cid="+_gsid+"&t=event&ec=widget&ea=loaded&el="+window.location.hostname+"&cs=widget&cm=web&cn=widget&cm1=1&ni=1");_gsreq.send();</script>
+		<script>jQuery(document).ready(function($){
+			var s_lat<?php echo $jsUnique; ?> = '<?php echo $lat; ?>';
+			var s_lng<?php echo $jsUnique; ?> = '<?php echo $lng; ?>';
+			var s_normAddress<?php echo $jsUnique; ?> = '<?php echo $address; ?>';
+			var s_schoolsWidth<?php echo $jsUnique; ?> = $('#<?php echo $blockName;?>').width();
+			var s_schoolsFrame<?php echo $jsUnique; ?> = '<iframe className="greatschools" src="//www.greatschools.org/widget/map?textColor=0066B8&borderColor=FFCC66&lat='+s_lat<?php echo $jsUnique; ?>+'&lon='+s_lng<?php echo $jsUnique; ?>+'&normalizedAddress='+s_normAddress<?php echo $jsUnique; ?>+'&height=500&zoom=13&width='+s_schoolsWidth<?php echo $jsUnique; ?>+'" style="width:100%" height="500" marginHeight="0" marginWidth="0" frameBorder="0" scrolling="no"></iframe>';
+			$('#<?php echo $blockName;?>').html(s_schoolsFrame<?php echo $jsUnique; ?>);
+			
+			$( window ).resize(function() {
+				var lat<?php echo $jsUnique; ?> = '<?php echo $lat; ?>';
+				var lng<?php echo $jsUnique; ?> = '<?php echo $lng; ?>';
+				var normAddress<?php echo $jsUnique; ?> = '<?php echo $address; ?>';
+				var schoolsWidth<?php echo $jsUnique; ?> = $('#<?php echo $blockName;?>').width();
+				var schoolsFrame<?php echo $jsUnique; ?> = '<iframe className="greatschools" src="//www.greatschools.org/widget/map?textColor=0066B8&borderColor=FFCC66&lat='+lat<?php echo $jsUnique; ?>+'&lon='+lng<?php echo $jsUnique; ?>+'&normalizedAddress='+normAddress<?php echo $jsUnique; ?>+'&height=500&zoom=13&width='+schoolsWidth<?php echo $jsUnique; ?>+'" style="width:100%" height="500" marginHeight="0" marginWidth="0" frameBorder="0" scrolling="no"></iframe>';
+				$('#<?php echo $blockName;?>').html(schoolsFrame<?php echo $jsUnique; ?>);
+			});
+		});</script>
+	</div>
+	<?php $GLOBALS['marketschoolscount']++;
+	return ob_get_clean();
+}
+$GLOBALS['marketwalkscorecount'] = 1;
+function aa_display_walkscore($locationField = 'market_walkscore') {
+	$blockStart = 'arWalkscore_'.get_the_ID().'-';
+	$blockName = $blockStart.(string)$GLOBALS['marketwalkscorecount'];
+	$ws_location = get_field($locationField);
+	$street = $ws_location['address']; 
+	ob_start(); ?>
+	<div class="aa-walkscore-widget">
+		<script type='text/javascript'>
+			var ws_wsid = '<?php echo AA_WALKSCORE_API_KEY; ?>';
+			var ws_address = '<?php echo $street; ?>';
+			var ws_format = 'wide';
+			var ws_width = '100%';
+			var ws_height = '620';
+			var ws_div_id = '<?php echo $blockName; ?>';
+		</script>
+		<style type='text/css'>#<?php echo $blockName; ?>{position:relative;text-align:left}#<?php echo $blockName; ?> *{float:none;}</style>
+		<div id='<?php echo $blockName; ?>'></div>
+		<script type='text/javascript' src='https://www.walkscore.com/tile/show-walkscore-tile.php'></script>
+	</div>
+	<?php $GLOBALS['marketwalkscorecount']++;
+	return ob_get_clean();
+}
+function aa_market_ws_schools_func( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'type' => 'both',
+			'cols' => 'two',
+			'first' => 'schools',
+			'class' => '',
+			'id'	=> '',
+		),
+		$atts
+	);
+	$return = "<p>Element available for market area template only</p>";
+	if(is_singular('avada_portfolio')):
+		ob_start(); 
+		$colClass = 'col-sm-12';
+		if($atts['cols'] == 'two') :
+			$colClass .= ' col-md-6';
+		endif; ?>
+		<div id="<?php echo $atts['id']; ?>" class="aa-market-ws-schools <?php echo $atts['class']; ?>">
+			<div class="row">
+				<?php if($atts['type'] == 'both'):
+					if($atts['first'] == 'schools'): ?>
+						<div class="aa-market-schools <?php echo $colClass; ?>" >
+							<h4>Local Schools</h4>
+							<?php echo aa_display_walkscore('market_schools'); ?>
+						</div>
+						<div class="aa-market-walkscore <?php echo $colClass; ?>" >
+							<?php echo aa_display_walkscore('market_walkscore'); ?>
+						</div>
+					<?php elseif($atts['first'] == 'walkscore'): ?>
+						<div class="aa-market-walkscore <?php echo $colClass; ?>" >
+							<?php echo aa_display_walkscore('market_walkscore'); ?>
+						</div>
+						<div class="aa-market-schools <?php echo $colClass; ?>" >
+							<h4>Local Schools</h4>
+							<?php echo aa_display_walkscore('market_schools'); ?>
+						</div>
+					<?php endif;
+				elseif($atts['type'] == 'schools'): ?>
+					<div class="aa-market-schools <?php echo $colClass; ?>" >
+						<?php echo aa_display_walkscore('market_schools'); ?>
+					</div>
+				<?php elseif($atts['type'] == 'walkscore'): ?>
+					<div class="aa-market-walkscore <?php echo $colClass; ?>" >
+						<?php echo aa_display_walkscore('market_walkscore'); ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+		<?php $return = ob_get_clean();
+	endif;
+	return $return;
+}
+add_shortcode( 'aa_market_content', 'aa_market_content_func' );
+
+
+
+
+
