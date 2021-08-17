@@ -4,7 +4,7 @@ Description: AgentAdvantage Child theme for Avada theme
 Author: Agent Reputation
 Author URI: https://www.agentreputation.net
 Template: Avada
-Version: 1.0.32
+Version: 1.0.34
 Text Domain:  Avada
 */
 
@@ -314,4 +314,67 @@ form.idx-omnibar-form {
 .ar-idx-hv-form div#hvForm form {
   display: flex;
   flex-wrap: nowrap;
+}
+
+
+/**yelp widget**/
+.ar_yelp .widget_yelp_widget {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ar_yelp.ar_yelp_cols4 .widget_yelp_widget .yelp-business {
+    width: 24%;
+}
+.ar_yelp.ar_yelp_cols3 .widget_yelp_widget .yelp-business {
+    width: 33%;
+}
+.ar_yelp.ar_yelp_cols2 .widget_yelp_widget .yelp-business {
+    width: 49%;
+}
+.ar_yelp.ar_yelp_cols1 .widget_yelp_widget .yelp-business {
+    width: 100%;
+}
+@media only screen and (min-width: 641px) and (max-width: 800px) {
+    .ar_yelp.ar_yelp_cols4 .widget_yelp_widget .yelp-business {
+        width: 49%;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .ar_yelp.ar_yelp_cols4 .widget_yelp_widget .yelp-business,
+    .ar_yelp.ar_yelp_cols3 .widget_yelp_widget .yelp-business,
+    .ar_yelp.ar_yelp_cols2 .widget_yelp_widget .yelp-business {
+        width: 100%;
+    }
+}
+.ar_yelp .yelp-business {
+    display: flex;
+    flex-direction: column;
+}
+.ar_yelp .yelp-business .yelp-business-img-wrap {
+    float: none;
+    position: relative;
+    padding-top: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.ar_yelp .yelp-business img.yelp-business-img {
+    float: none;
+    border-radius: 0;
+    width: unset;
+    height: unset;
+    box-shadow: unset;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.ar_yelp .yelp-business .yelp-info-wrap {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }

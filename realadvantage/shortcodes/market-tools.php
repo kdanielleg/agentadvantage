@@ -319,7 +319,7 @@ function aa_market_ws_schools_func( $atts ) {
 				<?php if($atts['type'] == 'both'):
 					if($atts['first'] == 'schools'): ?>
 						<div class="aa-market-schools <?php echo $colClass; ?>" >
-							<h4>Local Schools</h4>
+							<h4><?php echo get_the_title(); ?> Schools</h4>
 							<?php echo aa_display_schools('market_location'); ?>
 						</div>
 						<div class="aa-market-walkscore <?php echo $colClass; ?>" >
@@ -330,7 +330,7 @@ function aa_market_ws_schools_func( $atts ) {
 							<?php echo aa_display_walkscore('market_location'); ?>
 						</div>
 						<div class="aa-market-schools <?php echo $colClass; ?>" >
-							<h4>Local Schools</h4>
+							<h4><?php echo get_the_title(); ?>Local Schools</h4>
 							<?php echo aa_display_schools('market_location'); ?>
 						</div>
 					<?php endif;
@@ -404,6 +404,129 @@ function aa_fusion_element_market_ws_schools() {
 }
 add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_ws_schools' );
 
-
-
+/****
+** Market Areas Businesses
+****/
+function aa_yelp_display($cols = '4', $locationField = 'market_yelp', $limit = '8', $sort = '0', $term) {
+	$location = get_field($locationField);
+	return '<div class="ar_yelp ar_yelp_cols'.$cols.'">'.do_shortcode('[fusion_widget type="Yelp_Widget" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="" fusion_display_title="no" fusion_padding_color="0" fusion_margin="0" fusion_bg_color="rgba(0,0,0,0)" fusion_bg_radius_size="" fusion_border_size="0" fusion_border_style="solid" fusion_border_color="" fusion_divider_color="" fusion_align="" fusion_align_mobile="" yelp_widget__title="" yelp_widget__display_option="" yelp_widget__term="'.$term.'" yelp_widget__location="'.$atts['location'].'" yelp_widget__limit="'.$limit.'" yelp_widget__sort="'.$sort.'" yelp_widget__id="" yelp_widget__display_reviews="1" yelp_widget__profile_img_size="100x100" yelp_widget__display_address="1" yelp_widget__display_phone="1" yelp_widget__disable_title_output="1" yelp_widget__target_blank="1" yelp_widget__no_follow="1" yelp_widget__cache="1 Day" /]').'</div>';
+}
+function aa_market_yelp_func( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'cols' => '4',
+			'limit' => '8',
+			'sort' => '0',
+			'class' => '',
+			'id'	=> '',
+		),
+		$atts
+	);
+	$locationField = 'market_yelp';
+	$tabs = array(
+		array(
+			'title' => 'Dining',
+			'icon' => 'fa-taco fas',
+			'term' => 'Restaurant',
+		),
+		array(
+			'title' => 'Nightlife',
+			'icon' => 'fa-glass-whiskey-rocks fal',
+			'term' => 'Bar',
+		),
+		array(
+			'title' => "Groceries",
+			'icon' => "fa-shopping-basket fal",
+			'term' => 'Groceries',
+		),
+		array(
+			'title' => "Coffee",
+			'icon' => "fa-coffee-togo fal",
+			'term' => 'Coffee Shop',
+		),
+		array(
+			'title' => "Gym",
+			'icon' => "fa-dumbbell fal",
+			'term' => 'Gym',
+		),
+		array(
+			'title' => "Pet",
+			'icon' => "fa-paw-alt fal",
+			'term' => 'Pet',
+		),
+	);
+	$return = "<p>Element available for market area template only</p>";
+	if(is_singular('avada_portfolio')):
+		ob_start(); 
+		$tabsStart = '[fusion_tabs design="clean" layout="horizontal" justified="yes" backgroundcolor="" inactivecolor="" bordercolor="" icon="" icon_position="" icon_size="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id=""]';
+		$tabsEnd = '[/fusion_tabs]';
+		$tabsBody = '';
+		foreach ($tabs as $tab):
+			$tabsBody .= '[fusion_tab title="'.$tab['title'].'" icon="'.$tab['icon'].'"]'.aa_yelp_display($atts['cols'], $locationField, $atts['limit'], $atts['sort'], $tab['term']).'[/fusion_tab]';
+		endforeach; ?>
+		<div id="<?php echo $atts['id']; ?>" class="aa-market-yelp <?php echo $atts['class']; ?>">
+			<?php echo do_shortcode($tabsStart.$tabsBody.$tabsEnd); ?>
+		</div>
+		<?php $return = ob_get_clean();
+	endif;
+	return $return;
+}
+add_shortcode( 'aa_market_yelp', 'aa_market_yelp_func' );
+function aa_fusion_element_market_yelp() {
+	$params = array(
+		array(
+			'type'        => 'range',
+			'heading'     => esc_attr__( 'Number of Items', 'fusion-builder' ),
+			'description' => esc_attr__( 'Max number of items to display', 'fusion-builder' ),
+			'param_name'  => 'limit',
+			'value'       => '8',
+			'min'         => '1',
+			'max'         => '10',
+			'step'        => '1',
+		),
+		array(
+			'type'			=>	'select',
+			'heading'		=>	esc_attr__( 'Sort By', 'fusion-builder' ),
+			'param_name'	=>	'sort',
+			'value'			=>	array(
+				'0'			=>	esc_attr__( 'Best Match (default)', 'fusion-builder' ),
+				'1'			=>	esc_attr__( 'Distance', 'fusion-builder' ),
+				'2'			=>	esc_attr__( 'Highest Rated', 'fusion-builder' ),
+			),
+		),
+		array(
+			'type'			=>	'radio_button_set',
+			'heading'		=>	esc_attr__( 'How Many Columns?', 'fusion-builder' ),
+			'param_name'	=>	'cols',
+			'value'			=>	array(
+				'1'			=>	esc_attr__( '1', 'fusion-builder' ),
+				'2'			=>	esc_attr__( '2', 'fusion-builder' ),
+				'3'			=>	esc_attr__( '3', 'fusion-builder' ),
+				'4'			=>	esc_attr__( '4 (default)', 'fusion-builder' ),
+				'5'			=>	esc_attr__( '5', 'fusion-builder' ),
+			),
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
+			'param_name'	=> 'class',
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS ID', 'fusion-builder' ),
+			'param_name'	=> 'id',
+		),
+	);
+	$args = array(
+		'name'            => esc_attr__( 'Market Area Businesses', 'fusion-builder' ),
+		'shortcode'       => 'aa_market_yelp',
+		'icon'            => 'far fa-radiation-alt',
+		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_yelp-preview.php',
+		'preview_id'      => 'fusion-builder-block-module-market_yelp-preview-template',
+		'allow_generator' => true,
+		'params'          => $params,
+	);
+	fusion_builder_map($args);
+}
+add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_yelp' );
 
