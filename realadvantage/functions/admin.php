@@ -175,7 +175,7 @@ function aa_general_section() {
     add_settings_field( // Admin Phone
         'aa_admin_phone', // Option ID
         'Administrative Phone Number', // Label
-        'aa_textbox_callback', // !important - This is where the args go!
+        'aa_admin_phone_callback', // !important - This is where the args go!
         'general', // Page it will be displayed (General Settings)
         'aa_settings_section', // Name of our section
         array( // The $args
@@ -185,12 +185,11 @@ function aa_general_section() {
 
     register_setting('general','aa_admin_phone', 'esc_attr');
 }
-
 function aa_settings_section_options_callback() { // Section Callback
-    echo '<p>A little message on editing info</p>';  
+    echo '';  
 }
-
-function aa_textbox_callback($args) {  // Textbox Callback
+function aa_admin_phone_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
     echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<p>Number to display on DMCA and Privacy Policy pages.</p>';
 }
