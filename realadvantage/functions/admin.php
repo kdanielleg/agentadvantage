@@ -171,7 +171,16 @@ function aa_general_section() {
         'aa_settings_section_options_callback', // Callback
         'general' // What Page?  This makes the section show up on the General Settings Page
     );
-
+    add_settings_field( // Admin Name
+        'aa_admin_name', // Option ID
+        'Company/Agent Display Name', // Label
+        'aa_admin_name_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'aa_settings_section', // Name of our section
+        array( // The $args
+            'aa_admin_name' // Should match Option ID
+        )  
+    ); 
     add_settings_field( // Admin Phone
         'aa_admin_phone', // Option ID
         'Administrative Phone Number', // Label
@@ -182,11 +191,16 @@ function aa_general_section() {
             'aa_admin_phone' // Should match Option ID
         )  
     ); 
-
+    register_setting('general','aa_admin_name', 'esc_attr');
     register_setting('general','aa_admin_phone', 'esc_attr');
 }
 function aa_settings_section_options_callback() { // Section Callback
     echo '';  
+}
+function aa_admin_name_callback($args) {  // Textbox Callback
+    $option = get_option($args[0]);
+    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<p>Main Company Name to Display</p>';
 }
 function aa_admin_phone_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
