@@ -320,7 +320,7 @@ function aa_market_ws_schools_func( $atts ) {
 					if($atts['first'] == 'schools'): ?>
 						<div class="aa-market-schools <?php echo $colClass; ?>" >
 							<h4>Local Schools</h4>
-							<?php echo aa_display_walkscore('market_schools'); ?>
+							<?php echo aa_display_schools('market_schools'); ?>
 						</div>
 						<div class="aa-market-walkscore <?php echo $colClass; ?>" >
 							<?php echo aa_display_walkscore('market_walkscore'); ?>
@@ -331,12 +331,12 @@ function aa_market_ws_schools_func( $atts ) {
 						</div>
 						<div class="aa-market-schools <?php echo $colClass; ?>" >
 							<h4>Local Schools</h4>
-							<?php echo aa_display_walkscore('market_schools'); ?>
+							<?php echo aa_display_schools('market_schools'); ?>
 						</div>
 					<?php endif;
 				elseif($atts['type'] == 'schools'): ?>
 					<div class="aa-market-schools <?php echo $colClass; ?>" >
-						<?php echo aa_display_walkscore('market_schools'); ?>
+						<?php echo aa_display_schools('market_schools'); ?>
 					</div>
 				<?php elseif($atts['type'] == 'walkscore'): ?>
 					<div class="aa-market-walkscore <?php echo $colClass; ?>" >
