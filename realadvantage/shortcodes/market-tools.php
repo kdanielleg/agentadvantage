@@ -190,3 +190,47 @@ function aa_fusion_element_market_content() {
 	fusion_builder_map($args);
 }
 add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_content' );
+
+/****
+** Market Areas Wikipedia Link
+****/
+function aa_market_wiki_func( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'class' => '',
+			'id'	=> '',
+		),
+		$atts
+	);
+	$return = "<p>Element available for market area template only</p>";
+	if(is_singular('avada_portfolio') && get_field('market_wiki')):
+		$return = do_shortcode('[fusion_button link="'.get_field('market_wiki')).'" text_transform="none" title="" target="_self" link_attributes="" alignment_medium="" alignment_small="" alignment="center" modal="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" sticky_display="normal,sticky" class="'.$atts['class'].'" id="'.$atts['id'].'" color="custom" button_gradient_top_color="rgba(0,0,0,0)" button_gradient_bottom_color="rgba(0,0,0,0)" button_gradient_top_color_hover="rgba(0,0,0,0)" button_gradient_bottom_color_hover="rgba(0,0,0,0)" accent_color="#000000" accent_hover_color="#f37b20" type="flat" bevel_color="" border_width="0" border_radius="" border_color="rgba(0,0,0,0)" border_hover_color="rgba(0,0,0,0)" size="medium" stretch="no" margin_top="" margin_right="" margin_bottom="" margin_left="" icon="fa-link fal" icon_position="left" icon_divider="no" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset=""]Content Courtesy of Wikipedia.org[/fusion_button]');
+	endif;
+	return $return;
+}
+add_shortcode( 'aa_market_wiki', 'aa_market_wiki_func' );
+function aa_fusion_element_market_wiki() {
+	$params = array(
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
+			'param_name'	=> 'class',
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS ID', 'fusion-builder' ),
+			'param_name'	=> 'id',
+		),
+	);
+	$args = array(
+		'name'            => esc_attr__( 'Market Area Wiki Link', 'fusion-builder' ),
+		'shortcode'       => 'aa_market_wiki',
+		'icon'            => 'far fa-radiation-alt',
+		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_wiki-preview.php',
+		'preview_id'      => 'fusion-builder-block-module-market_wiki-preview-template',
+		'allow_generator' => true,
+		'params'          => $params,
+	);
+	fusion_builder_map($args);
+}
+add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_wiki' );
