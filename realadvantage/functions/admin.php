@@ -163,20 +163,34 @@ function ar_custom_mime_types( $mime_types=array() ) {
 add_filter( 'upload_mimes', 'ar_custom_mime_types' );
 
 //add phone to general settings
-add_action('admin_init', 'aa_admin_phone_func');
-function aa_admin_phone_func(){
-    add_settings_field(
-        'aa_admin-phone',
-        'Phone Number',
-        'aa_admin_phone_callback_function',
-        'general',
-        'default',
-        array( 'label_for' => 'aa_admin-phone' ),
+add_action('admin_init', 'aa_general_section');  
+function aa_general_section() {  
+    add_settings_section(  
+        'aa_settings_section', // Section ID 
+        'Agent Advantage Settings', // Section Title
+        'aa_settings_section_options_callback', // Callback
+        'general' // What Page?  This makes the section show up on the General Settings Page
     );
+
+    add_settings_field( // Admin Phone
+        'aa_admin_phone', // Option ID
+        'Administrative Phone Number', // Label
+        'aa_textbox_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'aa_settings_section', // Name of our section
+        array( // The $args
+            'aa_admin_phone' // Should match Option ID
+        )  
+    ); 
+
+    register_setting('general','aa_admin_phone', 'esc_attr');
 }
- 
-function aa_admin_phone_callback_function($args){
-	$value = get_option( 'aa_admin-phone', '' );
-	echo "<input type='text' id='aa_admin-phone' value='".$value."' placeholder='Phone Number' />";
-	echo "<p>This will display on your privacy policy and DMCA pages as the main phone number for your site.</p>";
+
+function aa_settings_section_options_callback() { // Section Callback
+    echo '<p>A little message on editing info</p>';  
+}
+
+function aa_textbox_callback($args) {  // Textbox Callback
+    $option = get_option($args[0]);
+    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
 }
