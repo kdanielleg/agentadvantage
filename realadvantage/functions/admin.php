@@ -162,5 +162,20 @@ function ar_custom_mime_types( $mime_types=array() ) {
 }
 add_filter( 'upload_mimes', 'ar_custom_mime_types' );
 
-
-
+//add phone to general settings
+add_action('admin_init', 'aa_admin_phone_func');
+function aa_admin_phone_func(){
+    add_settings_field(
+        'aa_admin-phone',
+        'Phone Number',
+        'aa_admin_phone_callback_function',
+        'general',
+        'default',
+        array( 'label_for' => 'aa_admin-phone' ),
+    );
+}
+ 
+function aa_admin_phone_callback_function($args){
+	echo "<input type='text' id='aa_admin-phone' value='".get_option('aa_admin-phone')."' placeholder='Enter Your Main Phone Number' />";
+	echo "<p>This will display on your privacy policy and DMCA pages as the main phone number for your site.</p>";
+}
