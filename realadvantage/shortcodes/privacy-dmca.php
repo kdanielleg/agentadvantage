@@ -105,7 +105,7 @@ add_action( 'fusion_builder_before_init', 'ar_fusion_element_privacy' );
 function ar_dmca_func() {
 	$name = get_option('aa_admin_name');
 	$email = get_option('admin_email');
-	$address = get_option('admin_address');
+	$address = get_option('aa_admin_address');
 	ob_start(); ?>
 		<div id="<?php echo $atts['id']; ?>" class="ar-dmca <?php echo $atts['class']; ?>">
 			<h2>Digital Millennium Copyright Act Notice</h2>
