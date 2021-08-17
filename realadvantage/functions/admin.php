@@ -191,8 +191,19 @@ function aa_general_section() {
             'aa_admin_phone' // Should match Option ID
         )  
     ); 
+    add_settings_field( // Admin Address
+        'aa_admin_address', // Option ID
+        'Administrative Address', // Label
+        'aa_admin_address_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'aa_settings_section', // Name of our section
+        array( // The $args
+            'aa_admin_address' // Should match Option ID
+        )  
+    ); 
     register_setting('general','aa_admin_name', 'esc_attr');
     register_setting('general','aa_admin_phone', 'esc_attr');
+    register_setting('general','aa_admin_address', 'esc_attr');
 }
 function aa_settings_section_options_callback() { // Section Callback
     echo '';  
@@ -205,5 +216,10 @@ function aa_admin_name_callback($args) {  // Textbox Callback
 function aa_admin_phone_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
     echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
-    echo '<p>Number to display on DMCA and Privacy Policy pages.</p>';
+    echo '<p>Phone number to display</p>';
+}
+function aa_admin_address_callback($args) {  // Textbox Callback
+    $option = get_option($args[0]);
+    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<p>Address to display</p>';
 }

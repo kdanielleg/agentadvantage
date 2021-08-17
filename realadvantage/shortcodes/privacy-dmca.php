@@ -102,17 +102,10 @@ add_action( 'fusion_builder_before_init', 'ar_fusion_element_privacy' );
 /****
 ** [ar_dmca $atts...]
 ****/
-function ar_dmca_func( $atts ) {
-	$atts = shortcode_atts(
-		array(
-			'name' => get_option('blogname'),
-			'address' => '',
-			'email' => get_option('admin_email'),
-			'class' => '',
-			'id'	=> '',
-		),
-		$atts
-	);
+function ar_dmca_func() {
+	$name = get_option('aa_admin_name');
+	$email = get_option('admin_email');
+	$address = get_option('admin_address');
 	ob_start(); ?>
 		<div id="<?php echo $atts['id']; ?>" class="ar-dmca <?php echo $atts['class']; ?>">
 			<h2>Digital Millennium Copyright Act Notice</h2>
@@ -137,11 +130,11 @@ function ar_dmca_func( $atts ) {
 			<div class="fusion-clearfix">
 				<div class="fusion-one-half fusion-layout-column fusion-spacing-yes">
 					<h5><strong>BY MAIL:</strong></h5>
-					<p><?php echo $atts['name']; ?><br><?php echo $atts['address']; ?><br><strong>Attention:</strong> DMCA Designated Agent</p>
+					<p><?php echo $name; ?><br><?php echo $address; ?><br><strong>Attention:</strong> DMCA Designated Agent</p>
 				</div>
 				<div class="fusion-one-half fusion-layout-column fusion-spacing-yes fusion-column-last">
 					<h5><strong>BY E-MAIL:</strong></h5>
-					<p><?php echo $atts['name']; ?><br><?php echo $atts['email']; ?><br><strong>RE:</strong> DMCA Designated Agent</p>
+					<p><?php echo $name; ?><br><?php echo $email; ?><br><strong>RE:</strong> DMCA Designated Agent</p>
 				</div>
 			</div>
 			<hr>
@@ -153,23 +146,6 @@ function ar_dmca_func( $atts ) {
 add_shortcode( 'ar_dmca', 'ar_dmca_func' );
 function ar_fusion_element_dmca() {
 	$params = array(
-		array(
-			'type'        => 'textfield',
-			'heading'     => esc_attr__( 'Display Name', 'fusion-builder' ),
-			'param_name'  => 'name',
-			'value' => get_option('blogname'),
-		),
-		array(
-			'type'        => 'textfield',
-			'heading'     => esc_attr__( 'Mailing Address', 'fusion-builder' ),
-			'param_name'  => 'address',
-		),
-		array(
-			'type'        => 'textfield',
-			'heading'     => esc_attr__( 'Email Address', 'fusion-builder' ),
-			'param_name'  => 'email',
-			'value'		  => get_option('admin_email'),
-		),
 		array(
 			'type'			=> 'textfield',
 			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
