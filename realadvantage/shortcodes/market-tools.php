@@ -349,8 +349,60 @@ function aa_market_ws_schools_func( $atts ) {
 	endif;
 	return $return;
 }
-add_shortcode( 'aa_market_content', 'aa_market_content_func' );
-
+add_shortcode( 'aa_market_ws_schools', 'aa_market_ws_schools_func' );
+function aa_fusion_element_market_ws_schools() {
+	$params = array(
+		array(
+			'type'			=>	'radio_button_set',
+			'heading'		=>	esc_attr__( 'Walkscore or Schools?', 'fusion-builder' ),
+			'param_name'	=>	'type',
+			'value'			=>	array(
+				'both'		=>	esc_attr__( 'Both (default)', 'fusion-builder' ),
+				'schools'	=>	esc_attr__( 'Schools', 'fusion-builder' ),
+				'walkscore'	=>	esc_attr__( 'Walkscore', 'fusion-builder' ),
+			),
+		),
+		array(
+			'type'			=>	'radio_button_set',
+			'heading'		=>	esc_attr__( 'How Many Columns?', 'fusion-builder' ),
+			'param_name'	=>	'cols',
+			'value'			=>	array(
+				'two'		=>	esc_attr__( 'Two (default)', 'fusion-builder' ),
+				'one'		=>	esc_attr__( 'One', 'fusion-builder' ),
+			),
+		),
+		array(
+			'type'			=>	'radio_button_set',
+			'heading'		=>	esc_attr__( 'If both, which first?', 'fusion-builder' ),
+			'param_name'	=>	'first',
+			'value'			=>	array(
+				'schools'	=>	esc_attr__( 'Schools (default)', 'fusion-builder' ),
+				'walkscore'	=>	esc_attr__( 'Walkscore', 'fusion-builder' ),
+			),
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
+			'param_name'	=> 'class',
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS ID', 'fusion-builder' ),
+			'param_name'	=> 'id',
+		),
+	);
+	$args = array(
+		'name'            => esc_attr__( 'Market WS + Schools', 'fusion-builder' ),
+		'shortcode'       => 'aa_market_ws_schools',
+		'icon'            => 'far fa-radiation-alt',
+		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_ws_schools-preview.php',
+		'preview_id'      => 'fusion-builder-block-module-market_ws_schools-preview-template',
+		'allow_generator' => true,
+		'params'          => $params,
+	);
+	fusion_builder_map($args);
+}
+add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_ws_schools' );
 
 
 
