@@ -240,7 +240,7 @@ add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_wiki' );
 ** Market Areas WS + Schools 
 ****/
 $GLOBALS['marketschoolscount'] = 1;
-function aa_display_schools($locationField = 'market_walkscore') {
+function aa_display_schools($locationField = 'market_location') {
 	$location = get_field($locationField);
 	$address = urlencode($location['address']);
 	$lat = $location['lat'];
@@ -274,7 +274,7 @@ function aa_display_schools($locationField = 'market_walkscore') {
 	return ob_get_clean();
 }
 $GLOBALS['marketwalkscorecount'] = 1;
-function aa_display_walkscore($locationField = 'market_walkscore') {
+function aa_display_walkscore($locationField = 'market_location') {
 	$blockStart = 'arWalkscore_'.get_the_ID().'-';
 	$blockName = $blockStart.(string)$GLOBALS['marketwalkscorecount'];
 	$ws_location = get_field($locationField);
@@ -320,27 +320,27 @@ function aa_market_ws_schools_func( $atts ) {
 					if($atts['first'] == 'schools'): ?>
 						<div class="aa-market-schools <?php echo $colClass; ?>" >
 							<h4>Local Schools</h4>
-							<?php echo aa_display_schools('market_schools'); ?>
+							<?php echo aa_display_schools('market_location'); ?>
 						</div>
 						<div class="aa-market-walkscore <?php echo $colClass; ?>" >
-							<?php echo aa_display_walkscore('market_walkscore'); ?>
+							<?php echo aa_display_walkscore('market_location'); ?>
 						</div>
 					<?php elseif($atts['first'] == 'walkscore'): ?>
 						<div class="aa-market-walkscore <?php echo $colClass; ?>" >
-							<?php echo aa_display_walkscore('market_walkscore'); ?>
+							<?php echo aa_display_walkscore('market_location'); ?>
 						</div>
 						<div class="aa-market-schools <?php echo $colClass; ?>" >
 							<h4>Local Schools</h4>
-							<?php echo aa_display_schools('market_schools'); ?>
+							<?php echo aa_display_schools('market_location'); ?>
 						</div>
 					<?php endif;
 				elseif($atts['type'] == 'schools'): ?>
 					<div class="aa-market-schools <?php echo $colClass; ?>" >
-						<?php echo aa_display_schools('market_schools'); ?>
+						<?php echo aa_display_schools('market_location'); ?>
 					</div>
 				<?php elseif($atts['type'] == 'walkscore'): ?>
 					<div class="aa-market-walkscore <?php echo $colClass; ?>" >
-						<?php echo aa_display_walkscore('market_walkscore'); ?>
+						<?php echo aa_display_walkscore('market_location'); ?>
 					</div>
 				<?php endif; ?>
 			</div>
