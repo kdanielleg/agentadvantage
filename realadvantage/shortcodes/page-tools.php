@@ -12,6 +12,7 @@ function aa_template_reviews_func( $atts ) {
 		),
 		$atts
 	);
+	$return = 'Not available.';
 	$reviews = get_field($atts['acf_field']);
 	if($atts['acf_field'] && $reviews):
 		$revStart =  '[fusion_testimonials design="clean" navigation="no" speed="" backgroundcolor="rgba(0,0,0,0)" textcolor="#ffffff" random="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="testimonials-height-fix" id=""]';
@@ -59,6 +60,61 @@ function aa_fusion_element_template_reviews() {
 	fusion_builder_map($args);
 }
 add_action( 'fusion_builder_before_init', 'aa_fusion_element_template_reviews' );
+
+
+/****
+** Template Listings
+****/
+function aa_template_listings_func( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'acf_field' => '',
+			'class' => '',
+			'id'	=> '',
+		),
+		$atts
+	);
+	$return = 'Not available.';
+	$widget = get_field($atts['acf_field']);
+	if($atts['acf_field'] && $widget):
+		ob_start();
+		echo do_shortcode('[ar_idx widget="'.$widget.'" class="'.$atts['class'].'" id="'.$atts['id'].'" /]');
+		$return = ob_get_clean();
+	endif;
+	return $return;
+}
+add_shortcode( 'aa_template_listings', 'aa_template_listings_func' );
+function aa_fusion_element_template_listings() {
+	$params = array(
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Widget Field Name', 'fusion-builder' ),
+			'param_name'	=> 'acf_field',
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
+			'param_name'	=> 'class',
+		),
+		array(
+			'type'			=> 'textfield',
+			'heading'		=> esc_attr__( 'Custom CSS ID', 'fusion-builder' ),
+			'param_name'	=> 'id',
+		),
+	);
+	$args = array(
+		'name'            => esc_attr__( 'Template Listings (Admin Only)', 'fusion-builder' ),
+		'shortcode'       => 'aa_template_listings',
+		'icon'            => 'far fa-radiation-alt',
+		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/template_listings-preview.php',
+		'preview_id'      => 'fusion-builder-block-module-template_listings-preview-template',
+		'allow_generator' => true,
+		'params'          => $params,
+	);
+	fusion_builder_map($args);
+}
+add_action( 'fusion_builder_before_init', 'aa_fusion_element_template_listings' );
+
 
 
 /****
@@ -123,51 +179,6 @@ add_action( 'fusion_builder_before_init', 'aa_fusion_element_front_areas' );
 
 
 
-/****
-** Front Page Listings
-**
-function aa_front_listings_func( $atts ) {
-	$atts = shortcode_atts(
-		array(
-			'class' => '',
-			'id'	=> '',
-		),
-		$atts
-	);
-	$return = "<p>Element available for home page only</p>";
-	if(is_front_page()):
-		ob_start();
-		echo do_shortcode('[ar_idx widget="'.get_field('home_listings_widget').'" class="'.$atts['class'].'" id="'.$atts['id'].'" /]');
-		$return = ob_get_clean();
-	endif;
-	return $return;
-}
-add_shortcode( 'aa_front_listings', 'aa_front_listings_func' );
-function aa_fusion_element_front_listings() {
-	$params = array(
-		array(
-			'type'			=> 'textfield',
-			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
-			'param_name'	=> 'class',
-		),
-		array(
-			'type'			=> 'textfield',
-			'heading'		=> esc_attr__( 'Custom CSS ID', 'fusion-builder' ),
-			'param_name'	=> 'id',
-		),
-	);
-	$args = array(
-		'name'            => esc_attr__( 'Front Page Listings', 'fusion-builder' ),
-		'shortcode'       => 'aa_front_listings',
-		'icon'            => 'far fa-radiation-alt',
-		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/front_page_listings-preview.php',
-		'preview_id'      => 'fusion-builder-block-module-front_page_listings-preview-template',
-		'allow_generator' => true,
-		'params'          => $params,
-	);
-	fusion_builder_map($args);
-}
-add_action( 'fusion_builder_before_init', 'aa_fusion_element_front_listings' );
 
 
-**/
+
