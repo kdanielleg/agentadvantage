@@ -69,7 +69,7 @@ function aa_fusion_element_market_intro() {
 		),
 	);
 	$args = array(
-		'name'            => esc_attr__( 'Market Area Intro', 'fusion-builder' ),
+		'name'            => esc_attr__( 'Template Area Intro (Admin Only)', 'fusion-builder' ),
 		'shortcode'       => 'aa_market_intro',
 		'icon'            => 'far fa-radiation-alt',
 		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_intro-preview.php',
@@ -80,52 +80,6 @@ function aa_fusion_element_market_intro() {
 	fusion_builder_map($args);
 }
 add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_intro' );
-
-/****
-** Market Areas Listings
-****/
-function aa_market_listings_func( $atts ) {
-	$atts = shortcode_atts(
-		array(
-			'class' => '',
-			'id'	=> '',
-		),
-		$atts
-	);
-	$return = "<p>Element available for market area template only</p>";
-	if(is_singular('avada_portfolio')):
-		ob_start();
-		echo do_shortcode('[ar_idx widget="'.get_field('market_widget').'" class="'.$atts['class'].'" id="'.$atts['id'].'" /]');
-		$return = ob_get_clean();
-	endif;
-	return $return;
-}
-add_shortcode( 'aa_market_listings', 'aa_market_listings_func' );
-function aa_fusion_element_market_listings() {
-	$params = array(
-		array(
-			'type'			=> 'textfield',
-			'heading'		=> esc_attr__( 'Custom CSS Class', 'fusion-builder' ),
-			'param_name'	=> 'class',
-		),
-		array(
-			'type'			=> 'textfield',
-			'heading'		=> esc_attr__( 'Custom CSS ID', 'fusion-builder' ),
-			'param_name'	=> 'id',
-		),
-	);
-	$args = array(
-		'name'            => esc_attr__( 'Market Area Listings', 'fusion-builder' ),
-		'shortcode'       => 'aa_market_listings',
-		'icon'            => 'far fa-radiation-alt',
-		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_listings-preview.php',
-		'preview_id'      => 'fusion-builder-block-module-market_listings-preview-template',
-		'allow_generator' => true,
-		'params'          => $params,
-	);
-	fusion_builder_map($args);
-}
-add_action( 'fusion_builder_before_init', 'aa_fusion_element_market_listings' );
 
 /****
 ** Market Areas Content
@@ -178,7 +132,7 @@ function aa_fusion_element_market_content() {
 		),
 	);
 	$args = array(
-		'name'            => esc_attr__( 'Market Area Content', 'fusion-builder' ),
+		'name'            => esc_attr__( 'Template Area Content (Admin Only)', 'fusion-builder' ),
 		'shortcode'       => 'aa_market_content',
 		'icon'            => 'far fa-radiation-alt',
 		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_content-preview.php',
@@ -224,7 +178,7 @@ function aa_fusion_element_market_wiki() {
 		),
 	);
 	$args = array(
-		'name'            => esc_attr__( 'Market Area Wiki Link', 'fusion-builder' ),
+		'name'            => esc_attr__( 'Template Area Wiki (Admin Only)', 'fusion-builder' ),
 		'shortcode'       => 'aa_market_wiki',
 		'icon'            => 'far fa-radiation-alt',
 		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_wiki-preview.php',
@@ -392,7 +346,7 @@ function aa_fusion_element_market_ws_schools() {
 		),
 	);
 	$args = array(
-		'name'            => esc_attr__( 'Market WS + Schools', 'fusion-builder' ),
+		'name'            => esc_attr__( 'Template Area WS + Schools (Admin Only)', 'fusion-builder' ),
 		'shortcode'       => 'aa_market_ws_schools',
 		'icon'            => 'far fa-radiation-alt',
 		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_ws_schools-preview.php',
@@ -518,7 +472,7 @@ function aa_fusion_element_market_yelp() {
 		),
 	);
 	$args = array(
-		'name'            => esc_attr__( 'Market Area Businesses', 'fusion-builder' ),
+		'name'            => esc_attr__( 'Template Area Businesses (Admin Only)', 'fusion-builder' ),
 		'shortcode'       => 'aa_market_yelp',
 		'icon'            => 'far fa-radiation-alt',
 		'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/market_yelp-preview.php',
