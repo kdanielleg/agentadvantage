@@ -4,7 +4,7 @@ Description: AgentAdvantage Child theme for Avada theme
 Author: Agent Reputation
 Author URI: https://www.agentreputation.net
 Template: Avada
-Version: 1.0.52
+Version: 1.0.53
 Text Domain:  Avada
 */
 
@@ -92,6 +92,47 @@ div#ar-footer-display p {
 /**IDX Omnibar Widget**/
 form.idx-omnibar-form {
 	padding: 0!important;
+}
+.ar-impress-omnibar form.idx-omnibar-form.idx-omnibar-original-form {
+    display: flex;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+}
+.ar-impress-omnibar form.idx-omnibar-form.idx-omnibar-original-form>div.awesomplete {
+    margin-right: 0;
+    flex-grow: 1;
+    display: block;
+}
+.ar-impress-omnibar form.idx-omnibar-form.idx-omnibar-original-form input#omnibar {
+    height: var(--form_input_height);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.ar-impress-omnibar form.idx-omnibar-form.idx-omnibar-original-form button {
+    width: var(--form_input_height);
+    height: calc(var(--form_input_height) + 1px);
+    margin: 0;
+    border-color: var(--primary_color);
+    background-color: var(--primary_color);
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: calc(var(--form_input_height) - 2px);
+    padding: 0;
+    border-radius: 0;
+    border-top-right-radius: var(--form_border_radius);
+    border-bottom-right-radius: var(--form_border_radius);
+    cursor: pointer;
+    flex-basis: calc(var(--form_input_height) + 10px);
+    flex-grow: 0;
+}
+.ar-impress-omnibar form.idx-omnibar-form.idx-omnibar-original-form button:hover {
+    cursor: pointer;
+    background-color: var(--menu_hover_first_color)!important;
+    border-color: var(--menu_hover_first_color)!important;
+}
+.ar-impress-omnibar form.idx-omnibar-form.idx-omnibar-original-form button span {
+    display: none!important;
 }
 
 
@@ -377,4 +418,24 @@ form.idx-omnibar-form {
     align-items: center;
     display: flex;
     flex-direction: column;
+}
+
+/**Tabs CSS **/
+.fusion-tabs .nav-tabs li .fusion-tab-heading {
+    font-size: 1.5rem;
+}
+.fusion-tabs .nav-tabs li.active a.tab-link .fusion-tab-heading, 
+.fusion-tabs .nav-tabs li.active a.tab-link:hover .fusion-tab-heading, 
+.fusion-tabs .nav-tabs li.active a.tab-link:focus .fusion-tab-heading,
+.fusion-tabs .nav-tabs li a.tab-link:hover .fusion-tab-heading, 
+.fusion-tabs .nav-tabs li a.tab-link:focus .fusion-tab-heading{
+    color: #ffffff!important;
+}
+
+/** Icon Boxes CSS **/
+div#iconTackBoxes.fusion-content-boxes.content-boxes-icon-boxed .content-wrapper-boxed {
+    border: 2px solid var(--primary_color);
+}
+div#iconTackBoxes.fusion-content-boxes.content-boxes-icon-boxed .content-container p {
+    font-size: 1.2rem;
 }
