@@ -1,1 +1,0 @@
-<?php /**browse by city and homes for sale pages**/

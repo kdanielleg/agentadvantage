@@ -112,11 +112,6 @@ function ar_fusion_element_idx_wrapcodes() {
 }
 add_action( 'fusion_builder_before_init', 'ar_fusion_element_idx_wrapcodes' );
 
-
-//ADD THEMES
-require_once( get_stylesheet_directory() . '/realadvantage/idx/themes/theme1/theme1.php');
-require_once( get_stylesheet_directory() . '/realadvantage/idx/themes/idxCustom/idxCustom.php');
-
 //theme fields function
 function ar_wc_theme_fields($themes, $pageField, $themeField) {
 	$groups = array();
@@ -191,14 +186,6 @@ function ar_wc_theme_fields($themes, $pageField, $themeField) {
 		$groups[] = $group;
 	endforeach;
 	return $groups;
-}
-
-//disable yoast SEO entirely
-//add_action('wp_head', 'ar_wc_remove_seo', 1);
-function ar_wc_remove_seo() {
-  if (is_singular('idx-wrapper')) {;
-    remove_all_actions('wpseo_head');
-  }
 }
 
 /**add HV autocomplete**/

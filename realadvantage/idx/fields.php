@@ -62,8 +62,6 @@ $wc_general = array(
 			'id' => '',
 		),
 		'choices' => array(
-			'theme1' => 'RoseLV.com',
-			'idxCustom' => 'IDX Custom',
 			'theme2020' => 'IDX 2020',
 		),
 		'default_value' => '',
@@ -82,8 +80,6 @@ $themeField = 'field_5dfdd662dd3a9';
 ar_require_folder('idx/fields');
 
 $theme_fields = array(
-	'theme1' => wc_fields_theme1(),
-	'idxCustom' => wc_fields_idxCustom(),
 	'theme2020' => wc_fields_theme2020(),
 );
 

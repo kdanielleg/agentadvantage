@@ -1,1 +1,0 @@
-<?php /**User Pages JS**/

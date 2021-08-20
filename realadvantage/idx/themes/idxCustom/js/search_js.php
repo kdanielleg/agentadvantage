@@ -1,1 +1,0 @@
-<?php //search page js 
