@@ -4,7 +4,7 @@ Description: AgentAdvantage Child theme for Avada theme
 Author: Agent Reputation
 Author URI: https://www.agentreputation.net
 Template: Avada
-Version: 1.0.55
+Version: 1.0.56
 Text Domain:  Avada
 */
 
@@ -106,6 +106,7 @@ form.idx-omnibar-form {
 }
 .ar-impress-omnibar form.idx-omnibar-form.idx-omnibar-original-form input#omnibar {
     height: var(--form_input_height);
+    border-radius:  ;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
