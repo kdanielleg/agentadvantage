@@ -42,14 +42,10 @@ if(!in_array($page, $customTemplates)) : ?>
 	});
 </script>
 
-<?php /**MODALS**/
-if(get_field('ar_wrapcodes_modals','option')!='none') : ?>
-	<!-- AR IDX Modals JS -->
-	<?php include get_stylesheet_directory().'/realadvantage/idx/modals/'.get_field('ar_wrapcodes_modals','option').'/modals_js.php'; ?>
-	<!-- AR IDX Modals CSS -->
-	<style>
-		<?php include get_stylesheet_directory().'/realadvantage/idx/modals/'.get_field('ar_wrapcodes_modals','option').'/modals.css'; ?>
-	</style>
-	<!-- AR IDX Modals Dynamic CSS -->
-	<?php include get_stylesheet_directory().'/realadvantage/idx/modals/'.get_field('ar_wrapcodes_modals','option').'/modals_dynamic_css.php'; ?>
-<?php endif; ?>
+<?php /**MODALS**/ ?>
+<!-- AR IDX Modals JS -->
+<?php include get_stylesheet_directory().'/realadvantage/idx/modals/theme1/modals_js.php'; ?>
+<!-- AR IDX Modals CSS -->
+<style>
+	<?php include get_stylesheet_directory().'/realadvantage/idx/modals/theme1/modals.css'; ?>
+</style>

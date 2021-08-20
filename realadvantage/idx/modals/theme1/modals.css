@@ -249,6 +249,74 @@ div#regModal-closeLink a.close.psudolink i,
 div#logModal-closeLink a.close.psudolink i {
     color: #000000;
 }
+/**Fonts**/
+div#regModal-left .IDX-customRegistrationFields input,
+div#regModal-left .IDX-customRegistrationFields select,
+div#logModal-left div#IDX-email-group input,
+div#logModal-left div#IDX-password-group input {
+    font-family:  var(--body_typography-font-family);
+}
+div#registrationSignup-inner div#regModal-or,
+div#registrationLogin-inner div#logModal-or,
+h2#regModal-leftTitle, h2#logModal-leftTitle,
+h2#regModal-rightTitle, h2#logModal-rightTitle,
+div#regModal-right #IDX-social-facebook button,
+div#regModal-right #IDX-social-google button,
+div#logModal-right #IDX-social-facebook button,
+div#logModal-right #IDX-social-google button {
+    font-family: var(--h2_typography-font-family);
+}
+div#regModal-left button#IDX-submitBtn,
+div#logModal-left button#IDX-loginSubmit,
+div#regModal-right a#IDX-toggleLogIn {
+    font-family: var(--button_typography-font-family);
+}
+div#regModal-left button#IDX-submitBtn, div#logModal-left button#IDX-loginSubmit {
+    background-color: var(--button_gradient_top_color);
+    border-color: var(--button_border_color);
+    color: var(--button_accent_color);
+}
+div#regModal-left button#IDX-submitBtn:hover, div#logModal-left button#IDX-loginSubmit:hover {
+    background-color: var(--button_gradient_top_color_hover)!important;
+    border-color: var(--button_border_hover_color)!important;
+    color: var(--button_accent_hover_color,var(--button_accent_color))!important;
+}
+div#regModal-right a#IDX-toggleLogIn {
+    background-color: var(--primary_color);
+}
+div#regModal-left button#IDX-submitBtn,
+div#logModal-left button#IDX-loginSubmit {
+    font-weight: var(--button_typography-font-weight)!important;
+    border-width: var(--button_border_width)!important;
+    border-radius: var(--button_border_radius)!important;
+    text-transform: var(--button_text_transform)!important;
+}
+div#regModal-right a#IDX-toggleLogIn,
+div#regModal-right #IDX-social-facebook button span, 
+div#regModal-right #IDX-social-google button span, 
+div#logModal-right #IDX-social-facebook button span, 
+div#logModal-right #IDX-social-google button span {
+    font-weight: var(--button_typography-font-weight)!important;
+    text-transform: var(--button_text_transform)!important;
+}
+div#regModal-left .IDX-customRegistrationFields input,
+div#regModal-left .IDX-customRegistrationFields select,
+div#logModal-left div#IDX-email-group input,
+div#logModal-left div#IDX-password-group input {
+    border-bottom-color: var(--form_border_color, #cccccc)!important;
+}
+div#registrationSignup-inner div#regModal-or,
+div#registrationLogin-inner div#logModal-or {
+    background-color: var(--primary_color, #000000)!important;
+}
+div#regModal-closeLink a:hover,
+div#logModal-closeLink a:hover {
+    color: var(--primary_color, #000000)!important;
+}
+p#regModal-leftText a,
+p#logModal-leftText a{
+    color: var(--primary_color, #000000)!important;
+}
 @media screen and (min-width: 1000px) {
 .ui-dialog[aria-labelledby="ui-dialog-title-IDX-registration"] {
     min-width: 800px;
