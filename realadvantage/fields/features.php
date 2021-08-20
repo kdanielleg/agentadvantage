@@ -110,33 +110,6 @@ if( function_exists('acf_add_local_field_group') ):
 			'placeholder' => '',
 		),
 		array(
-			'key' => 'field_5dff0827edae62020',
-			'label' => 'Use 2020 Theme Settings?',
-			'name' => 'ar_idx2020theme_active',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_5dff0827edae6',
-						'operator' => '==',
-						'value' => '1',
-					),
-				),
-			),
-			'wrapper' => array(
-				'width' => '30',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
-		),
-		array(
 			'key' => 'field_5f6a5d32dea82agentfield',
 			'label' => 'Agents Field Label',
 			'name' => 'ar_idx_agents_field_label',
