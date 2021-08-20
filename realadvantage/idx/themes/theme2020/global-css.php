@@ -5,6 +5,16 @@ $settings = get_field('ar_idx2020theme_settings', 'option');
 
 ?>
 <style>
+  .ui-widget.ui-widget-content.IDX-registrationModal {
+      position: fixed!important;
+  }
+  .ui-widget-overlay {
+      background-color: #000000;
+      opacity: 0.5;
+  }
+  div#regModal-closeLink a, div#regModal-closeLink a i {
+      color: #ffffff!important;
+  }
   #IDX-main {
     width: auto;
     min-width: 100%;
@@ -18,6 +28,10 @@ $settings = get_field('ar_idx2020theme_settings', 'option');
      display: none;
   }
   #IDX-main {
+    --form_border_width: var(--form_border_width-top); 
+    --nav_typography-font-family: "Open Sans";
+    --nav_typography-font-weight: 400;
+    --nav_typography-font-size: 1.1rem;
     --raplus_idx_title_align: <?php echo $settings['title']['align']; ?>;
     --raplus_idx_title_wrap: <?php echo $settings['title']['wrap']; ?>;
     --raplus_idx_title_direction: <?php echo $settings['title']['direction']; ?>;;

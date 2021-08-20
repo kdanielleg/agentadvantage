@@ -4,7 +4,7 @@ Description: AgentAdvantage Child theme for Avada theme
 Author: Agent Reputation
 Author URI: https://www.agentreputation.net
 Template: Avada
-Version: 1.0.56
+Version: 1.0.57
 Text Domain:  Avada
 */
 
@@ -134,6 +134,73 @@ form.idx-omnibar-form {
 }
 .ar-impress-omnibar form.idx-omnibar-form.idx-omnibar-original-form button span {
     display: none!important;
+}
+
+/**IDX Map Search Widget CSS**/
+/**Map search Widget**/
+#main div[id^="IDX-mapHeader-Widget-"] div[id^="IDX-mapControlContainer-"] {
+min-height: 600px;
+}
+#main div[id^="IDX-mapHeader-Widget-"] .leaflet-top.leaflet-left {
+    bottom: 50px!important;
+    top: auto!important;
+}
+@media only screen and (min-width: 801px){
+#main div[id^="IDX-mapHeader-Widget-"] .IDX-mapControlWindow {
+    padding-top: 195px;
+}
+}
+#main div[id^="IDX-mapHeader-Widget-"] {
+    position: relative;
+}
+#main div[id^="IDX-mapHeader-Widget-"] div[id^="IDX-mapHeader-Search-"] {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    height: 36px;
+}
+#main div[id^="IDX-mapHeader-Widget-"] div[id^="IDX-mapHeader-Search-"] .IDX-mapTab,
+#main div[id^="IDX-msSubmitGroup-"] button[id^="IDX-formSubmit-"] {
+    border: 1px solid #000000;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #000000;
+    text-transform: uppercase;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    font-family: var(--button_typography-font-family);
+    font-weight: var(--button_typography-font-weight);
+    font-style: var(--button_typography-font-style,normal);
+    border-radius: 0;
+    color: #ffffff;
+    height: auto;
+}
+#main div[id^="IDX-mapHeader-Widget-"] div[id^="IDX-mapHeader-Search-"] .IDX-mapTab {
+    padding: 9px 20px;
+    line-height: 14px;
+    font-size: 12px;
+}
+#main div[id^="IDX-msSubmitGroup-"] button[id^="IDX-formSubmit-"] {
+    padding: 17px 40px;
+    line-height: 21px;
+    font-size: 18px;
+    width: 220px;
+}
+#main div[id^="IDX-msSubmitGroup-"] button[id^="IDX-formSubmit-"]:hover,
+#main div[id^="IDX-mapHeader-Widget-"] div[id^="IDX-mapHeader-Search-"] .IDX-mapTab:hover {
+    background-color: #c0c0c0;
+    color: #000000;
+    border-color: #c0c0c0;
+    text-decoration: none!important;
+}
+#main div[id^="IDX-mapHeader-Widget-"] .IDX-msInput {
+    height: 45px;
+    padding: 10px 5px;
 }
 
 
