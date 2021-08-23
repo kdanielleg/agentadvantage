@@ -56,60 +56,6 @@ if( function_exists('acf_add_local_field_group') ):
 			'placeholder' => '',
 		),
 		array(
-			'key' => 'field_5dff0827edae6',
-			'label' => 'Activate RealAdvantage IDX Wrapper Codes?',
-			'name' => 'ar_wrapcodes_active',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '40',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
-		),
-		array(
-			'key' => 'field_5dff11b527389',
-			'label' => 'Modals Theme',
-			'name' => 'ar_wrapcodes_modals',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_5dff0827edae6',
-						'operator' => '==',
-						'value' => '1',
-					),
-				),
-			),
-			'wrapper' => array(
-				'width' => '30',
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => array(
-				'none' => 'None',
-				'theme1' => 'IdahoLegacy.com',
-			),
-			'default_value' => array(
-				0 => 'theme1',
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'return_format' => 'value',
-			'ajax' => 0,
-			'placeholder' => '',
-		),
-		array(
 			'key' => 'field_5f6a5d32dea82agentfield',
 			'label' => 'Agents Field Label',
 			'name' => 'ar_idx_agents_field_label',
@@ -135,15 +81,7 @@ if( function_exists('acf_add_local_field_group') ):
 			'type' => 'group',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_5dff0827edae6',
-						'operator' => '==',
-						'value' => '1',
-					),
-				),
-			),
+			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '100',
 				'class' => '',
@@ -201,24 +139,14 @@ if( function_exists('acf_add_local_field_group') ):
 				),
 			),
 		),
-	);
-	$idxModalsTheme1 =array(
 		array(
 			'key' => 'field_5dff13dfbcfa6',
-			'label' => 'Theme1 Image',
+			'label' => 'Modals Background Image',
 			'name' => 'ar_wc_modals_theme1_img',
 			'type' => 'image',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_5dff11b527389',
-						'operator' => '==',
-						'value' => 'theme1',
-					),
-				),
-			),
+			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
@@ -380,8 +308,7 @@ if( function_exists('acf_add_local_field_group') ):
 	);
 
 	if(shortcode_exists('idx-omnibar')) :
-		$idxAllFields = array_merge($idxTab, $idxModalsTheme1);
-		$featureAllFields = array_merge($idxAllFields, $featureFields);
+		$featureAllFields = array_merge($idxTab, $featureFields);
 	else :
 		$featureAllFields = array_merge($featureFields);
 	endif;
