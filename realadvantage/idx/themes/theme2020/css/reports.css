@@ -218,3 +218,7 @@ h2.idx-mk-report-landing-page__title {
     margin-left: auto;
     margin-right: auto;
 }
+#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-meta-data {
+    margin-top: 60px;
+    margin-bottom: 25px;
+}
