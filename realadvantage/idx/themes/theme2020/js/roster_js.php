@@ -107,4 +107,6 @@ endif;
 	}
 	$('.IDX-rosterContent').removeClass('IDX-row').removeClass('row');
 	$('.IDX-rosterCategoryTitle').removeClass('col-xs-12');
+	$('h3.IDX-rosterCategoryHeader').wrapInner('<h4 class="IDX-rosterCategoryHeader"></h4>');
+	$('h4.IDX-rosterCategoryHeader').unwrap();
 });</script>
