@@ -63,5 +63,6 @@ $subSelect = '#mainPageSubheading h4';
 	$('ul#ar-agentInfo-list li.IDX-agentOfficeFax .icon-wrapper, ul#ar-agentInfo-list li.IDX-agentHomeFax .icon-wrapper').prepend('<i class="fusion-li-icon fa-fax fal" aria-hidden="true"></i>');
 	$('ul#ar-agentInfo-list li.IDX-rosterresultsEmailLink .icon-wrapper').prepend('<i class="fusion-li-icon fa-envelope-open-text fal" aria-hidden="true"></i>');
 	$('ul#ar-agentInfo-list li.IDX-rosterresultsEmailLink .fusion-li-item-content i').remove();
+	$('ul#ar-agentInfo-list li.IDX-rosterresultsEmailLink .fusion-li-item-content').prepend('<span class="IDX-agentInfo__title">Email:&nbsp;</span>');
 	$('ul#ar-agentInfo-list li.IDX-agentAddress .icon-wrapper').prepend('<i class="fusion-li-icon fa-map-marker-alt fal" aria-hidden="true"></i>');
 });</script>
