@@ -73,9 +73,9 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 		$('.IDX-form-actions .IDX-form-group').removeClass('col-sm-6').addClass('col-xs-12 col-sm-12');
 
 		//page title settings
-		var pageTitleElement = $('title').text().trim();
-		var headTitleSelect = <?php echo json_encode($titleSelect); ?>;
-		var headSubSelect = <?php echo json_encode($subSelect); ?>;
+		//var pageTitleElement = $('title').text().trim();
+		//var headTitleSelect = <?php echo json_encode($titleSelect); ?>;
+		//var headSubSelect = <?php echo json_encode($subSelect); ?>;
 
 		if($('ul.IDX-propertyInfoList').length > 0) {
 			$('h2.IDX-pageHeader').wrap('<div class="IDX-pageHeaderContainer">');
@@ -180,9 +180,8 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 			$('div#IDX-hvAddress-group input#IDX-hvZipcode').attr('type','hidden').addClass('IDX-hide');
 			$('div#IDX-hvCityState-group, div#IDX-hvZipcode-group').remove();
 		}else { //Contact Page
-			$(headTitleSelect).text(pageTitleElement);
-
-
+			$('<?php echo $titleSelect; ?>').text($('title').text().trim());
+			
 			$('h2#IDX-contactHeader + hr').remove();
 			$('h2#IDX-contactHeader').remove();
 			var contactFormTitle = <?php echo json_encode($cformTitle); ?>;
