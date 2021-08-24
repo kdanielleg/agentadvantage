@@ -7,7 +7,7 @@ h3.IDX-rosterCategoryHeader {
 }
 h5.IDX-rosterUserTitle {
     margin-top: 5px;
-    margin-bottom: 35px!important;
+    margin-bottom: 0!important;
 }
 .IDX-rosterAgentImageWrap a.IDX-rosterCategoryLink,
 .IDX-rosterAgentImageWrap a.IDX-rosterCategoryLink img,
@@ -24,4 +24,7 @@ h5.IDX-rosterUserTitle {
 .IDX-rosterCategoryHeader {
     margin-top: 1rem;
     margin-bottom: 0;
+}
+.IDX-rosterManagementWrap, .IDX-rosterAgentWrap, .IDX-rosterStaffWrap {
+    padding-bottom:  35px;
 }

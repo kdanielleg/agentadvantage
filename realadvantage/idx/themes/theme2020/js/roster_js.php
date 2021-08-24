@@ -15,6 +15,7 @@ if(have_rows('settings_theme2020')) :
 							$showOffice = get_sub_field('office');
 							$showCell = get_sub_field('cell');
 							$showEmail = get_sub_field('email');
+							$showLang = get_sub_field('language');
 							if(!$showTitle || $showAddress || $showOffice || $showCell || $showEmail):
 								$showOnlyTitle = false;
 							endif;
@@ -75,6 +76,9 @@ endif;
 	<?php endif; ?>
 	<?php if(!$showCell): ?>
 		$('.IDX-roster-agentCellPhone').remove();
+	<?php endif; ?>
+	<?php if(!$showLang): ?>
+		$('.IDX-rosterUserLanguages').remove();
 	<?php endif; ?>
 	<?php if($showEmail): ?>
 		$('li.IDX-rosterAgentEmailLink a i').remove();
