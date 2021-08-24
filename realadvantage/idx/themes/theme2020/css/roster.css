@@ -46,3 +46,6 @@ h5.IDX-rosterUserTitle {
 .IDX-rosterOfficeInfoFields > br {
     display: none;
 }
+.IDX-rosterCategoryTitle {
+    margin-bottom: 2rem;
+}
