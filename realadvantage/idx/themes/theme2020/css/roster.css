@@ -21,3 +21,7 @@ h5.IDX-rosterUserTitle {
 .IDX-rosterStaffImageWrap a.IDX-rosterCategoryLink:hover img {
   transform: scale(1.2);
 }
+.IDX-rosterCategoryHeader {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}

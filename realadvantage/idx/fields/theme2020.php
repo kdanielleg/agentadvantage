@@ -42,7 +42,7 @@ function wc_fields_theme2020() {
 				'class' => '',
 				'id' => '',
 			),
-			'layout' => 'block',
+			'layout' => 'table',
 			'sub_fields' => array(
 				array(
 					'key' => 'field_608f351258b2c',
@@ -175,6 +175,33 @@ function wc_fields_theme2020() {
 					'key' => 'field_608f356158b2f',
 					'label' => 'Email Address',
 					'name' => 'email',
+					'type' => 'true_false',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_608f351258b2c',
+								'operator' => '!=',
+								'value' => '1',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '20',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 0,
+					'ui' => 1,
+					'ui_on_text' => '',
+					'ui_off_text' => '',
+				),
+				array(
+					'key' => 'field_608f356158b2flang',
+					'label' => 'Languages',
+					'name' => 'language',
 					'type' => 'true_false',
 					'instructions' => '',
 					'required' => 0,
