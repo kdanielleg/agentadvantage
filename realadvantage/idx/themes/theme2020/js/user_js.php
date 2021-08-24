@@ -75,8 +75,7 @@
 		//user pages hide title
 		if($('.IDX-page-userlogin, .IDX-page-usersignup').length > 0) {
 			$('.avada-page-titlebar-wrapper, section.fusion-page-title-bar.fusion-tb-page-title-bar').attr('style','display:none!important;');
-		}
-		
+		}		
 	});
 </script>
 <style>

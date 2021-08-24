@@ -289,3 +289,14 @@ div#ar-UserFormRow {
     width: 100%;
   }
 }
+
+
+div#IDX-main.IDX-page-myaccount {
+    padding-top: 0!important;
+    background-image: unset!important;
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+#IDX-main div#idx-mlm-app {
+    max-width: 100%;
+}
