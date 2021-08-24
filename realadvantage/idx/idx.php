@@ -92,11 +92,9 @@ function arwc_set_google_autocomplete(){
 
 /**add gmaps Icons**/
 add_action('wp_head','arwc_set_gmaps_icon');
-function arwc_set_gmaps_icon(){
-	$arwc_map_icons = get_field('map_icons','option');
-	?>
+function arwc_set_gmaps_icon(){ ?>
 	<script>
-		var arwc_maps_small_icon = "<?php echo $arwc_map_icons['small']; ?>";
-		var arwc_maps_large_icon = "<?php echo $arwc_map_icons['large']; ?>";
+		var arwc_maps_small_icon = "<?php echo get_home_url(); ?>/wp-content/themes/agentadvantage/realadvantage/img/map-marker-small.jpg";
+		var arwc_maps_large_icon = "<?php echo get_home_url(); ?>/wp-content/themes/agentadvantage/realadvantage/img/map-marker-large.jpg";
 	</script>
 <?php }

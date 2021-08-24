@@ -1,9 +1,4 @@
-<?php //global styles 
-
-$settings = get_field('ar_idx2020theme_settings', 'option');
-
-
-?>
+<?php //global styles ?>
 <style>
   .ui-widget.ui-widget-content.IDX-registrationModal {
       position: fixed!important;

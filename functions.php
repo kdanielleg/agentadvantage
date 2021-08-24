@@ -90,7 +90,7 @@ function add_default_value_to_image_field($field) {
 }
 
 /**Disable Yoast on IDX Wrappers**/
-add_action( 'template_redirect', 'ar_remove_wpseo' );
+//add_action( 'template_redirect', 'ar_remove_wpseo' );
 function ar_remove_wpseo() {
     if(is_singular( 'idx-wrapper')):
         $front_end = YoastSEO()->classes->get( Yoast\WP\SEO\Integrations\Front_End_Integration::class );

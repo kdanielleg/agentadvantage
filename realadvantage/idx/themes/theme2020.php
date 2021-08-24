@@ -6,7 +6,7 @@ $customTemplates = array('search','details','map');
 
 
 if(in_array($page, $titleTemplates)) : ?>
-	<style>.avada-page-titlebar-wrapper{visibility:hidden!important;}</style>
+	<style>.avada-page-titlebar-wrapper, section.fusion-page-title-bar.fusion-tb-page-title-bar{visibility:hidden!important;}</style>
 <?php endif;
 
 if(!in_array($page, $customTemplates)) : ?>
@@ -31,9 +31,9 @@ if(!in_array($page, $customTemplates)) : ?>
 	jQuery(document).ready(function($){
 		<?php if(in_array($page, $titleTemplates)) : ?>
 			if($('.IDX-page-market-reports.IDX-type-landing').length || $('.IDX-page-photogallery').length || $('.IDX-page-mortgage').length){
-				$('.avada-page-titlebar-wrapper').attr('style','display:none!important;');
+				$('.avada-page-titlebar-wrapper, section.fusion-page-title-bar.fusion-tb-page-title-bar').attr('style','display:none!important;');
 			}else {
-				$('.avada-page-titlebar-wrapper').attr('style','visibility:visible!important;');
+				$('.avada-page-titlebar-wrapper, section.fusion-page-title-bar.fusion-tb-page-title-bar').attr('style','visibility:visible!important;');
 			}
 		<?php endif; ?>
 		<?php if(!in_array($page, $customTemplates)) : ?>
