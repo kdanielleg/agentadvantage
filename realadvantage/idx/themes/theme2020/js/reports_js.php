@@ -1,21 +1,7 @@
 <?php /**repots pages js **/ 
 
-if(have_rows('settings_theme2020')) :
-	while(have_rows('settings_theme2020')): the_row();
-		if(have_rows('reports')) :
-			while(have_rows('reports')): the_row();
-				if(have_rows('reportsTitle')) :
-					while(have_rows('reportsTitle')) : the_row();
-						$titleSelect = '.fusion-page-title-captions h1';
-						$subSelect = '.fusion-page-title-captions h3';
-						$titleSelect = get_sub_field('title');
-						$subSelect = get_sub_field('sub');
-					endwhile;
-				endif;
-			endwhile;
-		endif;
-	endwhile;
-endif;
+$titleSelect = '#mainPageHeading h1';
+$subSelect = '#mainPageSubheading h4';
 
 
 ?>

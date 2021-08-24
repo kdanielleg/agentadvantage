@@ -287,64 +287,6 @@ function wc_fields_theme2020() {
 			),
 		),
 	);
-	/**Market Reports Pages **/
-	$wc_theme2020_reports = array(
-		array(
-			'key' => 'field_5e056c36bf8cc2020reportstitle',
-			'label' => 'Title Settings',
-			'name' => 'reportsTitle',
-			'type' => 'group',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'layout' => 'block',
-			'sub_fields' => array(
-				array(
-					'key' => 'field_5e056cb1bf8ce2020reportstitle',
-					'label' => 'Title Selector',
-					'name' => 'title',
-					'type' => 'text',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '50',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '.fusion-page-title-captions h1',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'maxlength' => '',
-				),
-				array(
-					'key' => 'field_5e056cc7bf8cf2020reportssub',
-					'label' => 'Subtitle Selector',
-					'name' => 'sub',
-					'type' => 'text',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '50',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '.fusion-page-title-captions h3',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'maxlength' => '',
-				),
-			),
-		),
-	);
 	
 
 	/**Sections**/
@@ -358,11 +300,6 @@ function wc_fields_theme2020() {
 			'key' =>  'field_5e056c20bf8cb2020contact',
 			'label' => 'Contact',
 			'fields' => $wc_theme2020_contact,
-		),
-		'reports' => array(
-			'key' =>  'field_5e056c20bf8cb2020reports',
-			'label' => 'Reports',
-			'fields' => $wc_theme2020_reports,
 		),
 		'roster' => array(
 			'key' =>  'field_5e056c20bf8cb2020roster',
