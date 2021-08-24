@@ -110,7 +110,7 @@ $sitemapTabs = preg_replace('~>\\s+<~m', '><', $sitemapTabs);
 			$('div#arListings-detailsTabs.fusion-tabs .tab-pane > h2').remove();
 		}
 
-		$('.avada-page-titlebar-wrapper').attr('style','visibility:visible!important;');
+		$('.avada-page-titlebar-wrapper, section.fusion-page-title-bar.fusion-tb-page-title-bar').attr('style','visibility:visible!important;');
 	});
 </script>
 
