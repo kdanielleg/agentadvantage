@@ -1,51 +1,9 @@
 /** results pages CSS **/
-/** results pages CSS **/
-nav#IDX-results-pagination {
-    text-align: center;
-}
 
-/**Scrollbar**/
-.IDX-wrapper-standard #IDX-resultsContent::-webkit-scrollbar {
-  width: 11px;
-}
-.IDX-wrapper-standard #IDX-resultsContent {
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary_color) var(--primary_color-35a);
-}
-.IDX-wrapper-standard #IDX-resultsContent::-webkit-scrollbar-track {
-  background: var(--primary_color-35a);
-}
-.IDX-wrapper-standard #IDX-resultsContent::-webkit-scrollbar-thumb {
-  background-color: var(--primary_color) ;
-  border-radius: 6px;
-  border: 3px solid var(--primary_color-35a);
-}
+@import "results.css";
 
-/**Results Title**/
-#IDX-main.IDX-wrapper-standard h3.IDX-results-title {
-    font-size: var(--h2_typography-font-size);
-    color: var(--h2_typography-color);
-    font-family: var(--h2_typography-font-family);
-    font-weight: var(--h2_typography-font-weight);
-    line-height: var(--h2_typography-line-height);
-    letter-spacing: var(--h2_typography-letter-spacing);
-    font-style: var(--h2_typography-font-style,normal);
-    text-align: center;
-    display: block;
-    margin-top: 0;
-    padding: 0 15px;
-    margin-bottom: 5px;
-}
-#IDX-main.IDX-wrapper-standard p.IDX-results-title--count {
-    padding: 0 15px;
-    width: 100%;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: normal;
-}
-#IDX-main.IDX-wrapper-standard h4.IDX-results-title {
-    display: none!important;
-}
-div#IDX-resultsContent > div:first-child {
-    padding-top: 45px;
+
+/**Agent Bio CSS**/
+div#arAgentBioWrap {
+    background-color:  #f2f2f2;
 }
