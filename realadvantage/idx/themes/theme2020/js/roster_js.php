@@ -42,7 +42,15 @@ endif;
 	$('div#IDX-rosterFilterForm').remove();
 	$('.IDX-rosterAgentWrap').removeClass('col-sm-6 col-md-3 IDX-roster-category').wrap('<div class="arAgentOuterWrap col-sm-12 col-md-6 col-lg-3">');
 	$('.IDX-rosterStaffWrap').removeClass('col-sm-6 col-md-3 IDX-roster-category').wrap('<div class="arStaffOuterWrap col-sm-12 col-md-6 col-lg-3">');
-	//$('.IDX-rosterCategoryTitle').remove();	
+	
+	
+
+	if($('.IDX-rosterCategoryTitle').length > 1 || $('.IDX-rosterOfficeWrap').length > 0) {
+		$('.IDX-rosterCategoryTitle .IDX-well').wrapInner('<h2>');
+		$('.IDX-rosterCategoryTitle h2').unwrap();
+	}else {
+		$('.IDX-rosterCategoryTitle').remove();
+	}
 
 
 	$('.IDX-rosterAgentImageWrap, .IDX-rosterStaffImageWrap').removeClass('col-xs-12').unwrap().unwrap().unwrap();
