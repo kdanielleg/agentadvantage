@@ -4,20 +4,6 @@ if(have_rows('settings_theme2020')) :
 	while(have_rows('settings_theme2020')): the_row();
 		if(have_rows('contact')) :
 			while(have_rows('contact')): the_row();
-				if(have_rows('contactTitle')) :
-					while(have_rows('contactTitle')) : the_row();
-						$titleSelect = '.fusion-page-title-captions h1';
-						$subSelect = '.fusion-page-title-captions h3';
-						$titleSelect = get_sub_field('title');
-						$subSelect = get_sub_field('sub');
-					endwhile;
-				endif;
-				if(have_rows('contactForm')) :
-					while(have_rows('contactForm')) : the_row();
-						$cformTitle = get_sub_field('title');
-						$cformText = get_sub_field('intro');
-					endwhile;
-				endif;
 				if(have_rows('phoneLabel')) :
 					while(have_rows('phoneLabel')) : the_row();
 						$phone = 'Phone';
@@ -31,14 +17,18 @@ if(have_rows('settings_theme2020')) :
 	endwhile;
 endif;
 
+
+$titleSelect = '#mainPageHeading h1';
+$subSelect = '#mainPageSubheading h4';
 $agentFieldText == 'Working with an Agent?';
+$cformTitle = 'Ask Us Anything!';
+$cformText = 'Contact us today and get the help you need with your real estate plans.';
 
 $socialShortcode = do_shortcode('[fusion_widget type="Fusion_Widget_Social_Links" hide_on_mobile="small-visibility,medium-visibility,large-visibility" class="" id="contactPageSocialLinks" fusion_display_title="yes" fusion_padding_color="" fusion_margin="" fusion_bg_color="" fusion_bg_radius_size="" fusion_border_size="0" fusion_border_style="solid" fusion_border_color="" fusion_divider_color="" fusion_align="" fusion_align_mobile="" fusion_widget_social_links__title="Stay Connected!" fusion_widget_social_links__linktarget="_blank" fusion_widget_social_links__icons_font_size="16px" fusion_widget_social_links__color_type="brand" fusion_widget_social_links__icon_color="" fusion_widget_social_links__boxed_icon="Yes" fusion_widget_social_links__boxed_color="" fusion_widget_social_links__boxed_icon_radius="4px" fusion_widget_social_links__boxed_icon_padding="8px" fusion_widget_social_links__tooltip_pos="Top" fusion_widget_social_links__show_custom="No" fusion_widget_social_links__use_to="Yes" fusion_widget_social_links__blogger_link="" fusion_widget_social_links__deviantart_link="" fusion_widget_social_links__discord_link="" fusion_widget_social_links__digg_link="" fusion_widget_social_links__dribbble_link="" fusion_widget_social_links__dropbox_link="" fusion_widget_social_links__fb_link="" fusion_widget_social_links__flickr_link="" fusion_widget_social_links__forrst_link="" fusion_widget_social_links__instagram_link="" fusion_widget_social_links__linkedin_link="" fusion_widget_social_links__mixer_link="" fusion_widget_social_links__myspace_link="" fusion_widget_social_links__paypal_link="" fusion_widget_social_links__pinterest_link="" fusion_widget_social_links__reddit_link="" fusion_widget_social_links__rss_link="" fusion_widget_social_links__skype_link="" fusion_widget_social_links__soundcloud_link="" fusion_widget_social_links__spotify_link="" fusion_widget_social_links__tiktok_link="" fusion_widget_social_links__tumblr_link="" fusion_widget_social_links__twitter_link="" fusion_widget_social_links__twitch_link="" fusion_widget_social_links__vimeo_link="" fusion_widget_social_links__vk_link="" fusion_widget_social_links__wechat_link="" fusion_widget_social_links__whatsapp_link="" fusion_widget_social_links__xing_link="" fusion_widget_social_links__yahoo_link="" fusion_widget_social_links__yelp_link="" fusion_widget_social_links__youtube_link="" fusion_widget_social_links__email_link="" fusion_widget_social_links__phone_link="" /]');
 $social = str_replace('"', "'", $socialShortcode);
 $social = preg_replace('~>\\s+<~m', '><', $social);	
 
-$icons = get_field('map_icons', 'option');
-$smallIcon = $icons['small'];
+$smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img/map-marker-small.jpg';
 
 ?>
 
