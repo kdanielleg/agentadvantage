@@ -1,11 +1,7 @@
 <?php /**modal scripts**/ 
-$modalsBg = wp_get_attachment_image_url(get_field('ar_wc_modals_theme1_img','option'), 'fusion-1200', false);
 $idxLink = get_field('idx_account_url','option');
 $siteHome = get_site_url();
-$agentFieldText = get_field('ar_idx_agents_field_label','option');
-if(!$agentFieldText):
-  $agentFieldText == 'Working with an Agent?';
-endif;
+$agentFieldText == 'Working with an Agent?';
 
 ?>
 
@@ -57,9 +53,6 @@ endif;
 
   $('.IDX-registrationModal.IDX-registration-requestRecurring p#regModal-leftText').html('Sign up to get access to our free listing manager. You can save properties and searches, get email updates and we can provide the best customer service. To skip registration, either close this modal window or click this <a href="#" class="psudolink" data-dismiss="dialog" onclick="idx(\'div#IDX-registration\').dialog(\'close\');">link</a>.');
   $('.IDX-registrationModal.IDX-registration-requestRecurring p#logModal-leftText').html('Sign up to get access to our free listing manager. You can save properties and searches, get email updates and we can provide the best customer service. To skip registration, either close this modal window or click this <a href="#" class="psudolink" data-dismiss="dialog" onclick="idx(\'div#IDX-registration\').dialog(\'close\');">link</a>.');
-
-  //background images
-  $('div#regModal-right, div#logModal-right').css({"background-image":"url(<?php echo $modalsBg; ?>)"});
 
   //force registration close link
   if($('#IDX-main.IDX-category-results').length > 0) {
