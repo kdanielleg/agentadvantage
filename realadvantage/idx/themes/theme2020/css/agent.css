@@ -50,5 +50,21 @@ ul#ar-IDX-user-actions {
     display:  flex;
 }
 ul#ar-IDX-user-actions li {
-    display:  flex;
+    display:  block;
+}
+ul#ar-IDX-user-actions {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+ul#ar-IDX-user-actions span.fusion-button-text i {
+    margin-right: 1rem;
+}
+@media only screen and (max-width:  640px) {
+    ul#ar-IDX-user-actions {
+        flex-direction:  column;
+    }
 }
