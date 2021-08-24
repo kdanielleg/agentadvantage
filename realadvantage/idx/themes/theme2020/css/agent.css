@@ -5,6 +5,8 @@ div#IDX-resultsContainer {
 }
 #IDX-main.IDX-wrapper-standard .IDX-topActions {
     text-align: right!important;
+    padding-right:  1rem;
+    padding-left:  1rem;
 }
 
 
