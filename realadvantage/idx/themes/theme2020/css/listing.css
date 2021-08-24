@@ -456,3 +456,49 @@ div#IDX-main.IDX-page-mortgage  .IDX-pagination-action select {
     max-width: var(--raplus_idx_title_sep_max_width, unset);
     order: var(--raplus_idx_title_sep_order, 0);
 }
+
+
+/**NEW CSS **/
+div#IDX-main.IDX-page-mortgage {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageCalculatorContainer {
+    min-height: unset!important;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageCalculatorContent {
+    max-width: 1200px!important;
+    border-width: 0!important;
+    padding: 0!important;
+    margin-bottom: 80px!important;
+}
+div#IDX-main.IDX-page-mortgage #IDX-mortgageCalculationResults .IDX-well > div {
+    position: initial!important;
+    display: flex!important;
+    height: auto!important;
+    overflow: visible!important;
+    padding: 0!important;
+    align-items: center!important;
+    margin-bottom: 10px!important;
+}
+div#IDX-main.IDX-page-mortgage #IDX-mortgageCalculationResults .IDX-well > div:before {
+    position: relative!important;
+    top: initial!important;
+    transform: unset!important;
+    padding-right: 15px!important;
+    padding-top: 5px!important;
+}
+div#IDX-main.IDX-page-mortgage #IDX-mortgageCalculationResults .IDX-well > div span.IDX-label {
+    padding-right: 15px!important;
+}
+div#IDX-main.IDX-page-mortgage #IDX-mortgageCalculationResults .IDX-well > div#IDX-pmiInfo span.IDX-label {
+    min-width: 142px!important;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgageCalculationResults .IDX-well {
+    padding-bottom: 20px!important;
+}
+div#IDX-main.IDX-page-mortgage div#IDX-mortgagePmi .IDX-mortgagePmi-wrap {
+    width: calc(98% - 94px)!important;
+    margin-right: 2%!important;
+    position: relative!important;
+}

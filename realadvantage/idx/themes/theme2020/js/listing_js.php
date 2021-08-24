@@ -1,45 +1,15 @@
 <?php //listing pages js 
 
-if(have_rows('settings_theme2020')) :
-	while(have_rows('settings_theme2020')): the_row();
-		if(have_rows('listing')) :
-			while(have_rows('listing')): the_row();
-				if(have_rows('listingTitle')) :
-					while(have_rows('listingTitle')) : the_row();
-						$titleSelect = '.fusion-page-title-captions h1';
-						$subSelect = '.fusion-page-title-captions h3';
-						$titleSelect = get_sub_field('title');
-						$subSelect = get_sub_field('sub');
-					endwhile;
-				endif;
-				if(have_rows('mcalcText')) :
-					while(have_rows('mcalcText')) : the_row();
-						$mcalcTitle = get_sub_field('title');
-						$mcalcSub = get_sub_field('sub');
-					endwhile;
-				endif;
-				if(have_rows('mcalcIcons')) :
-					while(have_rows('mcalcIcons')) : the_row();
-						$mcalcIcons['beds'] = get_sub_field('beds');
-						$mcalcIcons['baths'] = get_sub_field('baths');
-						$mcalcIcons['sqft'] = get_sub_field('sqft');
-						$mcalcIcons['acres'] = get_sub_field('acres');
-					endwhile;
-				endif;
-				$mcalcBg = wp_get_attachment_url(get_sub_field('mcalc_bg'));
-			endwhile;
-		endif;
-	endwhile;
-endif;
-
+$titleSelect = '#mainPageHeading h1';
+$subSelect = '#mainPageSubheading h4';
+$mcalcTitle = 'Calculate Your Mortgage...';
+$mcalcSub = 'Use the form below to estimate your mortgage payment and help determine what you can afford. Remember that this is only an estimate and your actual monthly payments will include other fees such as insurance and utilities.';
+$mcalcIcons['beds'] = '<i class="fal fa-bed-alt"></i>';
+$mcalcIcons['baths'] = '<i class="fal fa-toilet-paper"></i>';
+$mcalcIcons['sqft'] = '<i class="fal fa-ruler-combined"></i>';
+$mcalcIcons['acres'] = '<i class="fal fa-leaf"></i>';
 
 ?>
-<style>
-	div#IDX-mortgageCalculatorContainer {
-		--raplus_idx_mcalc_bg: url(<?php echo $mcalcBg; ?>);
-	}
-</style>
-
 <script>
 	jQuery(document).ready(function($){
 		$('div#ar-idx-disclaimer').append($('div.IDX-pageContainer + div'));
