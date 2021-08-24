@@ -71,6 +71,11 @@
 			$('select#IDX-agentOwner > option:first-of-type').text('Working with an Agent?');
 			$('div#IDX-customRegistrationFields div#IDX-agentOwner-group').removeClass('col-sm-6').addClass('col-sm-12');
 		}
+
+		//user pages hide title
+		if($('.IDX-page-userlogin, .IDX-page-usersignup').length > 0) {
+			$('.avada-page-titlebar-wrapper, section.fusion-page-title-bar.fusion-tb-page-title-bar').attr('style','display:none!important;');
+		}
 		
 	});
 </script>
