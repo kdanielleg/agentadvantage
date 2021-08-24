@@ -114,4 +114,5 @@ endif;
 	$('.IDX-rosterCategoryTitle').removeClass('col-xs-12');
 	$('h3.IDX-rosterCategoryHeader').wrapInner('<h4 class="IDX-rosterCategoryHeader"></h4>');
 	$('h4.IDX-rosterCategoryHeader').unwrap();
+	$('.IDX-rosterOfficeWrap').removeClass('col-md-6').addClass('col-sm-12');
 });</script>
