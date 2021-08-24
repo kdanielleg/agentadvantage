@@ -281,4 +281,11 @@ div#ar-UserFormRow {
   div#ar-UserFormRow {
     flex-direction: column;
   }
+  div#ar-UserFormRow div#ar-userSocial div#ar-userSocialInner {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: unset;
+    width: 100%;
+  }
 }
