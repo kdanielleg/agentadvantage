@@ -4,7 +4,7 @@ Description: AgentAdvantage Child theme for Avada theme
 Author: Agent Reputation
 Author URI: https://www.agentreputation.net
 Template: Avada
-Version: 1.0.93
+Version: 1.0.94
 Text Domain:  Avada
 */
 
@@ -499,6 +499,7 @@ min-height: 600px;
 .fusion-tabs .nav-tabs li a.tab-link:focus .fusion-tab-heading{
     color: #ffffff!important;
 }
+
 
 /** Icon Boxes CSS **/
 div#iconTackBoxes.fusion-content-boxes.content-boxes-icon-boxed .content-wrapper-boxed {
