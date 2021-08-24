@@ -30,6 +30,19 @@ $subSelect = '#mainPageSubheading h4';
 	$('<?php echo $titleSelect; ?>').text('Meet '+$('div#IDX-bioPanelWrapper .IDX-bioName').text().trim());
 	$('<?php echo $subSelect; ?>').text($('div#IDX-bioPanelWrapper .IDX-bioUserTitle').text().trim());
 
+	//Results Page
+	$('div#ar-idx-disclaimer').append($('div#IDX-main > div:last-of-type'));
+	$('div#ar-idx-disclaimer').append($('div#IDX-resultsContent > div > div:not(#IDX-resultsHeader, #IDX-resultsPager-data, .IDX-resultsListings)'));
+	$('a#scroll-top').after($('nav#IDX-results-pagination'));
+	$('form#IDX-refinementSearchForm').wrapInner('<div class="IDX-row">');
+	$('div#IDX-ccz-group').wrap('<div class="col-xs-12">');
+	$('div#IDX-minPrice-group, div#IDX-maxPrice-group, div#IDX-bd-group, div#IDX-tb-group, div#IDX-sqft-group, div#IDX-add-group, div#IDX-per-group, div#IDX-srt-group').wrap('<div class="col-xs-12 col-sm-6">');
+	$('input#IDX-resultsRefineSubmit').wrap('<div id="IDX-resultsRefineSubmit-wrap" class="col-xs-12">');
+	$('li.IDX-results--cell.IDX-resultsCell').each(function(){
+		$(this).append($(this).find($('.IDX-MLSCourtesy.IDX-results--cell--disclaimer')));
+	});
+
+	/**
 	$('div#ar-idx-disclaimer').append($('div#IDX-main > div:last-child'));
 	$('nav#IDX-results-pagination').nextAll().wrapAll('<div id="arIDX-mlsDisclaimer">');
 	$('div#ar-idx-disclaimer').prepend($('#arIDX-mlsDisclaimer'));
@@ -80,4 +93,6 @@ $subSelect = '#mainPageSubheading h4';
 		$('li.IDX-rosteragentViewActiveListings > a.IDX-rosterCategoryLink').attr('href', activeLink);
 	}
 	$('div#ar-idx-disclaimer').append($('div#IDX-resultsRow + div'));
+	**/
+
 });</script>
