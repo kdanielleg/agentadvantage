@@ -502,3 +502,12 @@ div#IDX-main.IDX-page-mortgage div#IDX-mortgagePmi .IDX-mortgagePmi-wrap {
     margin-right: 2%!important;
     position: relative!important;
 }
+
+#main #IDX-main .h5, #main #IDX-main h5 {
+    font-family: var(--h5_typography-font-family);
+    font-weight: var(--h5_typography-font-weight);
+    line-height: var(--h5_typography-line-height);
+    letter-spacing: var(--h5_typography-letter-spacing);
+    font-style: var(--h5_typography-font-style,normal);
+    font-size: var(--h5_typography-font-size)!important;
+}
