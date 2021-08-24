@@ -6,8 +6,8 @@ if(have_rows('settings_theme2020')) :
 			while(have_rows('contact')): the_row();
 				if(have_rows('phoneLabel')) :
 					while(have_rows('phoneLabel')) : the_row();
-						$phone = 'Phone';
-						$phoneAlt = 'Alt Phone';
+						$phone = 'Phone: ';
+						$phoneAlt = 'Phone: ';
 						if(get_sub_field('phone')):
 							$phone = get_sub_field('phone').': ';
 						endif;
