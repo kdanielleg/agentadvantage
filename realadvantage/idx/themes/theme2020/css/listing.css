@@ -511,3 +511,22 @@ div#IDX-main.IDX-page-mortgage div#IDX-mortgagePmi .IDX-mortgagePmi-wrap {
     font-style: var(--h5_typography-font-style,normal);
     font-size: var(--h5_typography-font-size)!important;
 }
+
+#IDX-main .IDX-input-group-addon:first-child {
+    border-top-left-radius: var(--form_border_radius);
+    border-bottom-left-radius: var(--form_border_radius);
+    border-right: 0;
+}
+#IDX-main .IDX-input-group-addon:first-child + input {
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+}
+#IDX-main input + .IDX-input-group-addon {
+    border-top-right-radius: var(--form_border_radius);
+    border-bottom-right-radius: var(--form_border_radius);
+    border-left: 0;
+}
+#IDX-main input:first-child {
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+}
