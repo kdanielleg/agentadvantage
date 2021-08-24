@@ -64,4 +64,6 @@ $subSelect = '#mainPageSubheading h4';
 	$('div#IDX-agent-bio-wrapper').append($('ul.IDX-actionLinks'));
 	$('ul.IDX-actionLinks').attr('id','ar-IDX-user-actions').removeClass('IDX-list-unstyled IDX-actionLinks');
 	$('ul#ar-IDX-user-actions a').addClass('fusion-button button-flat fusion-button-default-size button-default fusion-button-span-yes fusion-button-default-type').wrapInner('<span class="fusion-button-text">');
+	$('ul#ar-IDX-user-actions li.IDX-rosterresultsEmailLink .fusion-button-text').html('<i class="fa fa-envelope-o" aria-hidden="true"></i> Get in Touch');
+	$('span.IDX-bioDetails__inner').before('<h2>Why Choose Me?</h2>');
 });</script>
