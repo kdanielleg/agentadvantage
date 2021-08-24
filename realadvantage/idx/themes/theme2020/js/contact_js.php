@@ -219,7 +219,7 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 				var zip = $('span#IDX-contactZip').text().trim();
 				var map = street + '+' + city + '+' + state + '+' + zip;
 				var mapIcon = <?php echo json_encode($smallIcon); ?>;
-				var mapKey = <?php echo json_encode(get_field('ar_gmap_key', 'option')); ?>;
+				var mapKey = <?php echo json_encode(AA_GOOGLE_API_KEY); ?>;
 				$('div#IDX-contactInformation').append('<img width="300" height="200" src="https://maps.googleapis.com/maps/api/staticmap?key='+mapKey+'&amp;language=en&amp;center='+map+'&amp;maptype=roadmap&amp;zoom=14&amp;size=300x200&amp;markers=icon:'+mapIcon+'|'+map+'&amp;scale=2">');
 			}
 		}
