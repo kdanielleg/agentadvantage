@@ -26,6 +26,10 @@ $subSelect = '#mainPageSubheading h4';
 		}
 	});
 
+	//Title
+	$('<?php echo $titleSelect; ?>').text('Meet '+$('div#IDX-bioPanelWrapper .IDX-bioName').text().trim());
+	$('<?php echo $subSelect; ?>').text($('div#IDX-bioPanelWrapper .IDX-bioUserTitle').text().trim());
+
 	$('div#ar-idx-disclaimer').append($('div#IDX-main > div:last-child'));
 	$('nav#IDX-results-pagination').nextAll().wrapAll('<div id="arIDX-mlsDisclaimer">');
 	$('div#ar-idx-disclaimer').prepend($('#arIDX-mlsDisclaimer'));
@@ -63,8 +67,6 @@ $subSelect = '#mainPageSubheading h4';
 	$('div#IDX-agent-bio-wrapper').prepend($('ul.IDX-actionLinks, ul#IDX-agentInfo-group, h5.IDX-bioUserTitle, h3.IDX-bioName'));
 	$('ul.IDX-actionLinks').prepend($('ul#IDX-agentInfo-group > li'));
 	$('ul#IDX-agentInfo-group').remove();
-	$('<?php echo $titleSelect; ?>').text('Meet '+$('div#IDX-agent-bio-wrapper h2.title-heading-center').text().trim());
-	$('<?php echo $subSelect; ?>').text($('div#IDX-agent-bio-wrapper h5.IDX-bioUserTitle').text().trim());
 	$('.IDX-bioInfo img.IDX-rosterAgentImage').after($('div#IDX-agent-bio-wrapper ul.IDX-actionLinks, h5.IDX-bioUserTitle, h3.IDX-bioName'));
 	$('.IDX-bioInfo ul.IDX-actionLinks').append('<li class="IDX-agentInfo IDX-agentAddress"></li>');
 	$('.IDX-bioInfo ul.IDX-actionLinks .IDX-agentAddress').append($('address#IDX-rosterAddress'));
