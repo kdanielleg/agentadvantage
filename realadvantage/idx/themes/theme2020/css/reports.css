@@ -65,7 +65,7 @@ h2.idx-mk-report-landing-page__title {
 #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions {
     margin-bottom: 0;
     position: relative;
-    top: -175px;
+    order:  2;
 }
 #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-header-actions .idx-mk-report-change-location {
     margin-top: 0;
@@ -158,6 +158,8 @@ h2.idx-mk-report-landing-page__title {
 #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-twig-header {
     max-width: var(--site_width);
     margin: 0 auto;
+    display:  flex;
+    flex-direction:  column;
 }
 #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-market-report__header {
     margin-bottom: 50px;
