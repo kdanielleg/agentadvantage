@@ -64,7 +64,7 @@ div#IDX-resultsHeader {
 }
 @media screen and (min-width: 641px) {
 	.IDX-wrapper-standard .IDX-topActions {
-    	    height: 65px;
+        height: 65px;
     	line-height: 57px;
 	}
 	.IDX-wrapper-standard #IDX-resultsContent {
@@ -102,7 +102,7 @@ div#IDX-resultsTopActions {
   display: none!important;
 }
 div#arAgentBioOuterWrap {
-  max-width: 1400px;
+  max-width: 1250px;
   margin: 0 auto;
 }
 div#arAgentBioWrap {

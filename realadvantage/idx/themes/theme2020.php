@@ -1,7 +1,7 @@
 <?php /**theme2020 theme base **/ ?>
 
 <?php $page = get_field('page');
-$titleTemplates = array('reports','listing','other','contact');
+$titleTemplates = array('reports','listing','other','contact','agent');
 $customTemplates = array('search','details','map');
 
 
