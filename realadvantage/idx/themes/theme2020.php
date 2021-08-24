@@ -24,6 +24,9 @@ if(!in_array($page, $customTemplates)) : ?>
 	<?php include get_stylesheet_directory().'/realadvantage/idx/themes/'.get_field('theme').'/js/'.get_field('page').'_js.php'; ?>
 	<!-- AR IDX Page Styles -->
 	<style>
+		<?php if(get_field('page')=='agent') :
+			include get_stylesheet_directory().'/realadvantage/idx/themes/'.get_field('theme').'/css/results.css';
+		endif; ?>
 		<?php include get_stylesheet_directory().'/realadvantage/idx/themes/'.get_field('theme').'/css/'.get_field('page').'.css'; ?>
 	</style>
 <?php endif; ?>
