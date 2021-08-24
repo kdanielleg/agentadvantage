@@ -28,7 +28,7 @@ $socialShortcode = do_shortcode('[fusion_widget type="Fusion_Widget_Social_Links
 $social = str_replace('"', "'", $socialShortcode);
 $social = preg_replace('~>\\s+<~m', '><', $social);	
 
-$smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img/map-marker-small.jpg';
+$smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img/map-marker-small.png';
 
 ?>
 
