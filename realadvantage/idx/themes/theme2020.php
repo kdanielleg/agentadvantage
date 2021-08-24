@@ -30,11 +30,7 @@ if(!in_array($page, $customTemplates)) : ?>
 <script>
 	jQuery(document).ready(function($){
 		<?php if(in_array($page, $titleTemplates)) : ?>
-			if($('.IDX-page-market-reports.IDX-type-landing').length || $('.IDX-page-photogallery').length || $('.IDX-page-mortgage').length){
-				$('.avada-page-titlebar-wrapper, section.fusion-page-title-bar.fusion-tb-page-title-bar').attr('style','display:none!important;');
-			}else {
-				$('.avada-page-titlebar-wrapper, section.fusion-page-title-bar.fusion-tb-page-title-bar').attr('style','visibility:visible!important;');
-			}
+			$('.avada-page-titlebar-wrapper, section.fusion-page-title-bar.fusion-tb-page-title-bar').attr('style','visibility:visible!important;');
 		<?php endif; ?>
 		<?php if(!in_array($page, $customTemplates)) : ?>
 			$('#IDX-main').attr('style','visibility:visible!important;');
