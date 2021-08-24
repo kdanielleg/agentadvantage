@@ -56,6 +56,8 @@ endif;
 	$('.IDX-rosterAgentImageWrap, .IDX-rosterStaffImageWrap').removeClass('col-xs-12').unwrap().unwrap().unwrap();
 	$('.IDX-rosterAgentInfoWrap, .IDX-rosterStaffInfoWrap').removeClass('col-xs-12 IDX-rosterCategoryRightColumn');
 
+	$('.IDX-rosterContent').addClass('row');
+
 	$('.IDX-row').addClass('row');
 
 <?php if(!$showFields || $showOnlyTitle): ?>
