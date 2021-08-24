@@ -49,9 +49,11 @@ $subSelect = '#mainPageSubheading h4';
 	$('div#IDX-agentbio').wrap('<div id="arAgentBioWrap">').wrap('<div id="arAgentBioOuterWrap" class="container">');
 	$('div#IDX-agentbio').removeClass('IDX-agentbio__collapse');
 	$('ul#IDX-agentInfo-group').append($('li.IDX-rosterresultsEmailLink').clone());
-	$('.IDX-bioInfo ul#IDX-agentInfo-group').append('<li class="IDX-agentInfo IDX-agentAddress"></li>');
-	$('.IDX-bioInfo ul#IDX-agentInfo-group .IDX-agentAddress').append($('address#IDX-rosterAddress'));
-	$('address#IDX-rosterAddress').removeClass('IDX-agentInfo__collapse IDX-hidden');
+	if($('address#IDX-rosterAddress').length > 0) {
+		$('.IDX-bioInfo ul#IDX-agentInfo-group').append('<li class="IDX-agentInfo IDX-agentAddress"></li>');
+		$('.IDX-bioInfo ul#IDX-agentInfo-group .IDX-agentAddress').append($('address#IDX-rosterAddress'));
+		$('address#IDX-rosterAddress').removeClass('IDX-agentInfo__collapse IDX-hidden');
+	}
 	if($('li.IDX-rosterViewSoldListings').length > 0) {
 		var soldLink = $('li.IDX-rosterViewSoldListings > a.IDX-rosterCategoryLink').attr('href') + '#_IDX-resultsRow';
 		$('li.IDX-rosterViewSoldListings > a.IDX-rosterCategoryLink').attr('href', soldLink);
