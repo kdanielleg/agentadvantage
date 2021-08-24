@@ -54,8 +54,8 @@ endif;
 	}
 
 
-	$('.IDX-rosterAgentImageWrap, .IDX-rosterStaffImageWrap').removeClass('col-xs-12').unwrap().unwrap().unwrap();
-	$('.IDX-rosterAgentInfoWrap, .IDX-rosterStaffInfoWrap').removeClass('col-xs-12 IDX-rosterCategoryRightColumn');
+	$('.IDX-rosterAgentImageWrap, .IDX-rosterStaffImageWrap, .IDX-rosterManagementImageWrap').removeClass('col-xs-12').unwrap().unwrap().unwrap();
+	$('.IDX-rosterAgentInfoWrap, .IDX-rosterStaffInfoWrap, .IDX-rosterManagementInfoWrap').removeClass('col-xs-12 IDX-rosterCategoryRightColumn');
 
 	$('.IDX-row').addClass('row');
 
