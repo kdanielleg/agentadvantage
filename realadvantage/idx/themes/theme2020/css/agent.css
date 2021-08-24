@@ -60,6 +60,9 @@ ul#ar-IDX-user-actions {
 ul#ar-IDX-user-actions span.fusion-button-text i {
     margin-right: 1rem;
 }
+div#IDX-bioDetails > h2:first-child {
+    margin-bottom: 1rem;
+}
 @media only screen and (max-width:  640px) {
     ul#ar-IDX-user-actions {
         flex-direction:  column;

@@ -66,4 +66,12 @@ $subSelect = '#mainPageSubheading h4';
 	$('ul#ar-IDX-user-actions a').addClass('fusion-button button-flat fusion-button-default-size button-default fusion-button-span-yes fusion-button-default-type').wrapInner('<span class="fusion-button-text">');
 	$('ul#ar-IDX-user-actions li.IDX-rosterresultsEmailLink .fusion-button-text').html('<i class="fa fa-envelope-o" aria-hidden="true"></i> Get in Touch');
 	$('span.IDX-bioDetails__inner').before('<h2>Why Choose Me?</h2>');
+
+	//Contact Details
+	$('ul#IDX-agentInfo-group').attr("id","ar-agentInfo-list").removeClass('IDX-agentInfo-group IDX-list-unstyled').addClass('fusion-checklist').attr('style','font-size:20px;line-height:34px;');
+	$('ul#ar-agentInfo-list li').addClass('fusion-li-item').wrapInner('<div class="fusion-li-item-content" style="margin-left:48px;">').prepend('<span style="height:34px;width:34px;margin-right:14px;" class="icon-wrapper circle-no">');
+	$('ul#ar-agentInfo-list li.IDX-agentOfficePhone .icon-wrapper, ul#ar-agentInfo-list li.IDX-agentHomePhone .icon-wrapper').prepend('<i class="fusion-li-icon fa-phone-rotary fal" aria-hidden="true"></i>');
+	$('ul#ar-agentInfo-list li.IDX-agentCellPhone .icon-wrapper').prepend('<i class="fusion-li-icon fa-mobile-android fal" aria-hidden="true"></i>');
+	$('ul#ar-agentInfo-list li.IDX-agentOfficeFax .icon-wrapper, ul#ar-agentInfo-list li.IDX-agentHomeFax .icon-wrapper').prepend('<i class="fusion-li-icon fa-fax fal" aria-hidden="true"></i>');
+	$('ul#ar-agentInfo-list li.IDX-agentAddress .icon-wrapper').prepend('<i class="fusion-li-icon fa-envelope-open-text fal" aria-hidden="true"></i>');
 });</script>
