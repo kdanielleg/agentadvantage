@@ -8,8 +8,12 @@ if(have_rows('settings_theme2020')) :
 					while(have_rows('phoneLabel')) : the_row();
 						$phone = 'Phone';
 						$phoneAlt = 'Alt Phone';
-						$phone = get_sub_field('phone').': ';
-						$phoneAlt = get_sub_field('phone-alt').': ';
+						if(get_sub_field('phone')):
+							$phone = get_sub_field('phone').': ';
+						endif;
+						if(get_sub_field('phone-alt')):
+							$phoneAlt = get_sub_field('phone-alt').': ';
+						endif;
 					endwhile;
 				endif;
 			endwhile;
