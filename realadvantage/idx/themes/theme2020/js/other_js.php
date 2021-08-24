@@ -1,33 +1,14 @@
 <?php /**browse by city and homes for sale pages**/
 $homeSaleIcons = array(
 	'none' => array(
-		'icon' => '<i class="fal fa-house"></i>',
+		'icon' => '<i class="fal fa-search-location"></i>',
 		'label' => false,
 	),
 );
-if(have_rows('settings_theme2020')) :
-	while(have_rows('settings_theme2020')): the_row();
-		if(have_rows('other')) :
-			while(have_rows('other')): the_row();
-				if(have_rows('otherTitle')) :
-					while(have_rows('otherTitle')) : the_row();
-						$titleSelect = '.fusion-page-title-captions h1';
-						$subSelect = '.fusion-page-title-captions h3';
-						$titleSelect = get_sub_field('title');
-						$subSelect = get_sub_field('sub');
-					endwhile;
-				endif;
-				if(have_rows('icons')):
-					while(have_rows('icons')): the_row();
-						$homeSaleIcons[strval(get_sub_field('code'))] = array(
-							'icon' => str_replace('"', "'", get_sub_field('icon')),
-						);
-					endwhile;
-				endif;
-			endwhile;
-		endif;
-	endwhile;
-endif;
+
+
+$titleSelect = '#mainPageHeading h1';
+$subSelect = '#mainPageSubheading h4';
 
 $homeSaleIconsCount = sizeof($homeSaleIcons);
 
