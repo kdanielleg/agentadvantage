@@ -63,6 +63,7 @@ endif;
 <?php if(!$showFields || $showOnlyTitle): ?>
 	$('.IDX-rosterInfo').remove();
 	$('address#IDX-rosterAddress').remove();
+	$('.IDX-rosterUserLanguages').remove();
 	$('.IDX-rosterInnerWrap + .IDX-row').unwrap().remove();
 <?php else: ?>
 	<?php if(!$showTitle): ?>
