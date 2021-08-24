@@ -9,6 +9,18 @@ h5.IDX-rosterUserTitle {
     margin-top: 5px;
     margin-bottom: 0!important;
 }
+.IDX-rosterManagementImageWrap, .IDX-rosterStaffImageWrap, .IDX-rosterAgentImageWrap {
+    display: inline-block;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    max-width: 100%;
+    line-height: 1;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+    box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+}
 .IDX-rosterAgentImageWrap a.IDX-rosterCategoryLink,
 .IDX-rosterAgentImageWrap a.IDX-rosterCategoryLink img,
 .IDX-rosterStaffImageWrap a.IDX-rosterCategoryLink,
