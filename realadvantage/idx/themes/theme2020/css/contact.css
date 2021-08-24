@@ -348,3 +348,9 @@ div#ar-googleHvAddressParamWrap img {
 div#ar-googleHvAddressParamWrap .fusion-title {
     margin-bottom: 0;
 }
+div#IDX-contactFormWrap > .fusion-title {
+    margin-bottom: 0;
+}
+form#IDX-contactContactForm {
+    margin-top: 2rem;
+}

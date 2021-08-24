@@ -7,7 +7,7 @@ function ar_enqueue_styles_scripts() {
     wp_enqueue_script('jquery-ui-slider');
     wp_enqueue_style('jquery-ui-css', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', array('fusion-dynamic-css'),false, false);
     wp_enqueue_script('ar-gmaps-autocomplete', get_stylesheet_directory_uri() . '/realadvantage/js/autocomplete.js',array('jquery-core','jquery'),filemtime(get_stylesheet_directory() . '/realadvantage/js/autocomplete.js'),true);
-    wp_enqueue_script('google-maps','https://maps.googleapis.com/maps/api/js?key='.AA_GOOGLE_API_KEY.'&libraries=places',ar_autocomplete_dependency(),'1.0',true);
+    //wp_enqueue_script('google-maps','https://maps.googleapis.com/maps/api/js?key='.AA_GOOGLE_API_KEY.'&libraries=places',ar_autocomplete_dependency(),'1.0',true);
 
 }
 add_action( 'wp_enqueue_scripts', 'ar_enqueue_styles_scripts');
