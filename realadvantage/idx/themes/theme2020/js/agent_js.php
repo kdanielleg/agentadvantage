@@ -46,7 +46,7 @@ $subSelect = '#mainPageSubheading h4';
 
 	//Bio Section
 	$('.IDX-row:not(.row)').addClass('row');
-	$('div#IDX-agentbio').wrap('<div id="arAgentBioWrap">').wrap('<div id="arAgentBioOuterWrap">');
+	$('div#IDX-agentbio').wrap('<div id="arAgentBioWrap">').wrap('<div id="arAgentBioOuterWrap" class="container">');
 	$('div#IDX-agentbio').removeClass('IDX-agentbio__collapse');
 	$('ul.IDX-actionLinks').prepend($('ul#IDX-agentInfo-group > li'));
 	$('ul#IDX-agentInfo-group').remove();
@@ -61,4 +61,5 @@ $subSelect = '#mainPageSubheading h4';
 		var activeLink = $('li.IDX-rosteragentViewActiveListings > a.IDX-rosterCategoryLink').attr('href') + '#_IDX-resultsRow';
 		$('li.IDX-rosteragentViewActiveListings > a.IDX-rosterCategoryLink').attr('href', activeLink);
 	}
+	$('div#IDX-bio-collapse').remove();
 });</script>

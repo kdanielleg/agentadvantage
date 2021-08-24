@@ -1,9 +1,23 @@
 /** results pages CSS **/
-
-/**@import "results.css";**/
+div#IDX-resultsContainer {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
 
 
 /**Agent Bio CSS**/
 div#arAgentBioWrap {
     background-color:  #f2f2f2;
+}
+div#IDX-resultsContent h2.title-heading-center {
+    text-align: center;
+}
+#IDX-main.IDX-wrapper-standard h2.title-heading-center + h3.IDX-results-title {
+    font-size: var(--h3_typography-font-size);
+    color: var(--h3_typography-color);
+    font-family: var(--h3_typography-font-family);
+    font-weight: var(--h3_typography-font-weight);
+    line-height: var(--h3_typography-line-height);
+    letter-spacing: var(--h3_typography-letter-spacing);
+    font-style: var(--h3_typography-font-style,normal);
 }
