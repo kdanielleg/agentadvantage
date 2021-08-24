@@ -9,11 +9,8 @@
     padding: 0!important;
 }
 div#regModal-right, div#logModal-right {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     margin-bottom: 0;
-    background-color:  #000000;
+    background-color:  #000000!important;
 }
 div#regModal-left, div#logModal-left {
   margin-bottom: 0!important;
