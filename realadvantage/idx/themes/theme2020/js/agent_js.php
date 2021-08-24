@@ -73,7 +73,7 @@ $subSelect = '#mainPageSubheading h4';
 	$('ul#ar-agentInfo-list li.IDX-agentOfficePhone .icon-wrapper, ul#ar-agentInfo-list li.IDX-agentHomePhone .icon-wrapper').prepend('<i class="fusion-li-icon fa-phone-rotary fal" aria-hidden="true"></i>');
 	$('ul#ar-agentInfo-list li.IDX-agentCellPhone .icon-wrapper').prepend('<i class="fusion-li-icon fa-mobile-android fal" aria-hidden="true"></i>');
 	$('ul#ar-agentInfo-list li.IDX-agentOfficeFax .icon-wrapper, ul#ar-agentInfo-list li.IDX-agentHomeFax .icon-wrapper').prepend('<i class="fusion-li-icon fa-fax fal" aria-hidden="true"></i>');
-	$('ul#ar-agentInfo-list .li.IDX-rosterresultsEmailLink .icon-wrapper').prepend('<i class="fusion-li-icon fa-envelope-open-text fal" aria-hidden="true"></i>');
-	$('ul#ar-agentInfo-list .li.IDX-rosterresultsEmailLink .fusion-li-item-content i').remove();
+	$('ul#ar-agentInfo-list li.IDX-rosterresultsEmailLink .icon-wrapper').prepend('<i class="fusion-li-icon fa-envelope-open-text fal" aria-hidden="true"></i>');
+	$('ul#ar-agentInfo-list li.IDX-rosterresultsEmailLink .fusion-li-item-content i').remove();
 	$('ul#ar-agentInfo-list li.IDX-agentAddress .icon-wrapper').prepend('<i class="fusion-li-icon fa-map-marker-alt fal" aria-hidden="true"></i>');
 });</script>
