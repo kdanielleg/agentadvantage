@@ -14,6 +14,8 @@ if(have_rows('settings_theme2020')) :
 	endwhile;
 endif;
 
+$titleSelect = '#mainPageHeading h1';
+$subSelect = '#mainPageSubheading h4';
 
 ?>
 <script>jQuery(document).ready(function($){
@@ -59,44 +61,14 @@ endif;
 	$('div#IDX-agentbio').wrap('<div id="arAgentBioWrap">').wrap('<div id="arAgentBioOuterWrap">');
 	$('div#IDX-agentbio').removeClass('IDX-agentbio__collapse');
 	$('div#IDX-agent-bio-wrapper').prepend($('ul.IDX-actionLinks, ul#IDX-agentInfo-group, h5.IDX-bioUserTitle, h3.IDX-bioName'));
-	$('h3.IDX-bioName').before('<div class="fusion-title title fusion-title-1 fusion-title-center fusion-title-text fusion-title-size-two" style="margin-top:0px;margin-bottom:15px;"><div class="title-sep-container title-sep-container-left"><div class="title-sep sep-single sep-solid" style="border-color:#e0dede;"></div></div><h2 class="title-heading-center" style="margin:0;" data-fontsize="38" data-lineheight="46">'+$('h3.IDX-bioName').text().trim()+'</h2><div class="title-sep-container title-sep-container-right"><div class="title-sep sep-single sep-solid" style="border-color:#e0dede;"></div></div></div>');
-	$('h3.IDX-bioName').remove();
 	$('ul.IDX-actionLinks').prepend($('ul#IDX-agentInfo-group > li'));
 	$('ul#IDX-agentInfo-group').remove();
-	$('.fusion-page-title-captions h1.entry-title').text('Meet '+$('div#IDX-agent-bio-wrapper h2.title-heading-center').text().trim());
-<?php if($showTitleSub): ?>
-	$('.fusion-page-title-captions h3').text($('div#IDX-agent-bio-wrapper h5.IDX-bioUserTitle').text().trim());
-<?php endif; ?>
-<?php if($moveContact): ?>
-	$('.IDX-bioInfo img.IDX-rosterAgentImage').after($('div#IDX-agent-bio-wrapper ul.IDX-actionLinks'));
-<?php endif; ?>
-<?php if($agentAddress): ?>
+	$('<?php echo $titleSelect; ?>').text('Meet '+$('div#IDX-agent-bio-wrapper h2.title-heading-center').text().trim());
+	$('<?php echo $subSelect; ?>').text($('div#IDX-agent-bio-wrapper h5.IDX-bioUserTitle').text().trim());
+	$('.IDX-bioInfo img.IDX-rosterAgentImage').after($('div#IDX-agent-bio-wrapper ul.IDX-actionLinks, h5.IDX-bioUserTitle, h3.IDX-bioName'));
 	$('.IDX-bioInfo ul.IDX-actionLinks').append('<li class="IDX-agentInfo IDX-agentAddress"></li>');
 	$('.IDX-bioInfo ul.IDX-actionLinks .IDX-agentAddress').append($('address#IDX-rosterAddress'));
 	$('address#IDX-rosterAddress').removeClass('IDX-agentInfo__collapse IDX-hidden');
-<?php endif; ?>
-<?php if($showEmpty): ?>
-	var bedsLabel = $('.IDX-resultsAddress p.IDX-results--details-field-bedrooms:first span.IDX-label').text().trim();
-	var bathsLabel = $('.IDX-resultsAddress p.IDX-results--details-field-totalBaths:first span.IDX-label').text().trim();
-	var sqftLabel = $('.IDX-resultsAddress .IDX-field-sqFt.IDX-results--details-field:first span.IDX-label').text().trim();
-	var acresLabel = $('.IDX-resultsAddress .IDX-field-acres.IDX-results--details-field:first span.IDX-label').text().trim();
-
-	$('.IDX-resultsAddress').each(function(){
-		if($(this).find($('p.IDX-results--details-field-bedrooms')).length == 0) {
-			$(this).find($('h4.IDX-results--details-field:first-of-type + h4.IDX-results--details-field')).after('<p class="IDX-results--details-field-bedrooms IDX-results--details-field "><span class="IDX-text">N/A&nbsp;</span><span class="IDX-label">'+bedsLabel+'</span></p>');
-		}
-		if($(this).find($('p.IDX-results--details-field-totalBaths')).length == 0) {
-			$(this).find($('p.IDX-results--details-field-bedrooms')).after('<p class="IDX-results--details-field-totalBaths IDX-results--details-field "><span class="IDX-text">N/A&nbsp;</span><span class="IDX-label">'+bathsLabel+'</span></p>');
-		}
-		if($(this).find($('.IDX-field-sqFt')).length == 0) {
-			$(this).find($('p.IDX-results--details-field-totalBaths')).after('<div class="IDX-field-sqFt IDX-results--details-field"><span class="IDX-text">N/A&nbsp;</span><span class="IDX-label">'+sqftLabel+'</span></div>');
-		}
-		if($(this).find($('.IDX-field-acres')).length == 0) {
-			$(this).find($('.IDX-field-sqFt')).after('<div class="IDX-field-acres IDX-results--details-field"><span class="IDX-text">N/A&nbsp;</span><span class="IDX-label">'+acresLabel+'</span></div>');
-		}
-	});
-<?php endif; ?>
-<?php if($anchorLink): ?>
 	if($('li.IDX-rosterViewSoldListings').length > 0) {
 		var soldLink = $('li.IDX-rosterViewSoldListings > a.IDX-rosterCategoryLink').attr('href') + '#_IDX-resultsRow';
 		$('li.IDX-rosterViewSoldListings > a.IDX-rosterCategoryLink').attr('href', soldLink);
@@ -105,6 +77,5 @@ endif;
 		var activeLink = $('li.IDX-rosteragentViewActiveListings > a.IDX-rosterCategoryLink').attr('href') + '#_IDX-resultsRow';
 		$('li.IDX-rosteragentViewActiveListings > a.IDX-rosterCategoryLink').attr('href', activeLink);
 	}
-<?php endif; ?>
 	$('div#ar-idx-disclaimer').append($('div#IDX-resultsRow + div'));
 });</script>
