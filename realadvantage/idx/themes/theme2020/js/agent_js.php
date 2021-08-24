@@ -48,10 +48,10 @@ $subSelect = '#mainPageSubheading h4';
 	$('.IDX-row:not(.row)').addClass('row');
 	$('div#IDX-agentbio').wrap('<div id="arAgentBioWrap">').wrap('<div id="arAgentBioOuterWrap" class="container">');
 	$('div#IDX-agentbio').removeClass('IDX-agentbio__collapse');
-	$('ul.IDX-actionLinks').prepend($('ul#IDX-agentInfo-group > li'));
-	$('ul#IDX-agentInfo-group').remove();
-	$('.IDX-bioInfo ul.IDX-actionLinks').append('<li class="IDX-agentInfo IDX-agentAddress"></li>');
-	$('.IDX-bioInfo ul.IDX-actionLinks .IDX-agentAddress').append($('address#IDX-rosterAddress'));
+	//$('ul.IDX-actionLinks').prepend($('ul#IDX-agentInfo-group > li'));
+	//$('ul#IDX-agentInfo-group').remove();
+	$('.IDX-bioInfo ul#IDX-agentInfo-group').append('<li class="IDX-agentInfo IDX-agentAddress"></li>');
+	$('.IDX-bioInfo ul#IDX-agentInfo-group .IDX-agentAddress').append($('address#IDX-rosterAddress'));
 	$('address#IDX-rosterAddress').removeClass('IDX-agentInfo__collapse IDX-hidden');
 	if($('li.IDX-rosterViewSoldListings').length > 0) {
 		var soldLink = $('li.IDX-rosterViewSoldListings > a.IDX-rosterCategoryLink').attr('href') + '#_IDX-resultsRow';
