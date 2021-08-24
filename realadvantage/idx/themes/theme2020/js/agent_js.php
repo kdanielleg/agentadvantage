@@ -1,19 +1,5 @@
 <?php //results and agent bio page js 
 
-if(have_rows('settings_theme2020')) :
-	while(have_rows('settings_theme2020')): the_row();
-		if(have_rows('agent')) :
-			while(have_rows('agent')): the_row();
-				$showTitleSub = get_sub_field('agent_bio_title');
-				$moveContact = get_sub_field('agent_contact_left');
-				$agentAddress = get_sub_field('agent_address');
-				$showEmpty = get_sub_field('agent_empty_details');
-				$anchorLink = get_sub_field('agent_results_anchor');
-			endwhile;
-		endif;
-	endwhile;
-endif;
-
 $titleSelect = '#mainPageHeading h1';
 $subSelect = '#mainPageSubheading h4';
 

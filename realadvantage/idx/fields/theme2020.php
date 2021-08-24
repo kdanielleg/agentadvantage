@@ -28,6 +28,7 @@ function wc_fields_theme2020() {
 			'mime_types' => '',
 		),
 	);
+	/**Roster Pages**/
 	$wc_theme2020_roster = array(
 		array(
 			'key' => 'field_608f34a158b29',
@@ -228,103 +229,6 @@ function wc_fields_theme2020() {
 			),
 		),
 	);
-	$wc_theme2020_agent = array(
-		array(
-			'key' => 'field_6087bdd8cf456agent',
-			'label' => 'Use agent title as subtitle',
-			'name' => 'agent_bio_title',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '20%',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
-		),
-		array(
-			'key' => 'field_6087bdd8cf456agentcontact',
-			'label' => 'Agent Contact Below Image?',
-			'name' => 'agent_contact_left',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '20%',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
-		),
-		array(
-			'key' => 'field_6087bdd8cf456agentaddress',
-			'label' => 'Show Address?',
-			'name' => 'agent_address',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '20%',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
-		),
-		array(
-			'key' => 'field_6087bdd8cf456agentfix',
-			'label' => 'Show Empty Details?',
-			'name' => 'agent_empty_details',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '20%',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
-		),
-		array(
-			'key' => 'field_6087bdd8cf45677anchorFix',
-			'label' => 'Add anchor to links?',
-			'name' => 'agent_results_anchor',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '20%',
-				'class' => '',
-				'id' => '',
-			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
-		),
-	);
 	/**Contact Pages**/
 	$wc_theme2020_contact = array(
 		array(
@@ -464,11 +368,6 @@ function wc_fields_theme2020() {
 			'key' =>  'field_5e056c20bf8cb2020roster',
 			'label' => 'Roster',
 			'fields' => $wc_theme2020_roster,
-		),
-		'agent' => array(
-			'key' =>  'field_5e056c20bf8cb2020bioagent',
-			'label' => 'Agent',
-			'fields' => $wc_theme2020_agent,
 		),
 	);
 	$wc_theme2020 = array(
