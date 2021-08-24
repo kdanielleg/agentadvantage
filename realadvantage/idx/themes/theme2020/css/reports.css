@@ -181,11 +181,6 @@ h2.idx-mk-report-landing-page__title {
 #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-sign-up__banner.idx-mk-report-display__banner--fixed {
     border-top: 4px solid var(--primary_color);
 }
-#IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report  .idx-mk-report-landing-page__search-graphic {
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
 @media (min-width: 768px) {
     .IDX-wrapper-standard .idx-mk-report-display__banner--bottom.idx-mk-report-sign-up__banner .idx-mk-report-sign-up__graphic {
         -ms-flex-item-align: center;
@@ -213,4 +208,11 @@ h2.idx-mk-report-landing-page__title {
     #IDX-main.IDX-wrapper-standard.IDX-page-market-report.IDX-type-market-report .idx-mk-report-market-report-body {
         padding: 0!important;
     }
+}
+
+
+#IDX-main.IDX-wrapper-standard.IDX-page-market-reports.IDX-type-landing .idx-mk-report-landing-page__search-graphic {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
