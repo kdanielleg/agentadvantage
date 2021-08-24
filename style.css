@@ -4,7 +4,7 @@ Description: AgentAdvantage Child theme for Avada theme
 Author: Agent Reputation
 Author URI: https://www.agentreputation.net
 Template: Avada
-Version: 1.0.86
+Version: 1.0.87
 Text Domain:  Avada
 */
 
@@ -507,3 +507,48 @@ div#iconTackBoxes.fusion-content-boxes.content-boxes-icon-boxed .content-wrapper
 div#iconTackBoxes.fusion-content-boxes.content-boxes-icon-boxed .content-container p {
     font-size: 1.2rem;
 }
+
+/**Scroll  behavior fix**/
+html {
+    scroll-behavior: smooth;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 100px;
+    margin: -100px 0 0;
+}
+
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { 
+    @media {
+        ::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            -webkit-overflow-scrolling: auto;
+        }
+        ::-webkit-scrollbar-thumb {
+            border-radius: 0px;
+            background-color: rgba(0,0,0,.5);
+            -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+        }
+    }
+}
+
+@media not all and (min-resolution:.001dpcm) { 
+    @media {
+        ::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            -webkit-overflow-scrolling: auto;
+        }
+        ::-webkit-scrollbar-thumb {
+            border-radius: 0px;
+            background-color: rgba(0,0,0,.5);
+            -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+        }
+    }
+}
+
