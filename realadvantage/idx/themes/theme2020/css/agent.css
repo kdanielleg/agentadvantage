@@ -3,6 +3,9 @@ div#IDX-resultsContainer {
     padding-left: 0!important;
     padding-right: 0!important;
 }
+#IDX-main.IDX-wrapper-standard .IDX-topActions {
+    text-align: right!important;
+}
 
 
 /**Agent Bio CSS**/
