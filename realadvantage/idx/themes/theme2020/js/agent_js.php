@@ -61,4 +61,7 @@ $subSelect = '#mainPageSubheading h4';
 		$('li.IDX-rosteragentViewActiveListings > a.IDX-rosterCategoryLink').attr('href', activeLink);
 	}
 	$('div#IDX-bio-collapse').remove();
+	$('div#IDX-agent-bio-wrapper').append($('ul.IDX-actionLinks'));
+	$('ul.IDX-actionLinks').attr('id','ar-IDX-user-actions').removeClass('IDX-list-unstyled IDX-actionLinks');
+	$('ul#ar-IDX-user-actions a').addClass('fusion-button button-flat fusion-button-default-size button-default fusion-button-span-yes fusion-button-default-type').wrapInner('<span class="fusion-button-text">');
 });</script>

@@ -26,3 +26,29 @@ div#IDX-resultsContent h2.title-heading-center {
     letter-spacing: var(--h3_typography-letter-spacing);
     font-style: var(--h3_typography-font-style,normal);
 }
+div#arAgentBioOuterWrap {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.IDX-wrapper-standard .IDX-rosterAgentImage {
+    display: inline-block;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    max-width: 100%;
+    line-height: 1;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+    box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+}
+h3.IDX-bioName, h5.IDX-bioUserTitle {
+    text-align: center;
+}
+
+ul#ar-IDX-user-actions {
+    display:  flex;
+}
+ul#ar-IDX-user-actions li {
+    display:  flex;
+}
