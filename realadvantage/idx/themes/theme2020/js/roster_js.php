@@ -42,6 +42,7 @@ endif;
 	$('div#IDX-rosterFilterForm').remove();
 	$('.IDX-rosterAgentWrap').removeClass('col-sm-6 col-md-3 IDX-roster-category').wrap('<div class="arAgentOuterWrap col-sm-12 col-md-6 col-lg-3">');
 	$('.IDX-rosterStaffWrap').removeClass('col-sm-6 col-md-3 IDX-roster-category').wrap('<div class="arStaffOuterWrap col-sm-12 col-md-6 col-lg-3">');
+	$('.IDX-rosterManagementWrap').removeClass('col-sm-6 col-md-3 IDX-roster-category').wrap('<div class="arMgmtOuterWrap col-sm-12 col-md-6 col-lg-3">');
 	
 	
 
@@ -55,8 +56,6 @@ endif;
 
 	$('.IDX-rosterAgentImageWrap, .IDX-rosterStaffImageWrap').removeClass('col-xs-12').unwrap().unwrap().unwrap();
 	$('.IDX-rosterAgentInfoWrap, .IDX-rosterStaffInfoWrap').removeClass('col-xs-12 IDX-rosterCategoryRightColumn');
-
-	$('.IDX-rosterContent').addClass('row');
 
 	$('.IDX-row').addClass('row');
 
@@ -93,11 +92,7 @@ endif;
 	});
 	$('.IDX-rosterInnerWrap + .IDX-row').unwrap().remove();
 <?php endif; ?>
-	
-<?php if(get_field('ar_client_file','option')=='whitediamond'): ?>
-	$('.arAgentOuterWrap').wrapAll('<div class="IDX-row agents-row row">');
-	$('.arStaffOuterWrap').wrapAll('<div class="IDX-row staff-row row">');
-<?php else: ?>
+
 	var agents = $('.arAgentOuterWrap');
 	for(var k=0;k<agents.length;k+=4) {
 		agents.slice(k, k+4).wrapAll('<div class="IDX-row agents-row row">');
@@ -106,6 +101,10 @@ endif;
 	for(var s=0;s<staff.length;s+=4) {
 		staff.slice(s, s+4).wrapAll('<div class="IDX-row staff-row row">');
 	}
-<?php endif; ?>
+	var staff = $('.arMgmtOuterWrap');
+	for(var s=0;s<staff.length;s+=4) {
+		staff.slice(s, s+4).wrapAll('<div class="IDX-row mgmt-row row">');
+	}
 	$('.IDX-rosterContent').removeClass('IDX-row').removeClass('row');
+	$('.IDX-rosterCategoryTitle').removeClass('col-xs-12');
 });</script>
