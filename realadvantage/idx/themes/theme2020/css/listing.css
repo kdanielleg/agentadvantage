@@ -527,6 +527,6 @@ div#IDX-main.IDX-page-mortgage div#IDX-mortgagePmi .IDX-mortgagePmi-wrap {
     border-left: 0;
 }
 #IDX-main input:first-child {
-    border-top-left-radius: 0!important;
-    border-bottom-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+    border-bottom-right-radius: 0!important;
 }
