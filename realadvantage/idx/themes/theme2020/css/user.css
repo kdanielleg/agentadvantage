@@ -273,3 +273,12 @@ p.IDX-googleRecaptchaPolicy {
 .IDX-wrapper-standard #IDX-agentOwner-select-wrap.IDX-select-wrap {
     position: relative;
 }
+
+div#ar-UserFormRow {
+    display: flex;
+}
+@media only screen and (max-width: 800px) {
+  div#ar-UserFormRow {
+    flex-direction: column;
+  }
+}

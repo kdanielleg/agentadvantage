@@ -72,11 +72,6 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 		$('.IDX-form-actions button#IDX-resetBtn').unwrap().remove();
 		$('.IDX-form-actions .IDX-form-group').removeClass('col-sm-6').addClass('col-xs-12 col-sm-12');
 
-		//page title settings
-		//var pageTitleElement = $('title').text().trim();
-		//var headTitleSelect = <?php echo json_encode($titleSelect); ?>;
-		//var headSubSelect = <?php echo json_encode($subSelect); ?>;
-
 		if($('ul.IDX-propertyInfoList').length > 0) {
 			$('h2.IDX-pageHeader').wrap('<div class="IDX-pageHeaderContainer">');
 			var getListingID = $('h2.IDX-pageHeader').text().trim().split('ID');
