@@ -31,3 +31,6 @@ h5.IDX-rosterUserTitle {
 .IDX-rosterManagementWrap, .IDX-rosterAgentWrap, .IDX-rosterStaffWrap {
     padding-bottom:  35px;
 }
+.IDX-rosterOfficeInfoFields > br {
+    display: none;
+}
