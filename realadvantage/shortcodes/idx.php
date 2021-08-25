@@ -35,7 +35,7 @@ function ar_idx_func( $atts ) {
 		),
 		$atts
 	);
-	$idx = get_field('idx_account_id', 'option');
+	$idx = get_option('aa_idx_aid');
 	ob_start(); ?>
 		<div id="<?php echo $atts['id']; ?>" class="ar-idx-widget <?php echo $atts['class']; ?>">
 			<?php if($atts['widget']):
@@ -449,10 +449,11 @@ function ar_home_value_func( $atts ) {
 		$atts
 	);
 	$count = (int)$atts['count'];
+	$idxUrl = get_option('aa_idx_url');
 	ob_start(); ?>
 		<div id="<?php echo $atts['id']; ?>" class="ar-idx-hv-form <?php echo $atts['class']; ?>">
 			<div id="hvForm">
-				<form action="<?php the_field('idx_account_url', 'option'); ?>/idx/homevaluation">
+				<form action="<?php echo $idxUrl; ?>/idx/homevaluation">
   					<input type="text" id="hv-location" name="address" placeholder="Start Typing the Address...">
   					<button type="submit" value="Submit"><i class="fad fa-location"></i></button>
 				</form>

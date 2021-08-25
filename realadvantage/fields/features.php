@@ -3,83 +3,6 @@
 if( function_exists('acf_add_local_field_group') ):
 
 	//features tabs
-	$idxTab = array(
-		array(
-			'key' => 'field_5cdf19fb6a8dc',
-			'label' => 'IDX Broker',
-			'name' => '',
-			'type' => 'tab',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'placement' => 'left',
-			'endpoint' => 0,
-		),
-		array(
-			'key' => 'field_5cdf19f26a8db',
-			'label' => 'IDX Account ID',
-			'name' => 'idx_account_id',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-		),
-		array(
-			'key' => 'field_5cdf1a0a6a8dd',
-			'label' => 'IDX Base Link (do not include trailing slash)',
-			'name' => 'idx_account_url',
-			'type' => 'url',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-		),
-		array(
-			'key' => 'field_5dff13dfbcfa6',
-			'label' => 'Modals Background Image',
-			'name' => 'ar_wc_modals_theme1_img',
-			'type' => 'image',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'return_format' => 'id',
-			'preview_size' => 'medium',
-			'library' => 'all',
-			'min_width' => '',
-			'min_height' => '',
-			'min_size' => '',
-			'max_width' => '',
-			'max_height' => '',
-			'max_size' => '',
-			'mime_types' => '',
-		),
-	);
 	$featureFields = array(
 		array(
 			'key' => 'field_5cda92be3586e',
@@ -223,16 +146,10 @@ if( function_exists('acf_add_local_field_group') ):
 		),
 	);
 
-	if(shortcode_exists('idx-omnibar')) :
-		$featureAllFields = array_merge($idxTab, $featureFields);
-	else :
-		$featureAllFields = array_merge($featureFields);
-	endif;
-
 	acf_add_local_field_group(array(
 		'key' => 'group_5cda8f3e43754',
 		'title' => 'Enable Theme Features',
-		'fields' => $featureAllFields,
+		'fields' => $featureFields,
 		'location' => array(
 			array(
 				array(

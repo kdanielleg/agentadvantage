@@ -1,5 +1,5 @@
 <?php /**modal scripts**/ 
-$idxLink = get_field('idx_account_url','option');
+$idxLink = get_option('aa_idx_url');
 $siteHome = get_site_url();
 $agentFieldText == 'Working with an Agent?';
 

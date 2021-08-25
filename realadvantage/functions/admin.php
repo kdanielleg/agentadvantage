@@ -193,9 +193,31 @@ function aa_general_section() {
             'aa_admin_address' // Should match Option ID
         )  
     ); 
+    add_settings_field( // Admin IDX AID
+        'aa_idx_aid', // Option ID
+        'IDX Account ID', // Label
+        'aa_idx_aid_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'aa_settings_section', // Name of our section
+        array( // The $args
+            'aa_idx_aid' // Should match Option ID
+        )  
+    ); 
+    add_settings_field( // Admin IDX URL
+        'aa_idx_url', // Option ID
+        'IDX Account URL', // Label
+        'aa_idx_url_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'aa_settings_section', // Name of our section
+        array( // The $args
+            'aa_idx_url' // Should match Option ID
+        )  
+    ); 
     register_setting('general','aa_admin_name', 'esc_attr');
     register_setting('general','aa_admin_phone', 'esc_attr');
     register_setting('general','aa_admin_address', 'esc_attr');
+    register_setting('general','aa_idx_aid', 'esc_attr');
+    register_setting('general','aa_idx_url', 'esc_attr');
 }
 function aa_settings_section_options_callback() { // Section Callback
     echo '';  
@@ -214,4 +236,14 @@ function aa_admin_address_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
     echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     echo '<p>Address to display</p>';
+}
+function aa_idx_aid_callback($args) {  // Textbox Callback
+    $option = get_option($args[0]);
+    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<p>IDXbroker Account ID</p>';
+}
+function aa_idx_url_callback($args) {  // Textbox Callback
+    $option = get_option($args[0]);
+    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<p>Do not include trailing slash.<Br>EX: mydomain.idxbroker.com<br>EX: search.mydomain.com</p>';
 }
