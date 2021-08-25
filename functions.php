@@ -29,25 +29,71 @@ function avada_lang_setup() {
 }
 add_action( 'after_setup_theme', 'avada_lang_setup' );
 
-//FUNCTIONS
+/********Automatic Update Notifications*************/
+require get_stylesheet_directory() . '/realadvantage/plugins/plugin-update-checker/plugin-update-checker.php';
+$repo = 'agentadvantage';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker('https://github.com/kdanielleg/'.$repo.'/', __FILE__, $repo);
+$myUpdateChecker->setAuthentication(AA_THEME_API_KEY);
+$myUpdateChecker->setBranch('live-release');
+
+/********Font Awesome Pro**************/
+function fa_custom_setup_kit($kit_url = '') {
+    foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ):
+        add_action($action, function () use ( $kit_url ) {
+            wp_enqueue_script( 'font-awesome-kit', $kit_url, [], null );
+        });
+    endforeach;
+}
+fa_custom_setup_kit('https://kit.fontawesome.com/ee7e9124da.js');
+
+/*********FUNCTIONS*******************/
 ar_require_folder('functions');
 
-//CUSTOM FIELDS
+/*********CUSTOM FIELDS***************/
 ar_require_folder('fields');
 
-//SHORTCODES
+/*********SHORTCODES***************/
 ar_require_folder('shortcodes');
 
-//ADD Fivestar
+/*********ADD Fivestar***************/
 require_once( get_stylesheet_directory() . '/realadvantage/plugins/fivestar.php');
 
-//Add Custom IDX Codes
+/**Add Custom IDX Codes**/
 require_once( get_stylesheet_directory() . '/realadvantage/idx/idx.php');
 
-//Require Folders Loop
+
+/*********Require Folders Loop*******/
 function ar_require_folder($folder) {
     foreach (glob(get_stylesheet_directory().'/realadvantage/'.$folder.'/*.php') as $function) :
         $function = basename($function);
-        require_once get_stylesheet_directory().'/realadvantage/'.$folder.'/'.$function;
+        require get_stylesheet_directory().'/realadvantage/'.$folder.'/'.$function;
     endforeach;
+}
+
+
+/***acf default image value***/
+add_filter('acf/load_value/type=image', 'reset_default_image', 10, 3);
+function reset_default_image($value, $post_id, $field) {
+  if (!$value) {
+    $value = $field['default_value'];
+  }
+  return $value;
+}
+add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field');
+function add_default_value_to_image_field($field) {
+    acf_render_field_setting( $field, array(
+        'label'         => 'Default Image',
+        'instructions'      => 'Appears when creating a new post',
+        'type'          => 'image',
+        'name'          => 'default_value',
+    ));
+}
+
+/**Disable Yoast on IDX Wrappers**/
+//add_action( 'template_redirect', 'ar_remove_wpseo' );
+function ar_remove_wpseo() {
+    if(is_singular( 'idx-wrapper')):
+        $front_end = YoastSEO()->classes->get( Yoast\WP\SEO\Integrations\Front_End_Integration::class );
+        remove_action( 'wpseo_head', [ $front_end, 'present_head' ], -9999 );
+    endif;
 }
