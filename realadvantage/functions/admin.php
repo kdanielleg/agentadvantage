@@ -223,11 +223,23 @@ function aa_general_section() {
             'aa_idx_url' // Should match Option ID
         )  
     ); 
+    add_settings_field( // Admin IDX URL
+        'aa_admin_kw', // Option ID
+        'Keller Williams Website?', // Label
+        'aa_admin_kw_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'aa_settings_section', // Name of our section
+        array( // The $args
+            'aa_admin_kw' // Should match Option ID
+        )  
+    ); 
     register_setting('general','aa_admin_name', 'esc_attr');
+    register_setting('general','aa_admin_license', 'esc_attr');
     register_setting('general','aa_admin_phone', 'esc_attr');
     register_setting('general','aa_admin_address', 'esc_attr');
     register_setting('general','aa_idx_aid', 'esc_attr');
     register_setting('general','aa_idx_url', 'esc_attr');
+    register_setting('general','aa_admin_kw', 'esc_attr');
 }
 function aa_settings_section_options_callback() { // Section Callback
     echo '';  
@@ -261,4 +273,11 @@ function aa_idx_url_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
     echo '<input type="text" class="regular-text ltr" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     echo '<p>Do not include trailing slash.<Br>EX: https://mydomain.idxbroker.com<br>EX: https://search.mydomain.com</p>';
+}
+function aa_admin_kw_callback($args) { // Radio TF Callback
+    $option = get_option($args[0]);
+    ?>
+        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="true" <?php checked(1, $option, true); ?>>Yes
+        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="false" <?php checked(2, $option, true); ?>>No
+   <?php
 }

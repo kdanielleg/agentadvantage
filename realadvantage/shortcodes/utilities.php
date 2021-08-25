@@ -4,50 +4,6 @@
 **		& Fusion Elements
 ****/
 
-/**
-* [ar_dev_code $atts...][/ar_dev_code]
-*/
-function ar_dev_code_func( $atts , $content = null ) {
-	$atts = shortcode_atts(
-		array(
-			'label' => '',
-		),
-		$atts
-	);
-	$content = fusion_decode_if_needed( $content );
-	$content = apply_filters( 'fusion_shortcode_content', $content, 'fusion_code', $args );
-	return do_shortcode( html_entity_decode( $content, ENT_QUOTES ) );
-}
-add_shortcode( 'ar_dev_code', 'ar_dev_code_func' );
-function ar_fusion_element_dev_code() {
-	$params = array(
-		array(
-			'type'        => 'textfield',
-			'heading'     => esc_attr__( 'Code Box Label', 'fusion-builder' ),
-			'param_name'  => 'label',
-		),
-		array(
-			'type'        => 'code',
-			'heading'     => esc_attr__( 'Code', 'fusion-builder' ),
-			'description' => esc_attr__( 'Paste Code to Display', 'fusion-builder' ),
-			'param_name'  => 'element_content',
-	  		'value'		  => '',
-		),
-	);
-	$args = array(
-	  'name'            => esc_attr__( 'Labeled Code', 'fusion-builder' ),
-	  'shortcode'       => 'ar_dev_code',
-	  'icon'            => 'fas fa-code',
-	  'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/dev_code-preview.php',
-	  'preview_id'      => 'fusion-builder-block-module-dev_code-preview-template',
-	  'allow_generator' => true,
-	  'params'          => $params,
-	);
-
-	fusion_builder_map($args);
-}
-add_action( 'fusion_builder_before_init', 'ar_fusion_element_dev_code' );
-
 //Sitemap Shortcode
 function ar_sitemap_func( $atts ) {
 	$atts = shortcode_atts(
@@ -180,73 +136,21 @@ add_shortcode( 'ar_sitemap', 'ar_sitemap_func' );
 
 //footer display shortcode
 function ar_footer_display_func() {
-	$now = date("Y");
-	$start = get_field('ar_footer_date','option');
-	if($now == $start) {
-		$date = $now;
-	}else {
-		$date = $start.'-'.$now;
+	$date = date("Y");
+	$start = "2020";
+	if($date != $start) {
+		$date .= '-'.$now;
 	}
-	ob_start(); 
-	$extraLinks;
-	if(have_rows('footer_links', 'option')):
-		while(have_rows('footer_links','option')): the_row();
-			$this_link = '<a href="'.get_sub_field('url').'" target="'.get_sub_field('target').'">'.get_sub_field('text').'</a> | ';
-			$extraLinks .= $this_link;
-		endwhile;
-	endif;
-
-
-	?>
-		<div id="ar-footer-display">
-			<?php if(get_field('ar_footer_extra','option') == 'above') : 
-				if(get_field('ar_footer_extra','option') != 'none') : ?>
-					<div id="ar-footer-extra">
-						<?php echo do_shortcode(get_field('ar_footer_content','option')); ?>
-					</div>
-				<?php endif;
-			endif; 
-			if(!get_field('ar_footer_format','option')) : ?>
-				<p>© <?php echo $date; ?> <?php the_field('ar_footer_company','option'); ?> | All Rights Reserved | <a href="<?php the_field('ar_footer_privacy','option'); ?>" target="_blank">Privacy Policy</a> | <a href="<?php the_field('ar_footer_dmca','option'); ?>" target="_blank">DMCA</a> | <?php echo $extraLinks; ?><a href="<?php the_field('ar_footer_sitemap','option'); ?>" target="_blank">Sitemap</a>
-					<?php if(get_field('ar_footer_fhp','option')):
-						echo ' | <a href="'.get_field('ar_footer_fhp','option').'" target="_blank">Fair Housing Policy</a>';
-					endif; ?>
-				</p>
-				<?php if(get_field('ar_footer_extra','option') == 'below') :
-					if(get_field('ar_footer_extra','option') != 'none') : ?>
-						<div id="ar-footer-extra">
-							<?php echo do_shortcode(get_field('ar_footer_content','option')); ?>
-						</div>
-					<?php endif;
-				endif;
-				if(get_field('ar_footer_kw','option')) : ?>
-					<p>Agent Reputation - <a href="https://www.agentreputation.net/website-design-portfolio/" target="_blank" rel="noopener">Keller Williams Website Design</a></p>
-				<?php else : ?>
-					<p>Agent Reputation – <a href="https://www.agentreputation.net/real-estate-website-design/" target="_blank" rel="noopener">Real Estate Website Design</a></p>
-				<?php endif;
-			else : ?>
-				<p>
-					<span>© <?php echo $date; ?> <?php the_field('ar_footer_company','option'); ?> | All Rights Reserved | <a href="<?php the_field('ar_footer_privacy','option'); ?>" target="_blank">Privacy Policy</a> | <a href="<?php the_field('ar_footer_dmca','option'); ?>" target="_blank">DMCA</a> | <?php echo $extraLinks; ?><a href="<?php the_field('ar_footer_sitemap','option'); ?>" target="_blank">Sitemap</a>
-						<?php if(get_field('ar_footer_fhp','option')):
-							echo ' | <a href="'.get_field('ar_footer_fhp','option').'" target="_blank">Fair Housing Policy</a>';
-						endif; ?>
-					</span>
-					<?php if(get_field('ar_footer_kw','option')) : ?>
-						<span>| Agent Reputation - <a href="https://www.agentreputation.net/website-design-portfolio/" target="_blank" rel="noopener">Keller Williams Website Design</a></span>
-					<?php else : ?>
-						<span>| Agent Reputation – <a href="https://www.agentreputation.net/real-estate-website-design/" target="_blank" rel="noopener">Real Estate Website Design</a></span>
-					<?php endif; ?>
-				</p>
-				<?php if(get_field('ar_footer_extra','option') == 'below') :
-					if(get_field('ar_footer_extra','option') != 'none') : ?>
-						<div id="ar-footer-extra">
-							<?php echo do_shortcode(get_field('ar_footer_content','option')); ?>
-						</div>
-					<?php endif;
-				endif;
-			endif; ?>
-			<div id="ar-idx-disclaimer"></div>
-		</div>
+	ob_start(); ?>
+	<div id="ar-footer-display">
+		<p><?php echo '© '.$date.' '.get_option('aa_admin_name').' | '.get_option('aa_admin_license').' | '.get_option('aa_admin_address').' | All Rights Reserved | <a href="'.get_home_url().'/privacy" target="_blank">Privacy Policy</a> | <a href="'.get_home_url().'/dmca" target="_blank">DMCA</a> | <a href="'.get_option('aa_idx_url').'/idx/sitemap" target="_blank">Sitemap</a>'; ?></p>
+		<?php if(get_option('aa_admin_kw')) : ?>
+			<p>Agent Reputation - <a href="https://www.agentreputation.net/website-design-portfolio/" target="_blank" rel="noopener">Keller Williams Website Design</a></p>
+		<?php else : ?>
+			<p>Agent Reputation – <a href="https://www.agentreputation.net/real-estate-website-design/" target="_blank" rel="noopener">Real Estate Website Design</a></p>
+		<?php endif; ?>
+		<div id="ar-idx-disclaimer"></div>
+	</div>
 	<?php return ob_get_clean();
 }
 add_shortcode( 'ar_footer_display', 'ar_footer_display_func' );
