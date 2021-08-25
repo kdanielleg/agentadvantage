@@ -245,5 +245,5 @@ function aa_idx_aid_callback($args) {  // Textbox Callback
 function aa_idx_url_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
     echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
-    echo '<p>Do not include trailing slash.<Br>EX: mydomain.idxbroker.com<br>EX: search.mydomain.com</p>';
+    echo '<p>Do not include trailing slash.<Br>EX: https://mydomain.idxbroker.com<br>EX: https://search.mydomain.com</p>';
 }

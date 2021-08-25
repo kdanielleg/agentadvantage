@@ -1,9 +1,4 @@
-<?php /**modal scripts**/ 
-$idxLink = get_option('aa_idx_url');
-$siteHome = get_site_url();
-$agentFieldText == 'Working with an Agent?';
-
-?>
+<?php /**modal scripts**/ ?>
 
 <script>jQuery(document).ready(function($){
   $('.IDX-registrationModal').each(function(){
@@ -101,5 +96,5 @@ $agentFieldText == 'Working with an Agent?';
     $('div#IDX-registration.IDX-registration-force a.close.psudolink').attr('onclick', 'window.location.assign("<?php echo $siteHome; ?>")');
   }
 
-  $('div#regModal-left .IDX-customRegistrationFields div#IDX-agentOwner-group select#IDX-agentOwner > option:first-of-type').text('<?php echo $agentFieldText; ?>');
+  $('div#regModal-left .IDX-customRegistrationFields div#IDX-agentOwner-group select#IDX-agentOwner > option:first-of-type').text('Working with an Agent?');
 });</script>
