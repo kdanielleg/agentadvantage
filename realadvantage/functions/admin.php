@@ -224,26 +224,26 @@ function aa_settings_section_options_callback() { // Section Callback
 }
 function aa_admin_name_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
-    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<input type="text" class="regular-text ltr" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     echo '<p>Main Company Name to Display</p>';
 }
 function aa_admin_phone_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
-    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<input type="text" class="regular-text ltr" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     echo '<p>Phone number to display</p>';
 }
 function aa_admin_address_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
-    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<input type="text" class="regular-text ltr" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     echo '<p>Address to display</p>';
 }
 function aa_idx_aid_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
-    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<input type="text" class="regular-text ltr" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     echo '<p>IDXbroker Account ID</p>';
 }
 function aa_idx_url_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
-    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<input type="text" class="regular-text ltr" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     echo '<p>Do not include trailing slash.<Br>EX: https://mydomain.idxbroker.com<br>EX: https://search.mydomain.com</p>';
 }
