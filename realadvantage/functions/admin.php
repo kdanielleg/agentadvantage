@@ -172,6 +172,16 @@ function aa_general_section() {
         array( // The $args
             'aa_admin_name' // Should match Option ID
         )  
+    );
+    add_settings_field( // Admin License
+        'aa_admin_license', // Option ID
+        'State License', // Label
+        'aa_admin_license_callback', // !important - This is where the args go!
+        'general', // Page it will be displayed (General Settings)
+        'aa_settings_section', // Name of our section
+        array( // The $args
+            'aa_admin_license' // Should match Option ID
+        )  
     ); 
     add_settings_field( // Admin Phone
         'aa_admin_phone', // Option ID
@@ -226,6 +236,11 @@ function aa_admin_name_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
     echo '<input type="text" class="regular-text ltr" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     echo '<p>Main Company Name to Display</p>';
+}
+function aa_admin_license_callback($args) {  // Textbox Callback
+    $option = get_option($args[0]);
+    echo '<input type="text" class="regular-text ltr" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
+    echo '<p>License and Title to Display</p>';
 }
 function aa_admin_phone_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
