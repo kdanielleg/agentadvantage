@@ -277,7 +277,7 @@ function aa_idx_url_callback($args) {  // Textbox Callback
 function aa_admin_kw_callback($args) { // Radio TF Callback
     $option = get_option($args[0]);
     ?>
-        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="true" <?php checked(1, $option, true); ?>>Yes
-        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="false" <?php checked(2, $option, true); ?>>No
+        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="true" <?php checked("true", $option, true); ?>>Yes
+        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="false" <?php checked("false", $option, true); ?>>No
    <?php
 }
