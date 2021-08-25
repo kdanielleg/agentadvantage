@@ -139,7 +139,7 @@ function ar_footer_display_func() {
 	$date = date("Y");
 	$start = "2020";
 	if($date != $start) {
-		$date .= '-'.$now;
+		$date = $start.'-'.$date;
 	}
 	ob_start(); ?>
 	<div id="ar-footer-display">
