@@ -144,7 +144,7 @@ function ar_footer_display_func() {
 	ob_start(); ?>
 	<div id="ar-footer-display">
 		<p><?php echo '© '.$date.' '.get_option('aa_admin_name').' | '.get_option('aa_admin_license').' | '.get_option('aa_admin_address').' | All Rights Reserved | <a href="'.get_home_url().'/privacy" target="_blank">Privacy Policy</a> | <a href="'.get_home_url().'/dmca" target="_blank">DMCA</a> | <a href="'.get_option('aa_idx_url').'/idx/sitemap" target="_blank">Sitemap</a>'; ?></p>
-		<?php if(get_option('aa_admin_kw')) : ?>
+		<?php if(get_option('aa_admin_kw') == "true") : ?>
 			<p>Agent Reputation - <a href="https://www.agentreputation.net/website-design-portfolio/" target="_blank" rel="noopener">Keller Williams Website Design</a></p>
 		<?php else : ?>
 			<p>Agent Reputation – <a href="https://www.agentreputation.net/real-estate-website-design/" target="_blank" rel="noopener">Real Estate Website Design</a></p>
