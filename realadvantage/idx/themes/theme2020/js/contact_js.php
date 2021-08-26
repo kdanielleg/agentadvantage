@@ -130,6 +130,7 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 			$('div#IDX-hvMessage-group').wrap('<div class="col-xs-12 col-sm-12 col-md-7">');
 			$('p#IDX_hvProvide').removeClass('IDX-well');
 			$('div#IDX-homevaluationFormActions button#IDX-submitBtn').text('Send My Home Value Report');
+			$('div#IDX-hvAddress-group').removeClass('col-sm-6').addClass('col-sm-12');
 
 			//address
 			var getUrlParameter = function getUrlParameter(sParam) {
@@ -161,7 +162,7 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 				}
 				
 
-			} else {
+			} /**else {
 				//autocomplete field
 				$('form#IDX-homevaluationContactForm').before('<div id="ar-googleHvAddressWrap"><input id="hvAddressAutocomplete" class="IDX-form-control" placeholder="Start Typing Your Address..." onFocus="geolocate()" type="text"/></div>');
 			}
@@ -174,6 +175,7 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 			$('div#IDX-hvAddress-group').append($('input#IDX-hvZipcode'));
 			$('div#IDX-hvAddress-group input#IDX-hvZipcode').attr('type','hidden').addClass('IDX-hide');
 			$('div#IDX-hvCityState-group, div#IDX-hvZipcode-group').remove();
+			**/
 		}else { //Contact Page
 			$('<?php echo $titleSelect; ?>').text($('title').text().trim());
 			
