@@ -106,6 +106,10 @@ $mcalcIcons['acres'] = '<i class="fal fa-leaf"></i>';
 				var imgSuffixArr = ["jpg","jpeg","png"];
 				var largeSrcArr = largeSrc.split('.');
 				var fileSuffix = largeSrcArr[largeSrcArr.length-1].toLowerCase();
+				var fileSuffixArr = fileSuffix.split('?');
+				if(fileSuffixArr.length > 1) {
+					fileSuffix = fileSuffixArr[0];
+				}
 				if(imgSuffixArr.includes(fileSuffix)) {
 					$(this).wrapInner('<span class="fusion-imageframe imageframe-none hover-type-zoomin"><a href="'+largeSrc+'" class="fusion-lightbox IDX-gallery-thumb-link" data-rel="iLightbox[propGallery]" style="background-image:url('+src+')">');
 				} else {
