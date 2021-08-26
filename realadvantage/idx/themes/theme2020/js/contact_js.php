@@ -131,7 +131,7 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 			$('p#IDX_hvProvide').removeClass('IDX-well');
 			$('div#IDX-homevaluationFormActions button#IDX-submitBtn').text('Send My Home Value Report');
 			$('div#IDX-hvAddress-group').removeClass('col-sm-6').addClass('col-sm-12');
-			$('div#IDX-hvAddress-group, div#IDX-hvCityState-group, div#IDX-hvZipcode-group').wrapAll('<div class="col-sm-12"><div class="row IDX-row">');
+			$('div#IDX-hvAddress-group, div#IDX-hvCityState-group, div#IDX-hvZipcode-group').wrapAll('<div class="col-sm-12"><div id="IDX-hvAllAddress-group" class="row IDX-row">');
 
 			//address
 			var getUrlParameter = function getUrlParameter(sParam) {
@@ -150,7 +150,7 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 				$('form#IDX-homevaluationContactForm').before('<div id="ar-googleHvAddressParamWrap"><p><strong>We Found it!</strong><br>'+address+'</p></div>');
 				var hvMapIcon = <?php echo json_encode($smallIcon); ?>;
 				$('div#ar-googleHvAddressParamWrap').append('<img width="640" height="300" src="https://maps.googleapis.com/maps/api/staticmap?key='+hvMapKey+'&amp;language=en&amp;center='+addressParam+'&amp;maptype=roadmap&amp;zoom=14&amp;size=640x300&amp;markers=icon:'+hvMapIcon+'|'+addressParam+'&amp;scale=2">');
-				$('div#ar-googleHvAddressParamWrap').append('<div class="fusion-title title fusion-title-center fusion-title-text fusion-title-size-two"><div class="title-sep-container title-sep-container-left"><div class="title-sep"></div></div><h2 class="title-heading-center" style="margin-bottom:0!important;">Property Features</h2><div class="title-sep-container title-sep-container-right"><div class="title-sep"></div></div></div><p>Provide as much detail as possible to get the most accurate evaluation.</p>');
+				$('div#IDX-hvAllAddress-group').after('<div class="fusion-title title fusion-title-center fusion-title-text fusion-title-size-two"><div class="title-sep-container title-sep-container-left"><div class="title-sep"></div></div><h2 class="title-heading-center" style="margin-bottom:0!important;">Property Features</h2><div class="title-sep-container title-sep-container-right"><div class="title-sep"></div></div></div><p>Provide as much detail as possible to get the most accurate evaluation.</p>');
 				var addressArr = address.split(',');
 				var stateZipArr = addressArr[2].trim().split(' ');
 				var street = addressArr[0];
