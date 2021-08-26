@@ -131,6 +131,7 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 			$('p#IDX_hvProvide').removeClass('IDX-well');
 			$('div#IDX-homevaluationFormActions button#IDX-submitBtn').text('Send My Home Value Report');
 			$('div#IDX-hvAddress-group').removeClass('col-sm-6').addClass('col-sm-12');
+			$('div#IDX-hvAddress-group, div#IDX-hvCityState-group, div#IDX-hvZipcode-group').wrapAll('<div class="col-sm-12"><div class="row IDX-row">');
 
 			//address
 			var getUrlParameter = function getUrlParameter(sParam) {
@@ -142,7 +143,7 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 		        	}
 		    	}
 			};
-			var hvMapKey = <?php echo json_encode(get_field('ar_gmap_key', 'option')); ?>;
+			var hvMapKey = <?php echo json_encode(AA_GOOGLE_API_KEY); ?>;
 			if(getUrlParameter('address')) {
 				var addressParam = getUrlParameter('address');
 				var address = addressParam.split('+').join(' ');
@@ -155,10 +156,10 @@ $smallIcon = get_home_url().'/wp-content/themes/agentadvantage/realadvantage/img
 				var street = addressArr[0];
 				var cityState = addressArr[1] + ', ' + stateZipArr[0];
 				var zip = stateZipArr[1];
-				$('div#IDX-hvAddress-group input#IDX-hvAddress').val(street);
-				$('div#IDX-hvAddress-group input#IDX-hvCityState').val(cityState);
+				$('form#IDX-homevaluationContactForm input#IDX-hvAddress').val(street);
+				$('form#IDX-homevaluationContactForm input#IDX-hvCityState').val(cityState);
 				if(zip) {
-					$('div#IDX-hvAddress-group input#IDX-hvZipcode').val(zip);
+					$('form#IDX-homevaluationContactForm input#IDX-hvZipcode').val(zip);
 				}
 				
 
