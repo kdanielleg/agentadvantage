@@ -4,6 +4,53 @@
 **		& Fusion Elements
 ****/
 
+
+/**
+* [ar_dev_code $atts...][/ar_dev_code]
+*/
+function ar_dev_code_func( $atts , $content = null ) {
+	$atts = shortcode_atts(
+		array(
+			'label' => '',
+		),
+		$atts
+	);
+	$content = fusion_decode_if_needed( $content );
+	$content = apply_filters( 'fusion_shortcode_content', $content, 'fusion_code', $args );
+	return do_shortcode( html_entity_decode( $content, ENT_QUOTES ) );
+}
+add_shortcode( 'ar_dev_code', 'ar_dev_code_func' );
+
+
+function ar_fusion_element_dev_code() {
+	$params = array(
+		array(
+			'type'        => 'textfield',
+			'heading'     => esc_attr__( 'Code Box Label', 'fusion-builder' ),
+			'param_name'  => 'label',
+		),
+		array(
+			'type'        => 'code',
+			'heading'     => esc_attr__( 'Code', 'fusion-builder' ),
+			'description' => esc_attr__( 'Paste Code to Display', 'fusion-builder' ),
+			'param_name'  => 'element_content',
+	  		'value'		  => '',
+		),
+	);
+	$args = array(
+	  'name'            => esc_attr__( 'Labeled Code', 'fusion-builder' ),
+	  'shortcode'       => 'ar_dev_code',
+	  'icon'            => 'fas fa-code',
+	  'preview'         => get_stylesheet_directory().'/realadvantage/js/previews/dev_code-preview.php',
+	  'preview_id'      => 'fusion-builder-block-module-dev_code-preview-template',
+	  'allow_generator' => true,
+	  'params'          => $params,
+	);
+
+	fusion_builder_map($args);
+}
+add_action( 'fusion_builder_before_init', 'ar_fusion_element_dev_code' );
+
 //Sitemap Shortcode
 function ar_sitemap_func( $atts ) {
 	$atts = shortcode_atts(
