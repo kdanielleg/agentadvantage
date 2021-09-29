@@ -281,3 +281,10 @@ function aa_admin_kw_callback($args) { // Radio TF Callback
         <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="false" <?php checked("false", $option, true); ?>>No
    <?php
 }
+
+if(!is_super_admin) {
+    add_action( 'admin_enqueue_scripts', 'aa_admin_style');
+}
+function aa_admin_style() {
+  wp_enqueue_style( 'admin-style', get_stylesheet_directory_uri() . '/realadvantage/functions/admin-style.css' );
+}
