@@ -224,13 +224,13 @@ function aa_general_section() {
         )  
     ); 
     add_settings_field( // Admin IDX URL
-        'aa_admin_kw', // Option ID
-        'Keller Williams Website?', // Label
-        'aa_admin_kw_callback', // !important - This is where the args go!
+        'aa_admin_flink', // Option ID
+        'Brokerage Site Type?', // Label
+        'aa_admin_flink_callback', // !important - This is where the args go!
         'general', // Page it will be displayed (General Settings)
         'aa_settings_section', // Name of our section
         array( // The $args
-            'aa_admin_kw' // Should match Option ID
+            'aa_admin_flink' // Should match Option ID
         )  
     ); 
     register_setting('general','aa_admin_name', 'esc_attr');
@@ -239,7 +239,7 @@ function aa_general_section() {
     register_setting('general','aa_admin_address', 'esc_attr');
     register_setting('general','aa_idx_aid', 'esc_attr');
     register_setting('general','aa_idx_url', 'esc_attr');
-    register_setting('general','aa_admin_kw', 'esc_attr');
+    register_setting('general','aa_admin_flink', 'esc_attr');
 }
 function aa_settings_section_options_callback() { // Section Callback
     echo '';  
@@ -274,16 +274,17 @@ function aa_idx_url_callback($args) {  // Textbox Callback
     echo '<input type="text" class="regular-text ltr" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
     echo '<p>Do not include trailing slash.<Br>EX: https://mydomain.idxbroker.com<br>EX: https://search.mydomain.com</p>';
 }
-function aa_admin_kw_callback($args) { // Radio TF Callback
+function aa_admin_flink_callback($args) { // Radio TF Callback
     $option = get_option($args[0]);
     ?>
-        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="true" <?php checked("true", $option, true); ?>>Yes
-        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="false" <?php checked("false", $option, true); ?>>No
+        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="default" <?php checked("default", $option, true); ?>>Default
+        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="kw" <?php checked("kw", $option, true); ?>>Keller Williams
+        <input type="radio" id="<?php echo $args[0]; ?>" name="<?php echo $args[0]; ?>" value="exp" <?php checked("exp", $option, true); ?>>EXP Realty
    <?php
 }
 
 if(!is_super_admin) {
-    add_action( 'admin_enqueue_scripts', 'aa_admin_style');
+    //add_action( 'admin_enqueue_scripts', 'aa_admin_style');
 }
 function aa_admin_style() {
   wp_enqueue_style( 'admin-style', get_stylesheet_directory_uri() . '/realadvantage/functions/admin-style.css' );
