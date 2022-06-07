@@ -92,7 +92,6 @@ function aa_market_content_func( $atts ) {
 		),
 		$atts
 	);
-	$return = "<p>Element available for market area template only</p>";
 	if(is_singular('avada_portfolio')):
 		ob_start(); ?>
 		<div id="<?php echo $atts['id']; ?>" class="aa-market-content <?php echo $atts['class']; ?>">
@@ -114,6 +113,8 @@ function aa_market_content_func( $atts ) {
 			endif; ?>
 		</div>
 		<?php $return = ob_get_clean();
+	else:
+		$return = "<p>Element available for market area template only</p>";
 	endif;
 	return $return;
 }
@@ -156,10 +157,14 @@ function aa_market_wiki_func( $atts ) {
 		$atts
 	);
 	$return = "<p>Element available for market area template only</p>";
-	if(is_singular('avada_portfolio') && get_field('market_wiki')):
-		ob_start();
-		echo do_shortcode('[fusion_button link="'.get_field('market_wiki').'" text_transform="none" title="" target="_self" link_attributes="" alignment_medium="" alignment_small="" alignment="center" modal="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" sticky_display="normal,sticky" class="'.$atts['class'].'" id="'.$atts['id'].'" color="custom" button_gradient_top_color="rgba(0,0,0,0)" button_gradient_bottom_color="rgba(0,0,0,0)" button_gradient_top_color_hover="rgba(0,0,0,0)" button_gradient_bottom_color_hover="rgba(0,0,0,0)" accent_color="#000000" accent_hover_color="#f37b20" type="flat" bevel_color="" border_width="0" border_radius="" border_color="rgba(0,0,0,0)" border_hover_color="rgba(0,0,0,0)" size="medium" stretch="no" margin_top="" margin_right="" margin_bottom="" margin_left="" icon="fa-link fal" icon_position="left" icon_divider="no" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset=""]Content Courtesy of Wikipedia.org[/fusion_button]');
-		$return = ob_get_clean();
+	if(is_singular('avada_portfolio')):
+		if(get_field('market_wiki')):
+			ob_start();
+			echo do_shortcode('[fusion_button link="'.get_field('market_wiki').'" text_transform="none" title="" target="_self" link_attributes="" alignment_medium="" alignment_small="" alignment="center" modal="" hide_on_mobile="small-visibility,medium-visibility,large-visibility" sticky_display="normal,sticky" class="'.$atts['class'].'" id="'.$atts['id'].'" color="custom" button_gradient_top_color="rgba(0,0,0,0)" button_gradient_bottom_color="rgba(0,0,0,0)" button_gradient_top_color_hover="rgba(0,0,0,0)" button_gradient_bottom_color_hover="rgba(0,0,0,0)" accent_color="#000000" accent_hover_color="#f37b20" type="flat" bevel_color="" border_width="0" border_radius="" border_color="rgba(0,0,0,0)" border_hover_color="rgba(0,0,0,0)" size="medium" stretch="no" margin_top="" margin_right="" margin_bottom="" margin_left="" icon="fa-link fal" icon_position="left" icon_divider="no" animation_type="" animation_direction="left" animation_speed="0.3" animation_offset=""]Content Courtesy of Wikipedia.org[/fusion_button]');
+			$return = ob_get_clean();
+		else:
+			$return = '<!--wikipedia link placeholder -->';
+		endif;
 	endif;
 	return $return;
 }

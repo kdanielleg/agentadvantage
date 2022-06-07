@@ -46,6 +46,25 @@ function fa_custom_setup_kit($kit_url = '') {
 }
 fa_custom_setup_kit('https://kit.fontawesome.com/ee7e9124da.js');
 
+/**
+ * Prevent update notification for Yelp Businesses plugin
+ * Place in theme functions.php or at bottom of wp-config.php
+ */
+ function disable_plugin_updates( $value ) {
+    $pluginsToDisable = [
+        'yelp-widget-pro/yelp-widget-pro.php'
+    ];
+    if ( isset($value) && is_object($value) ) {
+        foreach ($pluginsToDisable as $plugin) {
+            if ( isset( $value->response[$plugin] ) ) {
+                unset( $value->response[$plugin] );
+            }
+        }
+    }
+    return $value;
+}
+add_filter( 'site_transient_update_plugins', 'disable_plugin_updates' );
+
 /*********FUNCTIONS*******************/
 ar_require_folder('functions');
 
