@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <?php get_header(); ?>
 
-<section id="content" <?php Avada()->layout->add_style( 'content_style' ); ?>>
+<section id="content" style="<?php echo esc_attr( apply_filters( 'awb_content_tag_style', '' ) ); ?>">
 	<?php if ( fusion_get_option( 'blog_pn_nav' ) ) : ?>
 		<div class="single-navigation clearfix">
 			<?php previous_post_link( '%link', esc_attr__( 'Previous', 'Avada' ) ); ?>

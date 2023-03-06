@@ -30,9 +30,10 @@ function avada_lang_setup() {
 add_action( 'after_setup_theme', 'avada_lang_setup' );
 
 /********Automatic Update Notifications*************/
-require get_stylesheet_directory() . '/realadvantage/plugins/plugin-update-checker/plugin-update-checker.php';
+require get_stylesheet_directory() . '/realadvantage/plugins/plugin-update-checker-5.0/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 $repo = 'agentadvantage';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker('https://github.com/kdanielleg/'.$repo.'/', __FILE__, $repo);
+$myUpdateChecker = PucFactory::buildUpdateChecker('https://github.com/kdanielleg/'.$repo.'/', __FILE__, $repo);
 $myUpdateChecker->setAuthentication(AA_THEME_API_KEY);
 $myUpdateChecker->setBranch('live-release');
 
